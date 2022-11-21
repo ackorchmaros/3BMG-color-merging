@@ -44,33 +44,13 @@
 \newtheorem{problem}{Problem}[section]
 \newtheorem{observ}{Observation}
 
+\newcommand{\TODO}[1]{\begingroup\color{red}#1\endgroup}
+\def\TODOO#1{\marginpar{\tiny\raggedright\color{red}#1}}
 
-\RequirePackage{hyperref}
-\DeclareMathOperator{\build}{\mathtt{BUILD}}
-\DeclareMathOperator{\sgn}{sgn}
-%%%% SOME LOW LEVEL STUFF NEEDED FOR SPECIAL SYMBOLS
-\makeatletter
-\def\moverlay{\mathpalette\mov@rlay}
-\def\mov@rlay#1#2{\leavevmode\vtop{%
-    \baselineskip\z@skip \lineskiplimit-\maxdimen
-    \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
-\newcommand{\charfusion}[3][\mathord]{
-  #1{\ifx#1\mathop\vphantom{#2}\fi
-    \mathpalette\mov@rlay{#2\cr#3}
-  }
-  \ifx#1\mathop\expandafter\displaylimits\fi}
-\DeclareRobustCommand\bigop[1]{%
-  \mathop{\vphantom{\sum}\mathpalette\bigop@{#1}}\slimits@
-}
-\newcommand{\bigop@}[2]{%
-  \vcenter{%
-    \sbox\z@{$#1\sum$}%
-    \hbox{\resizebox{\ifx#1\displaystyle.9\fi\dimexpr\ht\z@+\dp\z@}{!}{$\m@th#2$}}%
-  }%
-}
-%\makeatotherphased
-%%%%% END LOWLEVEL USER DEFINITION
-
+\newcommand{\ak}[1]{\begingroup\color{orange}#1\endgroup}
+\newcommand{\OLD}[1]{\begingroup\tiny\color{gray}#1\endgroup}
+%\newcommand{\PFS}[1]{\begingroup\color{blue}#1\endgroup}
+\newcommand{\mh}[1]{\begingroup\color{magenta}#1\endgroup}
 
 %\journal{Discrete Applied Mathematics}
 %\journal{Journal of Combinatorial Theory, Series B}
@@ -85,9 +65,15 @@
   \author[LEI]{Annachiara Korchmaros}
   \ead{annachiara@bioinf.uni-leipzig.de}
 
+  \author[STOCK]{Marc Hellmuth}
+  \ead{marc.hellmuth@math.su.se}
+
 \address[LEI]{Bioinformatics Group, Department of Computer Science \&
   Interdisciplinary Center for Bioinformatics, Universit{\"a}t Leipzig,
   H{\"a}rtelstra{\ss}e 16-18, D-04107 Leipzig, Germany}
+
+\address[STOCK]{Department of Mathematics, Faculty of Science,
+Stockholm University, SE-10691 Stockholm, Sweden}
 
 
 \begin{abstract}
