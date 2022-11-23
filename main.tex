@@ -270,9 +270,9 @@ contains both $\Gamma$ and $\sigma$ and thus, must be adjusted below!
 
 
 
-
+\OLD{
 In the general case, \emph{s-color derivative} denotes $\partial_s(\Gamma)$ for a color $s$, and \emph{color derivatives} denotes $\partial_s(\Gamma)$ for any color $s$. An example of the color derivatives of $\Gamma$ is in Figure~\ref{fig:color_derivatives}. When $\partial_s(\Gamma)$ is a 2-BMG, $T_s$ denotes a tree explaining it.
-
+}
 In general, color derivatives of $\Gamma$ are not 2-BMGs even though $\Gamma$ is a 3-BMG, as \mh{illustrated in Fig.\ \ref{fig:color_derivatives}.}
 \OLD{it is shown in the following example.}
 
@@ -282,7 +282,8 @@ In general, color derivatives of $\Gamma$ are not 2-BMGs even though $\Gamma$ is
   \centering
     \includegraphics[width=16cm]{figures/color_derivatives.png}
     \caption{Color derivatives of a 3-BMG.
-    Digraph $\Gamma$ in Figure~\ref{fig:color_derivatives} is a 3-BMG. However,
+    Digraph $\Gamma$ in Figure~\ref{fig:color_derivatives} is a 3-BMG
+    \TODO{why? could we add a tree to support the statement?}. However,
     none of its color derivatives are 2-BMGs, as they all contain either an
     induced F1-subgraph or an induced F2-subgraph. Indeed, $x'\rightarrow
     y'\rightarrow x$ and $z\rightarrow x$ define an induced F1-subgraph for
@@ -384,11 +385,13 @@ $\Delta_{rb}$ and your (formerly defined ) blue-color derivative ?  }
  \end{definition}
  }
  
-We stress that $\partial_b(\Gamma)$ and $\Delta_{(r,b)}(\partial_r(\Gamma))$ have the same vertex set with the same coloring but they may have different edge sets. 
+\OLD{We stress that $\partial_b(\Gamma)$ and $\Delta_{(r,b)}(\partial_r(\Gamma))$ have the same vertex set with the same coloring 
+but they may have different edge sets. }
 
 \begin{remark}
 \label{obs:delta_operator}
 $T_r$ and $T_b$ have the same uncolored tree if and only if $\Delta_{rb}(\partial_r(\Gamma))=\partial_b(\Gamma)$. In this case, the following diagram commutes.
+\TODO{should be adjusted to new def, but possibly becomes trivial, } % since former $\Delta_{rb}(\partial_r(\Gamma))$ is (\Gamma_)}
 \begin{figure}[ht]
   \centering
 \begin{tikzcd}
