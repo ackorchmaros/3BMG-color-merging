@@ -206,47 +206,67 @@ Let $W=\{x_1,x_2,y_1,y_2\}$ be a set of four vertices colored by a color map $\s
 \TODO{MH: annachiara, please dont get me wrong, if I rewrite here to much - just delete it if you are not 
 happy ! but just for now, I want to get some more consitent notion, that allows for generalizations .. }
 
+
 \mh{
 %In this section, we always consider 3-colored digraphs $(\Gamma,\sigma)$. 
-We introduce now two operators that are based on the idea of identifying certain colors in  $(\Gamma,\sigma)$.
+We introduce now 2-colored graphs that are based on the idea of identifying certain colors in  $(\Gamma,\sigma)$.
 }
 \OLD{In this section, $(\Gamma,\sigma)$ denotes a 3-colored digraph with colors red, blue and yellow. 
 We introduce two operators arising from the idea of merging two of the above colors into a unique color. The first operator formalizes the color merging process in $\Gamma$. Preserving one color, for instance red, and merging the other two, blue and yellow, into a unique new color named green.}
 
+
+
+
 \begin{definition}
 \label{def:color-derivative}
 \mh{Let $(\Gamma,\sigma)$ be an $n$-colored digraph where $\sigma\colon V(\Gamma) \to S$ 
-and $S = \{1,\dots,n\}$. The  \emph{$i$-color derivative} $\partial_i(\Gamma)$ of $(\Gamma,\sigma)$
-is the 2-colored digraph $(\Gamma_i,\sigma_i)$  that satisfies:
+and $S = \{1,\dots,n\}$. Let $i\in S$ be some color. We define
+$\sigma_i\colon V(\Gamma) \to \{i,c\}$ where $c\notin S$
+by \[\sigma_i(x)=c \iff \sigma(x)\neq i, \text{ for all } x\in V(\Gamma).\]
+Hence, $\sigma_i$ keeps the colors of all vertices with color $i$ while
+all other vertices obtain color $c$. 
+We define the digraph $\Gamma_i$ by putting
 \begin{enumerate}
-    \item $\Gamma$ and $\Gamma_i$ have the same vertex set, i.e.,  $V(\Gamma_i) \coloneqq V(\Gamma)$.
-    \item $\sigma_i\colon V(\Gamma_i) \to \{i,c\}$ where $c\notin S$
-    	  and $\sigma_i(x)=c$ if and only if $\sigma(x)\neq i$. 
-    	  
-    	  In other words,  $\Gamma$ and $\Gamma_i$ have the same vertices with color $i$ 
-    	  whereas any other vertex of $\Gamma_i$ has color $c$.  
+    \item $V(\Gamma_i) \coloneqq V(\Gamma)$ and
     
-    \item An edge $xy\in E(\Gamma)$ is an edge of $\Gamma_i$ presicely if 
+    \item $xy\in E(\Gamma_i)$  presicely if $xy\in E(\Gamma)$ and 
     	  $\sigma(x)=i	$ or  $\sigma(y)=i$.
     	  
     	  In other words, the edges of $\Gamma_i$ are precisely those edges 
     	  of $\Gamma$ that are incident to a vertex with color $i$.
 \end{enumerate}
+
+The \emph{$i$-color derivative} $\partial_i(\Gamma,\sigma)$ is the 2-colored
+digraph $(\Gamma_i,\sigma_i)$ and $\Delta_{ij}(\Gamma,\sigma)$ denotes the
+2-colored graph $(\Gamma_i,\sigma_j)$ where $i,j\in S$ are distinct. 
 }
 
 
 
+
+
+
 \OLD{
-The \emph{red-color derivative} $\partial_c(\Gamma)$ of \OLD{$\Gamma$}\mh{$(\Gamma,\sigma)$} 
-is the 2-colored digraph \OLD{$\Sigma$}\mh{$(\Gamma',\sigma')$} 
-with colors red and yellow such that
+The \emph{red-color derivative} $\partial_c(\Gamma)$ of
+\OLD{$\Gamma$}\mh{$(\Gamma,\sigma)$} is the 2-colored digraph
+\OLD{$\Sigma$}\mh{$(\Gamma',\sigma')$} with colors red and yellow such that
 \begin{enumerate}
     \item $\Gamma$ and $\Sigma$ have the same vertex set. 
     \item $\Gamma$ and $\Sigma$ have the same red vertices whereas any other vertex of $\Sigma$ is green. 
     \item The edges of $\Sigma$ are those of $\Gamma$ incident with a red vertex. 
 \end{enumerate}
-The blue- and yellow-color derivative of $\Gamma$ are analogously defined and denoted by $\partial_b(\Gamma)$ and $\partial_y(\Gamma)$, respectively. }
+The blue- and yellow-color derivative of $\Gamma$ are analogously defined and
+denoted by $\partial_b(\Gamma)$ and $\partial_y(\Gamma)$, respectively. }
 \end{definition} 
+
+\TODO{MH: recheck latter def, but as I can see, we define $\sigma_i$ and $\Gamma_i$
+inependent from each other -- this also simplifies that def of $\Delta_{ij}$. 
+
+Note also, that $\partial_i(\Gamma,\sigma)$ and $\Delta_{ij}(\Gamma,\sigma)$
+contains both $\Gamma$ and $\sigma$ and thus, must be adjusted below!
+ }
+
+
 
 In the general case, \emph{s-color derivative} denotes $\partial_s(\Gamma)$ for a color $s$, and \emph{color derivatives} denotes $\partial_s(\Gamma)$ for any color $s$. An example of the color derivatives of $\Gamma$ is in Figure~\ref{fig:color_derivatives}. When $\partial_s(\Gamma)$ is a 2-BMG, $T_s$ denotes a tree explaining it.
 
@@ -334,6 +354,7 @@ Therefore, we introduce the \emph{color-delta operator} $\Delta_{rb}$ to charact
 
 %}
 
+\OLD{
 \begin{definition}
 %\label{def:delta_operator}
 
@@ -358,7 +379,7 @@ $(\Delta_{rb}(\Sigma),\sigma_b)$ is defined to be the 2-colored digraph on the v
 \end{equation} \TODO{MH: completely confused now, what is the difference between 
 $\Delta_{rb}$ and your (formerly defined ) blue-color derivative ?  }
  \end{definition}
- 
+ }
  
 We stress that $\partial_b(\Gamma)$ and $\Delta_{(r,b)}(\partial_r(\Gamma))$ have the same vertex set with the same coloring but they may have different edge sets. 
 
@@ -384,7 +405,8 @@ $T_r$ and $T_b$ have the same uncolored tree if and only if $\Delta_{rb}(\partia
 In this section, we will show how color operators may be used to give a sufficient condition for a 3-colored digraph to be a 3-BMG.
 
 \begin{theorem}\label{thm:sufficient_condition}
-Let $(\Gamma,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(\Gamma)$ and $\partial_b(\Gamma)$ are 2-BMGs, and $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$, then $\Gamma$ is a 3-BMG.
+Let $(\Gamma,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(\Gamma)$ and $\partial_b(\Gamma)$ are 2-BMGs, and $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$, then $\Gamma$ is a 3-BMG. \TODO{MH: to be a pea-picker, this results that does not hold
+for  $\partial_r(\Gamma)$ and $\partial_y(\Gamma)$ as you fixed the colors only to red and blue, but the colors should be picked arbitrarily... ;)  }
 \end{theorem}
 
 \begin{proof}
