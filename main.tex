@@ -173,16 +173,19 @@ Let $S$ be a finite set \mh{of colors}. \OLD{of size $n$ whose elements are call
 \mh{if there is a} surjective \mh{map}\OLD{color
 function} $\sigma: V\to S$ \mh{where 
 $\sigma(x)$ is called the \emph{color} of $x$. We use $(\Gamma,\sigma)$ to specify
-that $\Gamma$ is equipped with such a map $\sigma$. A colored digraph $(\Gamma, \sigma)$ 
+that $\Gamma$ is equipped with such a map $\sigma$ and often say that $\Gamma$ 
+is an $|S|$-colored graphs to specify the number of colors used in $\Gamma$. 
+A colored digraph $(\Gamma, \sigma)$ 
 is \emph{properly colored} or, equivelently, $\sigma$ is a \emph{proper coloring}
 of $\Gamma$, if $\sigma(x)\neq \sigma(y)$ for all $xy\in E$. }
+
 If the neighborhood of any vertex contains
 vertices for all colors, $\Gamma$ is \emph{color-sink free}. 
 
 
 In this paper, we mostly concern with 3-colored digraphs, and we assume that the vertex colors to be red, blue and yellow. Therefore, the vertex set is partitioned in three \emph{color classes} as $V=R\,\dot{\cup}\, B\,\dot{\cup}\, Y$; we name such classes $R,B$ and $Y$ when they contain red, blue and yellow vertices, respectively. For a red vertex $x$, its out-neighbourhood $N(x)$ splits into two colored out-neighbourhoods, namely of blue and yellow vertices, denoted by $N^{B}(x)$ and $N^{Y}(x)$. 
 
-\subsection{Rooted trees and triples}
+\subsection{Rooted trees and triples} \TODO{MH: needs some clean-up later - I can do}
 Any acyclic undirected \TODO{undirected not clear, since mentioned above "only directed considered"} and connected graph is a tree. A tree $T$ is
 \emph{rooted} whenever one of its vertices is named as root; in this case, we
 use the symbol $\rho_T$, or briefly $\rho$, to indicate such a vertex.  
@@ -200,6 +203,8 @@ Let $W=\{x_1,x_2,y_1,y_2\}$ be a set of four vertices colored by a color map $\s
 
 \section{Color operators}
 \label{sec:operators}
+\mh{}
+
 In this section, $(\Gamma,\sigma)$ denotes a 3-colored digraph with colors red, blue and yellow. 
 We introduce two operators arising from the idea of merging two of the above colors into a unique color. The first operator formalizes the color merging process in $\Gamma$. Preserving one color, for instance red, and merging the other two, blue and yellow, into a unique new color named green.
 
