@@ -298,32 +298,42 @@ In case the color derivatives of a 3-colored digraph are 2-BMGs, they may not be
 
 Therefore, we introduce the \emph{color-delta operator} $\Delta_{rb}$ to characterize the case when $T_r$ and $T_b$ have the same uncolored tree.
 
-\mh{
-\begin{definition}
-\label{def:delta_operator}
-Let $(\Gamma,\sigma)$ be a n-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively.
-\TODO{confused now, are $R,B,Y$ really "colors" sets or "vertex" sets? and if not sets, a unified notion for colors must be used, either all
-capital or small letters }
-Let $(\Sigma,\sigma_r)$ be the 2-colored digraph on the vertex set of $\Gamma$ such that
-\begin{equation}\label{def:sigma-r}
-\sigma_r(v)= \begin{cases} 
-      red & v\in R \\
-     green & v\in B \,\dot{\cup}\, Y.
-   \end{cases}
-\end{equation}
-Then
-$(\Delta_{rb}(\Sigma),\sigma_b)$ is defined to be the 2-colored digraph on the vertex set of $\Gamma$ such that
-\begin{equation}\label{def:sigma-b}
-\sigma_b(v)= \begin{cases} 
-    blue & v\in B \\
-     pink & v\in R \,\dot{\cup}\, Y.
-   \end{cases}
-\end{equation}
- \end{definition}
+%\mh{
+%\begin{definition}
+%\label{def:delta_operator}
+%Let $(\Gamma,\sigma)$ be an $n$-colored digraph where $\sigma\colon V(\Gamma) \to S$, 
+%$S = \{1,\dots,n\}$ and $i,j\in S$ are distinct. Moreover, let $(\Gamma_i,\sigma_i)$
+%be the $i$-color derivative of $(\Gamma,\sigma)$.
+%Then $(\Delta_{ij}(\Sigma,\sigma)$ is defined to be the 2-colored digraph $(\Gamma_i^j,\sigma_i^j)$
+%such that 
+%\begin{enumerate}
+%    \item $\Gamma$ and $\Gamma_i^j$ have the same vertex set, i.e.,  $V(\Gamma_i^j) \coloneqq V(\Gamma)$.
+%    \item $\sigma_i\colon V(\Gamma_i) \to \{i,c\}$ where $c\notin S$
+%    	  and $\sigma_i(x)=c$ if and only if $\sigma(x)\neq i$. 
+%    	  
+%    	  In other words,  $\Gamma$ and $\Gamma_i$ have the same vertices with color $i$ 
+%    	  whereas any other vertex of $\Gamma_i$ has color $c$.  
+%    
+%    \item An edge $xy\in E(\Gamma)$ is an edge of $\Gamma_i$ presicely if 
+%    	  $\sigma(x)=i	$ or  $\sigma(y)=i$.
+%    	  
+%    	  In other words, the edges of $\Gamma_i$ are precisely those edges 
+%    	  of $\Gamma$ that are incident to a vertex with color $i$.
+%\end{enumerate}
 
-}
 
-\OLD{
+
+%on the vertex set of $\Gamma$ such that
+%\begin{equation}\label{def:sigma-b}
+%\sigma_b(v)= \begin{cases} 
+%    blue & v\in B \\
+%     pink & v\in R \,\dot{\cup}\, Y.
+%   \end{cases}
+%\end{equation}
+% \end{definition}
+
+%}
+
 \begin{definition}
 %\label{def:delta_operator}
 
@@ -339,14 +349,16 @@ Let $(\Sigma,\sigma_r)$ be the 2-colored digraph on the vertex set of $\Gamma$ s
 \end{equation}
 Then
 $(\Delta_{rb}(\Sigma),\sigma_b)$ is defined to be the 2-colored digraph on the vertex set of $\Gamma$ such that
+\TODO{what are its edges?}
 \begin{equation}\label{def:sigma-b}
 \sigma_b(v)= \begin{cases} 
     blue & v\in B \\
      pink & v\in R \,\dot{\cup}\, Y.
    \end{cases}
-\end{equation}
+\end{equation} \TODO{MH: completely confused now, what is the difference between 
+$\Delta_{rb}$ and your (formerly defined ) blue-color derivative ?  }
  \end{definition}
-} 
+ 
  
 We stress that $\partial_b(\Gamma)$ and $\Delta_{(r,b)}(\partial_r(\Gamma))$ have the same vertex set with the same coloring but they may have different edge sets. 
 
