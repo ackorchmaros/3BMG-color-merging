@@ -199,62 +199,111 @@ For any three pairwise distinct vertices $a,b,c$, the associated (rooted) \emph{
 \subsection{Best Match Graphs}
 Geiss et al.~\cite{Geiss:19a} were the first to introduce the concept of best match graph associated to a rooted tree $(T,\sigma)$. A leaf $y\in L(T)$ is a {\emph{best match of}} $x\in L(T)$, in symbols $x\rightarrow y$, if ${\rm{lca_T}}(x,y)\preceq {\rm{lca_T}}(x,y')$ for all $y'\in L$ with the same color of $y$. The associated {\emph{best match graph}} (BMG) is the digraph on the vertex set $L$ where the edges are the ordered pairs $xy$ with $x\rightarrow y$ and  $x\neq y$. It is a properly colored digraph with vertices colored as the leaves of $T$. A colored digraph $\Gamma$ is a \emph{BMG} if it is color-invariantly isomorphic to a BMG associated to a leaf colored rooted tree $(T,\sigma)$. When this occurs then $(T,\sigma)$ is said to explain $(\Gamma,\sigma)$. A best match graph with $n$ colors is also known as n-BMG. Moreover, from~\cite[Proposition~2.3]{korchmaros2021quasi}, $(\Gamma,\sigma)$ is a BMG if and only if it is color-sink free and $(\mathscr{R}(\Gamma),\mathscr{F}(\Gamma))$ is a consistent pair. 
 
-Let $W=\{x_1,x_2,y_1,y_2\}$ be a set of four vertices colored by a color map $\sigma$ such that $\sigma(x_1)=\sigma(x_2),\sigma(y_1)=\sigma(y_2),$ and $\sigma(x_1)\neq \sigma(y_1)$. A properly 2-colored digraph $G=(W,F)$ is a \emph{F1-graph} if $x_1y_1,y_2x_2,y_1x_2 \in F$ and $x_1 y_2,y_2x_1 \notin F$; when $x_1y_1,y_1x_2,x_2y_2 \in F$ and $x_1y_2 \notin F$, $G$ is a \emph{F2-graph}. A 2-colored digraph containing either an induced F1- or F2-subgraph cannot be a 2-BMG~\cite[Lemma 4.2]{schaller2021complexity}. On the other hand, 2-BMGs must be \emph{bi-transitive}, which requires that for all vertices $x_1, x_2, y_1, y_2$ with directed edges $x_1y_1, y_1x_2, x_2y_2$, $x_1y_2$ is also a directed edge~\cite{Korchmaros:21a}.
+Let $W=\{x_1,x_2,y_1,y_2\}$ be a set of four vertices colored by a color map $\sigma$ such that $\sigma(x_1)=\sigma(x_2),\sigma(y_1)=\sigma(y_2),$ and $\sigma(x_1)\neq \sigma(y_1)$. A properly 2-colored digraph $G=(W,F)$ is a \emph{F1-graph} if \TODO{here picture might be helpful - can copy ot from the BMG paper}$x_1y_1,y_2x_2,y_1x_2 \in F$ and $x_1 y_2,y_2x_1 \notin F$; when $x_1y_1,y_1x_2,x_2y_2 \in F$ and $x_1y_2 \notin F$, $G$ is a \emph{F2-graph}. A 2-colored digraph containing either an induced F1- or F2-subgraph cannot be a 2-BMG~\cite[Lemma 4.2]{schaller2021complexity}. On the other hand, 2-BMGs must be \emph{bi-transitive}, which requires that for all vertices $x_1, x_2, y_1, y_2$ with directed edges $x_1y_1, y_1x_2, x_2y_2$, $x_1y_2$ is also a directed edge~\cite{Korchmaros:21a}.
 
 \section{Color operators}
 \label{sec:operators}
-\mh{}
+\TODO{MH: annachiara, please dont get me wrong, if I rewrite here to much - just delete it if you are not 
+happy ! but just for now, I want to get some more consitent notion, that allows for generalizations .. }
 
-In this section, $(\Gamma,\sigma)$ denotes a 3-colored digraph with colors red, blue and yellow. 
-We introduce two operators arising from the idea of merging two of the above colors into a unique color. The first operator formalizes the color merging process in $\Gamma$. Preserving one color, for instance red, and merging the other two, blue and yellow, into a unique new color named green.
+\mh{
+%In this section, we always consider 3-colored digraphs $(\Gamma,\sigma)$. 
+We introduce now two operators that are based on the idea of identifying certain colors in  $(\Gamma,\sigma)$.
+}
+\OLD{In this section, $(\Gamma,\sigma)$ denotes a 3-colored digraph with colors red, blue and yellow. 
+We introduce two operators arising from the idea of merging two of the above colors into a unique color. The first operator formalizes the color merging process in $\Gamma$. Preserving one color, for instance red, and merging the other two, blue and yellow, into a unique new color named green.}
 
 \begin{definition}
 \label{def:color-derivative}
-The \emph{red-color derivative} $\partial_r(\Gamma)$ of $\Gamma$ is the 2-colored digraph $\Sigma$ with colors red and yellow such that
+\mh{Let $(\Gamma,\sigma)$ be an $n$-colored digraph where $\sigma\colon V(\Gamma) \to S$ 
+and $S = \{1,\dots,n\}$. The  \emph{$i$-color derivative} $\partial_i(\Gamma)$ of $(\Gamma,\sigma)$
+is the 2-colored digraph $(\Gamma_i,\sigma_i)$  that satisfies:
+\begin{enumerate}
+    \item $\Gamma$ and $\Gamma_i$ have the same vertex set, i.e.,  $V(\Gamma_i) \coloneqq V(\Gamma)$.
+    \item $\sigma_i\colon V(\Gamma_i) \to \{i,c\}$ where $c\notin S$
+    	  and $\sigma_i(x)=c$ if and only if $\sigma(x)\neq i$. 
+    	  
+    	  In other words,  $\Gamma$ and $\Gamma_i$ have the same vertices with color $i$ 
+    	  whereas any other vertex of $\Gamma_i$ has color $c$.  
+    
+    \item An edge $xy\in E(\Gamma)$ is an edge of $\Gamma_i$ presicely if 
+    	  $\sigma(x)=i	$ or  $\sigma(y)=i$.
+    	  
+    	  In other words, the edges of $\Gamma_i$ are precisely those edges 
+    	  of $\Gamma$ that are incident to a vertex with color $i$.
+\end{enumerate}
+}
+
+
+
+\OLD{
+The \emph{red-color derivative} $\partial_c(\Gamma)$ of \OLD{$\Gamma$}\mh{$(\Gamma,\sigma)$} 
+is the 2-colored digraph \OLD{$\Sigma$}\mh{$(\Gamma',\sigma')$} 
+with colors red and yellow such that
 \begin{enumerate}
     \item $\Gamma$ and $\Sigma$ have the same vertex set. 
     \item $\Gamma$ and $\Sigma$ have the same red vertices whereas any other vertex of $\Sigma$ is green. 
     \item The edges of $\Sigma$ are those of $\Gamma$ incident with a red vertex. 
 \end{enumerate}
-The blue- and yellow-color derivative of $\Gamma$ are analogously defined and denoted by $\partial_b(\Gamma)$ and $\partial_y(\Gamma)$, respectively. 
+The blue- and yellow-color derivative of $\Gamma$ are analogously defined and denoted by $\partial_b(\Gamma)$ and $\partial_y(\Gamma)$, respectively. }
 \end{definition} 
 
 In the general case, \emph{s-color derivative} denotes $\partial_s(\Gamma)$ for a color $s$, and \emph{color derivatives} denotes $\partial_s(\Gamma)$ for any color $s$. An example of the color derivatives of $\Gamma$ is in Figure~\ref{fig:color_derivatives}. When $\partial_s(\Gamma)$ is a 2-BMG, $T_s$ denotes a tree explaining it.
 
-In general, color derivatives of $\Gamma$ are not 2-BMGs even though $\Gamma$ is a 3-BMG, as it is shown in the following example.
+In general, color derivatives of $\Gamma$ are not 2-BMGs even though $\Gamma$ is a 3-BMG, as \mh{illustrated in Fig.\ \ref{fig:color_derivatives}.}
+\OLD{it is shown in the following example.}
 
-\begin{example}
-\label{ex:color-derNo2BMG_3BMG}
+%\begin{example}
+%\label{ex:color-derNo2BMG_3BMG}
 \begin{figure}[ht]
   \centering
     \includegraphics[width=16cm]{figures/color_derivatives.png}
-    \caption{Color derivatives of a 3-BMG.}
+    \caption{Color derivatives of a 3-BMG.
+    Digraph $\Gamma$ in Figure~\ref{fig:color_derivatives} is a 3-BMG. However,
+    none of its color derivatives are 2-BMGs, as they all contain either an
+    induced F1-subgraph or an induced F2-subgraph. Indeed, $x'\rightarrow
+    y'\rightarrow x$ and $z\rightarrow x$ define an induced F1-subgraph for
+    $\partial_r(\Gamma)$; an induced F2-subgraph for $\partial_b(\Gamma)$ is
+    given by $y'\rightarrow x\rightarrow y\rightarrow z\rightarrow y'$; the
+    edges $x'\rightarrow z'\rightarrow y'$ and $z \rightarrow y'$ define an
+    induced F1-subgraph for $\partial_y(\Gamma)$.
+}
       \label{fig:color_derivatives}
 \end{figure}
 
-Digraph $\Gamma$ in Figure~\ref{fig:color_derivatives} is a 3-BMG. However, none of its color derivatives are 2-BMGs, as they all contain either an induced F1-subgraph or an induced F2-subgraph. Indeed, $x'\rightarrow y'\rightarrow x$ and $z\rightarrow x$ define an induced F1-subgraph for $\partial_r(\Gamma)$; an induced F2-subgraph for $\partial_b(\Gamma)$ is given by $y'\rightarrow x\rightarrow y\rightarrow z\rightarrow y'$; the edges $x'\rightarrow z'\rightarrow y'$ and $z \rightarrow y'$ define an induced F1-subgraph for $\partial_y(\Gamma)$.
-\end{example}
+%\end{example}
 
-In case the color derivatives of a 3-colored digraph are 2-BMGs, they may not behave as excepted. For instance, the associated uncolored trees may not coincide, as it is shown in the following example. 
+In case the color derivatives of a 3-colored digraph are 2-BMGs, they may not behave as excepted. For instance, the associated uncolored trees may not coincide, as 
+\mh{illustrated in Fig.\ \ref{fig:different_trees}.}
+\OLD{it is shown in the following example. }
 
-\begin{example}
-\label{ex:2BMGcolor-derivative_no3BMG}
+%\begin{example}
+%\label{ex:2BMGcolor-derivative_no3BMG}
 \begin{figure}[ht]
   \centering
     \includegraphics[width=16cm]{figures/different_trees.png}
-    \caption{Red- and blue-derivative of $\Gamma$ which is not 3-BMG. The tree $T_r$ explains $\partial_r(\Gamma)$ while the tree $T_b$ explains $\partial_b(\Gamma)$.}
+    \caption{Red- and blue-derivative of $\Gamma$ which is not 3-BMG. The tree $T_r$ explains $\partial_r(\Gamma)$ while the tree $T_b$ explains $\partial_b(\Gamma)$.
+    	In Figure~\ref{fig:different_trees}, the uncolored trees associated to
+    	$T_r$ and $T_b$ are isomorphic but do not coincide. Let $t$ be the
+    	parent of $y'$ in $T_r$, and let $t'$ be the parent of $y$ in $T_b$. The
+    	bijection $\phi:V(T_r)\rightarrow V(T_b)$ defined by
+    	$\phi(t)=t',\phi(z')=z$ and $\phi(v)=v$ for any $v\in V(T_r)$, is a tree
+    	isomorphism. Furthermore, $\Gamma$ is not a 3-BMG, as it contains an
+    	induced F2-subgraph, namely $x\rightarrow y$ together with $y\rightarrow
+    	x'\leftarrow y'$. }
     \label{fig:different_trees}
 \end{figure}
 
-In Figure~\ref{fig:different_trees}, the uncolored trees associated to $T_r$ and $T_b$ are isomorphic but  do not coincide. Let $t$ be the parent of $y'$ in $T_r$, and let $t'$ be the parent of $y$ in $T_b$. The bijection $\phi:V(T_r)\rightarrow V(T_b)$ defined by $\phi(t)=t',\phi(z')=z$ and $\phi(v)=v$ for any $v\in V(T_r)$, is a tree isomorphism.  
-Furthermore, $\Gamma$ is not a 3-BMG, as it contains an induced F2-subgraph, namely $x\rightarrow y$ together with $y\rightarrow x'\leftarrow y'$. 
-\end{example}
+%\end{example}
 
 Therefore, we introduce the \emph{color-delta operator} $\Delta_{rb}$ to characterize the case when $T_r$ and $T_b$ have the same uncolored tree.
 
 \begin{definition}
 \label{def:delta_operator}
+
 Let $(\Gamma,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively.
+\TODO{confused now, are $R,B,Y$ really sets? and if not, a unified notion for colors must be used, either all
+capital or small letters }
 Let $(\Sigma,\sigma_r)$ be the 2-colored digraph on the vertex set of $\Gamma$ such that
 \begin{equation}\label{def:sigma-r}
 \sigma_r(v)= \begin{cases} 
@@ -306,7 +355,8 @@ Since $\partial_{r}(\Gamma)$ is supposed to be a 2-BMG, $T_r$ is a tree explaini
 Let $ab|b'$be a triple of $\Gamma$ such that $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E(\Gamma)$. We have to prove that $(T_r,\sigma)$ displays $ab|b'$ if $ab'\notin E(\Gamma)$ ($ abb'$ is informative) and does not display $ab|b'$otherwise ($ab|b'$is forbidden). Suppose that either $a$ or $b$ is a red vertex. Then $ab|b'\in \mathscr{R}(\partial_{r}(\Gamma))$ if $ab|b'$is informative, and $ab|b'\in \mathscr{F}(\partial_{r}(\Gamma))$ if $ab|b'$is forbidden, as $\partial_{r}$ preserves all edges headed or tailed on a red vertex and $\sigma_r(a)\ne \sigma_r(b)=\sigma_r(b')$. Hence, in the former case $ab|b'$ is displayed in $(T_r,\sigma_r)$ and the latter case $ab|b'$is not displayed in $(T_r,\sigma_r)$. This follows from~\cite[Proposition~2.3]{korchmaros2021quasi} since $\partial_{r}(\Gamma)$ is a 2-BMG. Assume neither $a$ nor $b$ is a red vertex; therefore, one between $a$ and $b$ is blue colored, and the previous argument shows that $ab|b'$ is displayed in $(T_b,\sigma_b)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_b,\sigma_b)$ if $ab|b'$is forbidden in $\Gamma$. Condition $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$ ensures that $T_r$ and $T_b$ have the same uncolored tree. Hence, $ab|b'$ is displayed in $(T_r,\sigma)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_r,\sigma)$ if $ab|b'$is forbidden.
 \end{proof}
 
-The 3-BMG condition only requires that two of the possible three color derivative graphs are 2-BMGs, assuming that they have the same uncolored explaining tree. This condition cannot be dropped as shown in Example~\ref{ex:2BMGcolor-derivative_no3BMG}. However, such a condition guaranties that also the yellow-color derivative of $\Gamma$ is a 3-BMG, as proven in the following proposition. 
+The 3-BMG condition only requires that two of the possible three color derivative graphs are 2-BMGs, assuming that they have the same uncolored explaining tree. This condition cannot be dropped as shown in \OLD{Example~\ref{ex:2BMGcolor-derivative_no3BMG}.}\mh{Fig.\ \ref{fig:different_trees}.}
+ However, such a condition guaranties that also the yellow-color derivative of $\Gamma$ is a 3-BMG, as proven in the following proposition. 
 
 \begin{proposition}\label{prop:yellow-derv}
 Let $(\Gamma,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(\Gamma)$ and $\partial_b(\Gamma)$ are 2-BMGs, and $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$, then $\partial_{y}(\Gamma)$ is a 2-BMG.
