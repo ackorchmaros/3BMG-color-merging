@@ -49,8 +49,8 @@
 
 \newcommand{\ak}[1]{\begingroup\color{orange}#1\endgroup}
 \newcommand{\OLD}[1]{\begingroup\tiny\color{gray}#1\endgroup}
-\newcommand{\PFS}[1]{\begingroup\color{blue}#1\endgroup}
-\newcommand{\mh}[1]{\begingroup\color{magenta}#1\endgroup}
+\newcommand{\PFS}[1]{\begingroup\color{magenta}#1\endgroup}
+\newcommand{\mh}[1]{\begingroup\color{blue}#1\endgroup}
 
 %\journal{Discrete Applied Mathematics}
 %\journal{Journal of Combinatorial Theory, Series B}
@@ -212,6 +212,153 @@ Let $W=\{x_1,x_2,y_1,y_2\}$ be a set of four vertices colored by a color map $\s
 
 \section{Color operators}
 \label{sec:operators}
+
+\TODO{ *** MH: I will subsequently add here result accoring to the new defs. all
+original text is in Sec "Color operators-old" ***}
+
+
+\mh{ We introduce now 2-colored graphs that are based on the idea of identifying
+certain colors in $(\Gamma,\sigma)$. In the following, we always assume that 
+for an $n$-colored digraph $(\Gamma,\sigma)$ with $\sigma\colon V(\Gamma) \to S$ 
+it holds that $S = \{1,\dots,n\}$}
+
+
+
+
+\begin{definition}
+\label{def:color-derivative}
+\mh{Let $(\Gamma,\sigma)$ be an $n$-colored digraph and $S'\subseteq \in S$. We
+    define $\sigma_{|S'}\colon V(\Gamma) \to S'\cup \{c\}$ where $c\notin S$ by
+    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in
+    V(\Gamma).\] Hence, $\sigma_{|S'}$ keeps the colors of all vertices with
+    color $i\in S'$ while all other vertices obtain a common color $c$ that is
+    not contained in $S$. We define the digraph $\Gamma_{|S'}$ by putting
+\begin{enumerate}
+    \item $V(\Gamma_{|S'}) \coloneqq V(\Gamma)$ and
+    
+    \item $xy\in E(\Gamma_{|S'}$  presicely if $xy\in E(\Gamma)$ and 
+    	  $\sigma(x)\in S'$ or  $\sigma(y)\in S'$.
+    	  
+    	  In other words, the edges of $\Gamma_{|S'}$ are precisely those edges 
+    	  of $\Gamma$ that are incident to a vertex with color $i\in S'$.
+\end{enumerate}
+%
+	The \emph{$S'$-color derivative} $\partial_{|S'}(\Gamma,\sigma)$ is the
+	$(|S'|+1)$-colored digraph $(\Gamma_{|S'},\sigma_{|S'})$. 
+	
+	
+	In case that $S' = \{i\}$, we replace, for simplicity, ``$S'$'' by ``$i$'',
+	in which case, the $i$-color derivative $\partial_{|i}(\Gamma,\sigma)$ is
+	the the 2-colored digraph $(\Gamma_{|i},\sigma_{|i})$.
+}
+\TODO{\small MH: if we see that we dont need this general def, we may replace it at the end 
+just be $i$-color derivative $\partial_{|i}(\Gamma,\sigma)$ etc }
+\end{definition} 
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=16cm]{figures/color_derivatives.png}
+    \caption{Color derivatives of a 3-BMG.
+    Digraph $\Gamma$ in Figure~\ref{fig:color_derivatives} is a 3-BMG
+    \TODO{why? could we add a tree to support the statement?}.\\
+    \TODO{could we also replace $r,b,y$ by "1,2,3" and use simpy black/gray
+    for the new color $c$ in all figs}\\
+    \TODO{in the Fig is must always be $(\Gamma,\sigma)$ instead of $\Gamma$!}
+     However,
+    none of its color derivatives are 2-BMGs, as they all contain either an
+    induced F1-subgraph or an induced F2-subgraph. Indeed, $x'\rightarrow
+    y'\rightarrow x$ and $z\rightarrow x$ define an induced F1-subgraph for
+    $\partial_r(\Gamma)$; an induced F2-subgraph for $\partial_b(\Gamma)$ is
+    given by $y'\rightarrow x\rightarrow y\rightarrow z\rightarrow y'$; the
+    edges $x'\rightarrow z'\rightarrow y'$ and $z \rightarrow y'$ define an
+    induced F1-subgraph for $\partial_y(\Gamma)$.
+}
+   \label{fig:color_derivatives}
+\end{figure}
+
+\mh{
+Note that, in general, $i$-color derivatives $(\Gamma_{|i},\sigma_{|i})$ are not
+2-BMGs even though $(\Gamma,\sigma)$ is a 3-BMG, as illustrated in Fig.\
+\ref{fig:color_derivatives}. To characterize 3-BMGs at least two of the three
+color derivatives must satisfied a particular condition as provided in 
+}
+\begin{definition}
+\mh{
+Let $(\Gamma,\sigma)$ be an $n$-colored digraph and $i,j\in S$ be distinct. 
+Then, $(\Gamma,\sigma)$ satisfies the \mh{$(i,j)$-derivative-tree property ($(i,j)$-DT)}
+if 
+\begin{enumerate}
+	\item $(G_{|i},\sigma_{|i})$ is a 2-BMG that is explained by $(T,\sigma_{|i})$.
+	\item $(G_{|j},\sigma_{|j})$ is a 2-BMG that is explained by $(T,\sigma_{|j})$.
+\end{enumerate}
+}
+\end{definition}
+
+\begin{fact}
+\mh{Let $(\Gamma,\sigma)$ be an $n$-colored digraph and $i,j\in S$ be distinct. 
+Then, $(\Gamma,\sigma)$ satisfies $(i,j)$-DT  if and only if 
+$(\Gamma,\sigma)$ satisfies the $(j,i)$-DT.}
+\end{fact}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+\section{Color operators-old}
+%\label{sec:operators}
 \TODO{MH: annachiara, please dont get me wrong, if I rewrite here to much - just delete it if you are not 
 happy ! but just for now, I want to get some more consitent notion, that allows for generalizations .. }
 
