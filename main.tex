@@ -197,7 +197,16 @@ Let $T_1$ and $T_2$ be two rooted trees. A bijection $\phi:V(T_1) \rightarrow V(
 For any three pairwise distinct vertices $a,b,c$, the associated (rooted) \emph{triple} is a rooted tree $T$ on three leaves $a,b,c$ and two inner nodes. In the case, ${\rm{lca}}(a,b)\prec_T {\rm{lca}}(a,c)=_T{\rm{lca}}(b,c)=\rho_T$, the symbol $ab|c$ is used. Let $\mathscr{R}$ and $\mathscr{F}$ be two sets of triples. The pair $(\mathscr{R},\mathscr{F})$ is \emph{consistent} if there exists a tree $T$ containing all leaves occurring in the triples of $\mathscr{R}$ and $\mathscr{F}$ such that $T$ displays all triples of $\mathscr{R}$ but none of $\mathscr{F}$. For a digraph $(\Gamma,\sigma)$, a triple $ab|b'$ with $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E$ is either {\emph{informative}} or {\emph{forbidden}} according as $ab'\not\in E(\Gamma)$ or $ab'\in E(\Gamma)$. The set $\mathscr{R}(\Gamma)$ denotes the set of all informative triples of $\Gamma$, and the set of forbidden triples of $\Gamma$ is $\mathscr{F}(\Gamma)$. 
 
 \subsection{Best Match Graphs}
-Geiss et al.~\cite{Geiss:19a} were the first to introduce the concept of best match graph associated to a rooted tree $(T,\sigma)$. A leaf $y\in L(T)$ is a {\emph{best match of}} $x\in L(T)$, in symbols $x\rightarrow y$, if ${\rm{lca_T}}(x,y)\preceq {\rm{lca_T}}(x,y')$ for all $y'\in L$ with the same color of $y$. The associated {\emph{best match graph}} (BMG) is the digraph on the vertex set $L$ where the edges are the ordered pairs $xy$ with $x\rightarrow y$ and  $x\neq y$. It is a properly colored digraph with vertices colored as the leaves of $T$. A colored digraph $\Gamma$ is a \emph{BMG} if it is color-invariantly isomorphic to a BMG associated to a leaf colored rooted tree $(T,\sigma)$. When this occurs then $(T,\sigma)$ is said to explain $(\Gamma,\sigma)$. A best match graph with $n$ colors is also known as n-BMG. Moreover, from~\cite[Proposition~2.3]{korchmaros2021quasi}, $(\Gamma,\sigma)$ is a BMG if and only if it is color-sink free and $(\mathscr{R}(\Gamma),\mathscr{F}(\Gamma))$ is a consistent pair. 
+Geiss et al.~\cite{Geiss:19a} \OLD{were the first to introduce}\mh{introduced} the concept of best match graph associated to a rooted tree $(T,\sigma)$. 
+A leaf $y\in L(T)$ is a {\emph{best match of}} $x\in L(T)$, in symbols $x\rightarrow y$, 
+if ${\rm{lca_T}}(x,y)\preceq {\rm{lca_T}}(x,y')$ for all $y'\in L$ with the same color of $y$. 
+\mh{Given a rooted leaf-colored tree $(T,\sigma)$,}
+the associated {\emph{best match graph}} (\emph{BMG}) \mh{$\mathcal{G}(T,\sigma)$} is the digraph with 
+vertex set $L$ where the edges are the ordered pairs $xy$ with $x\rightarrow y$ and $x\neq y$. 
+It is a properly colored digraph with vertices colored as the leaves of $T$ \TODO{latter to handwavy, to be made more precise}.
+\mh{A colored digraph $(\Gamma, \sigma)$ is a \emph{BMG}, whenever there is a tree $(T,\sigma)$ such that 
+    $(\Gamma, \sigma) = \mathcal{G}(T,\sigma)$. In this case, $(T,\sigma)$ explains $(\Gamma, \sigma)$. }
+\OLD{ A colored digraph $\Gamma$ is a \emph{BMG} if it is color-invariantly isomorphic to a BMG associated to a leaf colored rooted tree $(T,\sigma)$. When this occurs then $(T,\sigma)$ is said to explain $(\Gamma,\sigma)$. A best match graph with $n$ colors is also known as n-BMG.} Moreover, from~\cite[Proposition~2.3]{korchmaros2021quasi}, $(\Gamma,\sigma)$ is a BMG if and only if it is color-sink free and $(\mathscr{R}(\Gamma),\mathscr{F}(\Gamma))$ is a consistent pair. 
 
 Let $W=\{x_1,x_2,y_1,y_2\}$ be a set of four vertices colored by a color map $\sigma$ such that $\sigma(x_1)=\sigma(x_2),\sigma(y_1)=\sigma(y_2),$ and $\sigma(x_1)\neq \sigma(y_1)$. A properly 2-colored digraph $G=(W,F)$ is a \emph{F1-graph} if \TODO{here picture might be helpful - can copy ot from the BMG paper}$x_1y_1,y_2x_2,y_1x_2 \in F$ and $x_1 y_2,y_2x_1 \notin F$; when $x_1y_1,y_1x_2,x_2y_2 \in F$ and $x_1y_2 \notin F$, $G$ is a \emph{F2-graph}. A 2-colored digraph containing either an induced F1- or F2-subgraph cannot be a 2-BMG~\cite[Lemma 4.2]{schaller2021complexity}. On the other hand, 2-BMGs must be \emph{bi-transitive}, which requires that for all vertices $x_1, x_2, y_1, y_2$ with directed edges $x_1y_1, y_1x_2, x_2y_2$, $x_1y_2$ is also a directed edge~\cite{Korchmaros:21a}.
 
@@ -239,12 +248,16 @@ We define the digraph $\Gamma_i$ by putting
 The \emph{$i$-color derivative} $\partial_i(\Gamma,\sigma)$ is the 2-colored
 digraph $(\Gamma_i,\sigma_i)$ \OLD{and $\Delta_{ij}(\Gamma,\sigma)$ denotes the
 2-colored graph $(\Gamma_i,\sigma_j)$ where $i,j\in S$ are distinct. 
-}} \ak{Suppose $\partial_i(\Gamma,\sigma)$ is a 2-BMG explained by $(T_i,\sigma_i)$,  $\Delta_{ij}(\partial_i(\Gamma,\sigma))$ denotes the
+}} 
+
+
+
+\OLD{\TODO{to complicated and can be simplfied . not needed here!}\ak{Suppose $\partial_i(\Gamma,\sigma)$ is a 2-BMG explained by $(T_i,\sigma_i)$,  $\Delta_{ij}(\partial_i(\Gamma,\sigma))$ denotes the
 2-BMG explained by $(T_i,\sigma_j)$ where $i,j\in S$ are distinct. 
 }
 \TODO{MH: completely lost here! in your previous def you never used 2-BMG and even not the existence of some
 tree explaining anything.  just the edges and certain colors -- why do I need trees and stuff now ??? }
-
+}
 
 
 
@@ -415,6 +428,13 @@ $T_r$ and $T_b$ have the same uncolored tree if and only if $\Delta_{rb}(\partia
 In this section, we will show how color operators may be used to give a sufficient condition for a 3-colored digraph to be a 3-BMG.
 
 \begin{theorem}\label{thm:sufficient_condition}
+\mh{Let $(\Gamma,\sigma)$ be a 3-colored digraph. Suppose that, 
+for some distinct colors $i,j\in S$, $(G_i,\sigma_i)$ and $(G_j,\sigma_j)$
+are BMGs and  that $(G_i,\sigma_i)$ is explained by $(T,\sigma_i)$.
+If $\mathcal{G}(T,\sigma_j) = (G_j,\sigma_j)$, then $\Gamma$ is a 3-BMG.  }
+
+
+\TODO{OLD below}
 Let $(\Gamma,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(\Gamma)$ and $\partial_b(\Gamma)$ are 2-BMGs, and $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$, then $\Gamma$ is a 3-BMG. \TODO{MH: to be a pea-picker, this results that does not hold
 for  $\partial_r(\Gamma)$ and $\partial_y(\Gamma)$ as you fixed the colors only to red and blue, but the colors should be picked arbitrarily... ;)  }
 \end{theorem}
