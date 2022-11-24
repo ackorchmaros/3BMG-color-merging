@@ -114,7 +114,7 @@ Stockholm University, SE-10691 Stockholm, Sweden}
 \section{Introduction}
 In the last few years, a new method was developed for studying phylogenetic trees on $n$ species which encodes their properties into an $n$ vertex-colored directed graph, called best match graph (n-BMG).
 
-The simplest case, $n=2$, was worked out thoroughly by exploiting the characterization of 2-BMGs by purely graph theoretic axioms; see \cite{Geiss:19a,Geiss:20b,Korchmaros:21a,korchmaros2021quasi,Schaller:21a,Schaller:21b,Schaller:21c,Schaller:21d}. For $n=3$, a graph theoretical characterization was also given under the rather restrictive hypothesis that all edges are symmetric~\cite{geiss2020reciprocal}. The general case, $n\ge 3$, appears to be more involved since neither analog characterization of an n-BMG in terms of graph theoretic axioms seems plausible, nor its induced 2-BMGs are enough to characterize it. Indeed, an n-colored digraph may not be a best match graph even if each of its $n(n-1)/2$ maximal inherited 2-colored subgraphs is a 2-BMG, as shown for $n=3$ in~\cite[Figure 1]{schaller2021corrigendum}. On the other hand, all 2-colored induced subgraphs of any BMG are necessarily 2-BMGs~\cite[Corollary 5]{Geiss:19a}, and this poses the question whether a BMG can be characterized by some family of its non-induced subgraphs which are 2-BMGs. Such non-induced subgraphs exist in any n-colored digraph $\Gamma$. In fact, preserving one color and merging the other $n-1$ colors into a new one gives an immediate example of a non-induced 2-colored subgraph with the same vertex set of $\Gamma$. We refer to this example as a \emph{color derivative} (subgraph) of $\Gamma$.
+The simplest case, $n=2$, was worked out thoroughly by exploiting the characterization of 2-BMGs by purely graph theoretic axioms; see \cite{Geiss:19a,Geiss:20b,Korchmaros:21a,korchmaros2021quasi,Schaller:21a,Schaller:21b,Schaller:21c,Schaller:21d}. For $n=3$, a graph theoretical characterization was also given under the rather restrictive hypothesis that all edges are symmetric~\cite{geiss2020reciprocal}. The general case, $n\ge 3$, appears to be more involved since neither analog characterization of an n-BMG in terms of graph theoretic axioms seems plausible, nor its induced 2-BMGs are enough to characterize it. Indeed, an n-colored digraph may not be a best match graph even if each of its $n(n-1)/2$ maximal inherited 2-colored subgraphs is a 2-BMG, as shown for $n=3$ in~\cite[Figure 1]{schaller2021corrigendum}. On the other hand, all 2-colored induced subgraphs of any BMG are necessarily 2-BMGs~\cite[Corollary 5]{Geiss:19a}, and this poses the question whether a BMG can be characterized by some family of its non-induced subgraphs which are 2-BMGs. Such non-induced subgraphs exist in any n-colored digraph $G$. In fact, preserving one color and merging the other $n-1$ colors into a new one gives an immediate example of a non-induced 2-colored subgraph with the same vertex set of $G$. We refer to this example as a \emph{color derivative} (subgraph) of $G$.
 
 In this paper we investigate the above question for $n=3$. Our main contribution is the introduction of \emph{the 3-BMG condition} which ensures a 3-colored digraph to be a 3-BMG in terms of its color derivatives. This condition is not necessary in general, and our second contribution is describing a large family of 3-BMGs for which the 3-BMG condition is also necessary. To this aim, we forbid certain 3-colored digraphs on three vertices (F$^R$-graphs and F$^B$-graphs). 
 
@@ -125,25 +125,25 @@ The paper is organized as follows. In Section~\ref{sec:background}, we fix our n
 \subsection{Vertex-colored digraphs}
 
 \mh{
-We consider \emph{directed graphs} $\Gamma=(V,E)$ with vertex set $V(\Gamma)\coloneqq V$ and edge set $E(\Gamma)\coloneqq E$
-where $E\subseteq (V\times V)\setminus \{(x,x)\mid x\in V\}$. Hence, by definition, $\Gamma$ does not contain 
+We consider \emph{directed graphs} $G=(V,E)$ with vertex set $V(G)\coloneqq V$ and edge set $E(G)\coloneqq E$
+where $E\subseteq (V\times V)\setminus \{(x,x)\mid x\in V\}$. Hence, by definition, $G$ does not contain 
 loops or multiple edges. We denote edges $e=(x,y)\in E$ simply by $xy$. For $xy\in E$, vertex $x$ is the \emph{tail} of $e$
 and $y$ the \emph{head} of $e$. We call an edge $xy$ \emph{symmetric} if $yx\in E$. }
 \OLD{
-digraphs (directed graphs) are without loops and multiple edges. For a digraph $\Gamma$ with vertex set $\Gamma(V)$ and edge set $\Gamma(E)$, the notation $\Gamma=\Gamma(V,E)$ is also used. For $x,y\in V$,
+digraphs (directed graphs) are without loops and multiple edges. For a digraph $G$ with vertex set $G(V)$ and edge set $G(E)$, the notation $G=G(V,E)$ is also used. For $x,y\in V$,
 the edge with tail $x$ and head $y$ is denoted by $xy$. If $xy,yx\in E$ then $xy$ (and $yx)$ is a {\emph{symmetric edge}}.
 }
 
-For a vertex $x\in V$, the out-neighbors and the in-neighbors of $x$ in $\Gamma$
+For a vertex $x\in V$, the out-neighbors and the in-neighbors of $x$ in $G$
 are those vertices $z\in V$ for which $xz\in E$ and $zx\in E$, respectively. The
-out-neighborhood of $x$ is denoted by $N_\Gamma(x)$, or 
+out-neighborhood of $x$ is denoted by $N_G(x)$, or 
 \mh{simply by  $N(x)$ if there is no risk of confusion.}
 \OLD{briefly by $N(x)$ when
-this clearly refers to $\Gamma$.} A digraph $\Gamma$ is called sink-free if each
+this clearly refers to $G$.} A digraph $G$ is called sink-free if each
 of its vertices has at least one out-neighbor.
 
 \mh{
-A \emph{directed path} from $x_0$ to $x_m$ in $\Gamma = (V,E)$ is a sequence of 
+A \emph{directed path} from $x_0$ to $x_m$ in $G = (V,E)$ is a sequence of 
 pairwise distinct vertices $x_0\rightarrow x_1 \rightarrow \cdots\rightarrow x_m
 \rightarrow x_{m+1}$ such that $x_ix_{i+1}\in E$ for every
 $0\le i \le m$. 
@@ -157,10 +157,10 @@ The \emph{length} of a directed path or cycle is the number of its edges.
 $m\geq 1$ above instead of $m\geq 2$}
 
 \OLD{\TODO{MH: cant see that this is ever used, so for now I made it shorter:}
-A \emph{directed walk} from $x$ to $y$ in $\Gamma$ is a sequence of \mh{(not necessarily
+A \emph{directed walk} from $x$ to $y$ in $G$ is a sequence of \mh{(not necessarily
 distinct)} vertices
 \OLD{$x=$} $x_0\rightarrow x_1 \rightarrow x_2 \rightarrow \cdots\rightarrow x_m
-\rightarrow x_{m+1}$\OLD{$=y $} such that $x_ix_{i+1}\in E(\Gamma)$ for every
+\rightarrow x_{m+1}$\OLD{$=y $} such that $x_ix_{i+1}\in E(G)$ for every
 $0\le i \le m$. The \emph{length} of a directed walk is the number of its edges.
 A directed walk in which all edges are distinct is called \emph{directed trail};
 in particular, it is a \emph{directed path} when also all vertices are distinct.
@@ -169,18 +169,18 @@ A directed trail in which all vertices but the first and last are distinct is a
 }
 
 Let $S$ be a finite set \mh{of colors}. \OLD{of size $n$ whose elements are called colors.} \OLD{If a}
-\mh{A} digraph $\Gamma=(V,E)$ is colored by the colors in $S$, \OLD{then the} 
+\mh{A} digraph $G=(V,E)$ is colored by the colors in $S$, \OLD{then the} 
 \mh{if there is a} surjective \mh{map}\OLD{color
 function} $\sigma: V\to S$ \mh{where 
-$\sigma(x)$ is called the \emph{color} of $x$. We use $(\Gamma,\sigma)$ to specify
-that $\Gamma$ is equipped with such a map $\sigma$ and often say that $\Gamma$ 
-is an $|S|$-colored graphs to specify the number of colors used in $\Gamma$. 
-A colored digraph $(\Gamma, \sigma)$ 
+$\sigma(x)$ is called the \emph{color} of $x$. We use $(G,\sigma)$ to specify
+that $G$ is equipped with such a map $\sigma$ and often say that $G$ 
+is an $|S|$-colored graphs to specify the number of colors used in $G$. 
+A colored digraph $(G, \sigma)$ 
 is \emph{properly colored} or, equivelently, $\sigma$ is a \emph{proper coloring}
-of $\Gamma$, if $\sigma(x)\neq \sigma(y)$ for all $xy\in E$. }
+of $G$, if $\sigma(x)\neq \sigma(y)$ for all $xy\in E$. }
 
 If the neighborhood of any vertex contains
-vertices for all colors, $\Gamma$ is \emph{color-sink free}. 
+vertices for all colors, $G$ is \emph{color-sink free}. 
 
 
 In this paper, we mostly concern with 3-colored digraphs, and we assume that the vertex colors to be red, blue and yellow. Therefore, the vertex set is partitioned in three \emph{color classes} as $V=R\,\dot{\cup}\, B\,\dot{\cup}\, Y$; we name such classes $R,B$ and $Y$ when they contain red, blue and yellow vertices, respectively. For a red vertex $x$, its out-neighbourhood $N(x)$ splits into two colored out-neighbourhoods, namely of blue and yellow vertices, denoted by $N^{B}(x)$ and $N^{Y}(x)$. 
@@ -195,7 +195,7 @@ In this paper, $L=L(T)$ is the leaf set of a tree $T$. The notation $(T,\sigma)$
 Let $T_1$ and $T_2$ be two rooted trees. A bijection $\phi:V(T_1) \rightarrow V(T_2)$ is a \emph{tree isomorphism} if it maps adjacent vertices of $T_1$ to adjacent vertices $T_2$ and  $\phi(\rho_{T_1})=\rho_{T_2}$.
 
 For any three pairwise distinct vertices $a,b,c$, the associated (rooted) \emph{triple} is a rooted tree $T$ on three leaves $a,b,c$ and two inner nodes. In the case, ${\rm{lca}}(a,b)\prec_T {\rm{lca}}(a,c)=_T{\rm{lca}}(b,c)=\rho_T$, the symbol $ab|c$ is used. 
-\OLD{Let $\mathscr{R}$ and $\mathscr{F}$ be two sets of triples. The pair $(\mathscr{R},\mathscr{F})$ is \emph{consistent} if there exists a tree $T$ containing all leaves occurring in the triples of $\mathscr{R}$ and $\mathscr{F}$ such that $T$ displays all triples of $\mathscr{R}$ but none of $\mathscr{F}$. For a digraph $(\Gamma,\sigma)$, a triple $ab|b'$ with $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E$ is either {\emph{informative}} or {\emph{forbidden}} according as $ab'\not\in E(\Gamma)$ or $ab'\in E(\Gamma)$. The set $\mathscr{R}(\Gamma)$ denotes the set of all informative triples of $\Gamma$, and the set of forbidden triples of $\Gamma$ is $\mathscr{F}(\Gamma)$.}
+\OLD{Let $\mathscr{R}$ and $\mathscr{F}$ be two sets of triples. The pair $(\mathscr{R},\mathscr{F})$ is \emph{consistent} if there exists a tree $T$ containing all leaves occurring in the triples of $\mathscr{R}$ and $\mathscr{F}$ such that $T$ displays all triples of $\mathscr{R}$ but none of $\mathscr{F}$. For a digraph $(G,\sigma)$, a triple $ab|b'$ with $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E$ is either {\emph{informative}} or {\emph{forbidden}} according as $ab'\not\in E(G)$ or $ab'\in E(G)$. The set $\mathscr{R}(G)$ denotes the set of all informative triples of $G$, and the set of forbidden triples of $G$ is $\mathscr{F}(G)$.}
 
 \mh{
 \begin{definition}
@@ -223,13 +223,13 @@ if ${\rm{lca_T}}(x,y)\preceq {\rm{lca_T}}(x,y')$ for all $y'\in L$ with the same
 the associated {\emph{best match graph}} (\emph{BMG}) \mh{$\mathcal{G}(T,\sigma)$} is the digraph with 
 vertex set $L$ where the edges are the ordered pairs $xy$ with $x\rightarrow y$ and $x\neq y$. 
 It is a properly colored digraph with vertices colored as the leaves of $T$ \TODO{latter to handwavy, to be made more precise}.
-\mh{A colored digraph $(\Gamma, \sigma)$ is a \emph{BMG}, whenever there is a tree $(T,\sigma)$ such that 
-    $(\Gamma, \sigma) = \mathcal{G}(T,\sigma)$. In this case, $(T,\sigma)$ explains $(\Gamma, \sigma)$. }
-\OLD{ A colored digraph $\Gamma$ is a \emph{BMG} if it is color-invariantly isomorphic to a BMG associated to a leaf colored rooted tree $(T,\sigma)$. When this occurs then $(T,\sigma)$ is said to explain $(\Gamma,\sigma)$. A best match graph with $n$ colors is also known as n-BMG.} 
+\mh{A colored digraph $(G, \sigma)$ is a \emph{BMG}, whenever there is a tree $(T,\sigma)$ such that 
+    $(G, \sigma) = \mathcal{G}(T,\sigma)$. In this case, $(T,\sigma)$ explains $(G, \sigma)$. }
+\OLD{ A colored digraph $G$ is a \emph{BMG} if it is color-invariantly isomorphic to a BMG associated to a leaf colored rooted tree $(T,\sigma)$. When this occurs then $(T,\sigma)$ is said to explain $(G,\sigma)$. A best match graph with $n$ colors is also known as n-BMG.} 
 
 
 \OLD{
-Moreover, from~\cite[Proposition~2.3]{korchmaros2021quasi} \TODO{bad style ;) - it was not shown there }, $(\Gamma,\sigma)$ is a BMG if and only if it is color-sink free and $(\mathscr{R}(\Gamma),\mathscr{F}(\Gamma))$ is a consistent pair. }
+Moreover, from~\cite[Proposition~2.3]{korchmaros2021quasi} \TODO{bad style ;) - it was not shown there }, $(G,\sigma)$ is a BMG if and only if it is color-sink free and $(\mathscr{R}(G),\mathscr{F}(G))$ is a consistent pair. }
 
 \mh{
 \begin{proposition}[\cite{Schaller:21b}, Lemma~3.4 and Thm.~3.5]
@@ -252,8 +252,8 @@ original text is in "old" Sections below***}
 
 
 \mh{ We introduce now 2-colored graphs that are based on the idea of identifying
-certain colors in $(\Gamma,\sigma)$. In the following, we always assume that 
-for an $n$-colored digraph $(\Gamma,\sigma)$ with $\sigma\colon V(\Gamma) \to S$ 
+certain colors in $(G,\sigma)$. In the following, we always assume that 
+for an $n$-colored digraph $(G,\sigma)$ with $\sigma\colon V(G) \to S$ 
 it holds that $S = \{1,\dots,n\}$}
 
 
@@ -261,51 +261,51 @@ it holds that $S = \{1,\dots,n\}$}
 
 \begin{definition}
 \label{def:color-derivative}
-\mh{Let $(\Gamma,\sigma)$ be an $n$-colored digraph and $S'\subseteq \in S$. We
-    define $\sigma_{|S'}\colon V(\Gamma) \to S'\cup \{c\}$ where $c\notin S$ by
+\mh{Let $(G,\sigma)$ be an $n$-colored digraph and $S'\subseteq \in S$. We
+    define $\sigma_{|S'}\colon V(G) \to S'\cup \{c\}$ where $c\notin S$ by
     \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in
-    V(\Gamma).\] Hence, $\sigma_{|S'}$ keeps the colors of all vertices with
+    V(G).\] Hence, $\sigma_{|S'}$ keeps the colors of all vertices with
     color $i\in S'$ while all other vertices obtain a common color $c$ that is
-    not contained in $S$. We define the digraph $\Gamma_{|S'}$ by putting
+    not contained in $S$. We define the digraph $G_{|S'}$ by putting
 \begin{enumerate}
-    \item $V(\Gamma_{|S'}) \coloneqq V(\Gamma)$ and
+    \item $V(G_{|S'}) \coloneqq V(G)$ and
     
-    \item $xy\in E(\Gamma_{|S'}$  presicely if $xy\in E(\Gamma)$ and 
+    \item $xy\in E(G_{|S'}$  presicely if $xy\in E(G)$ and 
     	  $\sigma(x)\in S'$ or  $\sigma(y)\in S'$.
     	  
-    	  In other words, the edges of $\Gamma_{|S'}$ are precisely those edges 
-    	  of $\Gamma$ that are incident to a vertex with color $i\in S'$.
+    	  In other words, the edges of $G_{|S'}$ are precisely those edges 
+    	  of $G$ that are incident to a vertex with color $i\in S'$.
 \end{enumerate}
 %
-	The \emph{$S'$-color derivative} $\partial_{|S'}(\Gamma,\sigma)$ is the
-	$(|S'|+1)$-colored digraph $(\Gamma_{|S'},\sigma_{|S'})$. 
+	The \emph{$S'$-color derivative} $\partial_{|S'}(G,\sigma)$ is the
+	$(|S'|+1)$-colored digraph $(G_{|S'},\sigma_{|S'})$. 
 	
 	
 	In case that $S' = \{i\}$, we replace, for simplicity, ``$S'$'' by ``$i$'',
-	in which case, the $i$-color derivative $\partial_{|i}(\Gamma,\sigma)$ is
-	the the 2-colored digraph $(\Gamma_{|i},\sigma_{|i})$.
+	in which case, the $i$-color derivative $\partial_{|i}(G,\sigma)$ is
+	the the 2-colored digraph $(G_{|i},\sigma_{|i})$.
 }
 \TODO{\small MH: if we see that we dont need this general def, we may replace it at the end 
-just be $i$-color derivative $\partial_{|i}(\Gamma,\sigma)$ etc }
+just be $i$-color derivative $\partial_{|i}(G,\sigma)$ etc }
 \end{definition} 
 
 \begin{figure}[ht]
   \centering
     \includegraphics[width=16cm]{figures/color_derivatives.png}
     \caption{Color derivatives of a 3-BMG.
-    Digraph $\Gamma$ in Figure~\ref{fig:color_derivatives} is a 3-BMG
+    Digraph $G$ in Figure~\ref{fig:color_derivatives} is a 3-BMG
     \TODO{why? could we add a tree to support the statement?}.\\
     \TODO{could we also replace $r,b,y$ by "1,2,3" and use simpy black/gray
     for the new color $c$ in all figs}\\
-    \TODO{in the Fig is must always be $(\Gamma,\sigma)$ instead of $\Gamma$!}
+    \TODO{in the Fig is must always be $(G,\sigma)$ instead of $G$!}
      However,
     none of its color derivatives are 2-BMGs, as they all contain either an
     induced F1-subgraph or an induced F2-subgraph. Indeed, $x'\rightarrow
     y'\rightarrow x$ and $z\rightarrow x$ define an induced F1-subgraph for
-    $\partial_r(\Gamma)$; an induced F2-subgraph for $\partial_b(\Gamma)$ is
+    $\partial_r(G)$; an induced F2-subgraph for $\partial_b(G)$ is
     given by $y'\rightarrow x\rightarrow y\rightarrow z\rightarrow y'$; the
     edges $x'\rightarrow z'\rightarrow y'$ and $z \rightarrow y'$ define an
-    induced F1-subgraph for $\partial_y(\Gamma)$.
+    induced F1-subgraph for $\partial_y(G)$.
 }
    \label{fig:color_derivatives}
 \end{figure}
@@ -317,13 +317,13 @@ just be $i$-color derivative $\partial_{|i}(\Gamma,\sigma)$ etc }
     \includegraphics[width=16cm]{figures/different_trees.png}
     \caption{
     	\TODO{adjust to new def/notation + the same comments as in Fig \ref{fig:color_derivatives}}
-    	Red- and blue-derivative of $\Gamma$ which is not 3-BMG. The tree $T_r$ explains $\partial_r(\Gamma)$ while the tree $T_b$ explains $\partial_b(\Gamma)$.
+    	Red- and blue-derivative of $G$ which is not 3-BMG. The tree $T_r$ explains $\partial_r(G)$ while the tree $T_b$ explains $\partial_b(G)$.
     	In Figure~\ref{fig:different_trees}, the uncolored trees associated to
     	$T_r$ and $T_b$ are isomorphic but do not coincide. Let $t$ be the
     	parent of $y'$ in $T_r$, and let $t'$ be the parent of $y$ in $T_b$. The
     	bijection $\phi:V(T_r)\rightarrow V(T_b)$ defined by
     	$\phi(t)=t',\phi(z')=z$ and $\phi(v)=v$ for any $v\in V(T_r)$, is a tree
-    	isomorphism. Furthermore, $\Gamma$ is not a 3-BMG, as it contains an
+    	isomorphism. Furthermore, $G$ is not a 3-BMG, as it contains an
     	induced F2-subgraph, namely $x\rightarrow y$ together with $y\rightarrow
     	x'\leftarrow y'$. }
     \label{fig:different_trees}
@@ -331,10 +331,10 @@ just be $i$-color derivative $\partial_{|i}(\Gamma,\sigma)$ etc }
 
 
 \mh{
-Note that, in general, $i$-color derivatives $(\Gamma_{|i},\sigma_{|i})$ are not
-2-BMGs even though $(\Gamma,\sigma)$ is a 3-BMG, as illustrated in Fig.\
+Note that, in general, $i$-color derivatives $(G_{|i},\sigma_{|i})$ are not
+2-BMGs even though $(G,\sigma)$ is a 3-BMG, as illustrated in Fig.\
 \ref{fig:color_derivatives}. 
-Even, if $(\Gamma_{|i},\sigma_{|i})$ and $(\Gamma_{|j},\sigma_{|j})$ are 2-BMGs
+Even, if $(G_{|i},\sigma_{|i})$ and $(G_{|j},\sigma_{|j})$ are 2-BMGs
 their trees that explain them may differ in their topology as shown 
 in Fig.\ \ref{fig:different_trees}.
 As we shall see later,  to characterize 3-BMGs we must ensure that 
@@ -343,8 +343,8 @@ trees having the same topology (but possibly different leaf-colorings).
 }
 \begin{definition}
 \mh{
-Let $(\Gamma,\sigma)$ be an $n$-colored digraph and $i,j\in S$ be distinct. 
-Then, $(\Gamma,\sigma)$ satisfies the \mh{$(i,j)$-derivative-tree property ($(i,j)$-DT)}
+Let $(G,\sigma)$ be an $n$-colored digraph and $i,j\in S$ be distinct. 
+Then, $(G,\sigma)$ satisfies the \mh{$(i,j)$-derivative-tree property ($(i,j)$-DT)}
 if 
 \begin{enumerate}
 	\item $(G_{|i},\sigma_{|i})$ is a 2-BMG that is explained by $(T,\sigma_{|i})$.
@@ -355,44 +355,49 @@ if
 
 
 \begin{fact}
-\mh{Let $(\Gamma,\sigma)$ be an $n$-colored digraph and $i,j\in S$ be distinct. 
-Then, $(\Gamma,\sigma)$ satisfies $(i,j)$-DT  if and only if 
-$(\Gamma,\sigma)$ satisfies the $(j,i)$-DT.}
+\mh{Let $(G,\sigma)$ be an $n$-colored digraph and $i,j\in S$ be distinct. 
+Then, $(G,\sigma)$ satisfies $(i,j)$-DT  if and only if 
+$(G,\sigma)$ satisfies the $(j,i)$-DT.}
 \end{fact}
 
 
 
 
 \begin{lemma}\label{lem:sufficient_condition}
-\mh{If a 3-colored digraph $(\Gamma,\sigma)$ satisfies $(i,j)$-DT for some 
-distinct $i,j\in S$, then $(\Gamma,\sigma)$ is a 3-BMG.}
+\mh{If a 3-colored digraph $(G,\sigma)$ satisfies $(i,j)$-DT for some 
+distinct $i,j\in S$, then $(G,\sigma)$ is a 3-BMG.}
 \end{lemma}
 \begin{proof}
+Let  3-colored digraph $(G,\sigma)$ satisfies $(i,j)$-DT for some 
+distinct $i,j\in S$. By Prop.\ \ref{prop:BMG-triple-charac}, we must show that
+$(G,\sigma)$ is
+  color-sink-free and that $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$
+  is consistent in order to verify that $(G,\sigma)$ is a .  In this case, every tree $(T,\sigma)$ with leaf set
+  $V(G)$ that agrees with
 
 
 
 
+We begin by showing that $G$ is color-sink free. If a vertex $x\in V$ is red then it has an out-neighbour in $\partial_{r}(G)$. Since $\partial_{r}(G)$ is a 2-BMG by hypothesis, this yields that $x$ is not a sink of $\partial_{r}(G)$ and hence neither of $G$. For a blue vertex $x$, the hypothesis that $\partial_b(G)$ is a 2-BMG yields that it is sink free, and hence some red or yellow vertex is an out-neighbor of $x$ in $G$. For a yellow vertex $x$, the last argument still applies showing that some red or blue vertex is an out-neighbor of $x$ in $G$. Thus, $G$ is sink free.
 
-We begin by showing that $\Gamma$ is color-sink free. If a vertex $x\in V$ is red then it has an out-neighbour in $\partial_{r}(\Gamma)$. Since $\partial_{r}(\Gamma)$ is a 2-BMG by hypothesis, this yields that $x$ is not a sink of $\partial_{r}(\Gamma)$ and hence neither of $\Gamma$. For a blue vertex $x$, the hypothesis that $\partial_b(\Gamma)$ is a 2-BMG yields that it is sink free, and hence some red or yellow vertex is an out-neighbor of $x$ in $\Gamma$. For a yellow vertex $x$, the last argument still applies showing that some red or blue vertex is an out-neighbor of $x$ in $\Gamma$. Thus, $\Gamma$ is sink free.
+Since $\partial_{r}(G)$ is supposed to be a 2-BMG, $T_r$ is a tree explaining it, and its leaves are red or green colored as in Definition~\ref{def:delta_operator}. By~\cite[Proposition~2.3]{korchmaros2021quasi}, to prove that $G$ is a 3-BMG is enough to show that $(T_r,\sigma)$ displays all informative but none of the forbidden triples of $(G,\sigma)$, so that the pair $(\mathscr{R}(G),\mathscr{F}(G))$ is consistent.
 
-Since $\partial_{r}(\Gamma)$ is supposed to be a 2-BMG, $T_r$ is a tree explaining it, and its leaves are red or green colored as in Definition~\ref{def:delta_operator}. By~\cite[Proposition~2.3]{korchmaros2021quasi}, to prove that $\Gamma$ is a 3-BMG is enough to show that $(T_r,\sigma)$ displays all informative but none of the forbidden triples of $(\Gamma,\sigma)$, so that the pair $(\mathscr{R}(\Gamma),\mathscr{F}(\Gamma))$ is consistent.
-
-Let $ab|b'$be a triple of $\Gamma$ such that $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E(\Gamma)$. We have to prove that $(T_r,\sigma)$ displays $ab|b'$ if $ab'\notin E(\Gamma)$ ($ abb'$ is informative) and does not display $ab|b'$otherwise ($ab|b'$is forbidden). Suppose that either $a$ or $b$ is a red vertex. Then $ab|b'\in \mathscr{R}(\partial_{r}(\Gamma))$ if $ab|b'$is informative, and $ab|b'\in \mathscr{F}(\partial_{r}(\Gamma))$ if $ab|b'$is forbidden, as $\partial_{r}$ preserves all edges headed or tailed on a red vertex and $\sigma_r(a)\ne \sigma_r(b)=\sigma_r(b')$. Hence, in the former case $ab|b'$ is displayed in $(T_r,\sigma_r)$ and the latter case $ab|b'$is not displayed in $(T_r,\sigma_r)$. This follows from~\cite[Proposition~2.3]{korchmaros2021quasi} since $\partial_{r}(\Gamma)$ is a 2-BMG. Assume neither $a$ nor $b$ is a red vertex; therefore, one between $a$ and $b$ is blue colored, and the previous argument shows that $ab|b'$ is displayed in $(T_b,\sigma_b)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_b,\sigma_b)$ if $ab|b'$is forbidden in $\Gamma$. Condition $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$ ensures that $T_r$ and $T_b$ have the same uncolored tree. Hence, $ab|b'$ is displayed in $(T_r,\sigma)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_r,\sigma)$ if $ab|b'$is forbidden.
+Let $ab|b'$be a triple of $G$ such that $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E(G)$. We have to prove that $(T_r,\sigma)$ displays $ab|b'$ if $ab'\notin E(G)$ ($ abb'$ is informative) and does not display $ab|b'$otherwise ($ab|b'$is forbidden). Suppose that either $a$ or $b$ is a red vertex. Then $ab|b'\in \mathscr{R}(\partial_{r}(G))$ if $ab|b'$is informative, and $ab|b'\in \mathscr{F}(\partial_{r}(G))$ if $ab|b'$is forbidden, as $\partial_{r}$ preserves all edges headed or tailed on a red vertex and $\sigma_r(a)\ne \sigma_r(b)=\sigma_r(b')$. Hence, in the former case $ab|b'$ is displayed in $(T_r,\sigma_r)$ and the latter case $ab|b'$is not displayed in $(T_r,\sigma_r)$. This follows from~\cite[Proposition~2.3]{korchmaros2021quasi} since $\partial_{r}(G)$ is a 2-BMG. Assume neither $a$ nor $b$ is a red vertex; therefore, one between $a$ and $b$ is blue colored, and the previous argument shows that $ab|b'$ is displayed in $(T_b,\sigma_b)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_b,\sigma_b)$ if $ab|b'$is forbidden in $G$. Condition $\partial_b(G)=\Delta_{rb}(\partial_r(G))$ ensures that $T_r$ and $T_b$ have the same uncolored tree. Hence, $ab|b'$ is displayed in $(T_r,\sigma)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_r,\sigma)$ if $ab|b'$is forbidden.
 \end{proof}
 
 The 3-BMG condition only requires that two of the possible three color derivative graphs are 2-BMGs, assuming that they have the same uncolored explaining tree. This condition cannot be dropped as shown in \OLD{Example~\ref{ex:2BMGcolor-derivative_no3BMG}.}\mh{Fig.\ \ref{fig:different_trees}.}
- However, such a condition guaranties that also the yellow-color derivative of $\Gamma$ is a 3-BMG, as proven in the following proposition. 
+ However, such a condition guaranties that also the yellow-color derivative of $G$ is a 3-BMG, as proven in the following proposition. 
 
 \begin{proposition}\label{prop:yellow-derv}
-Let $(\Gamma,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(\Gamma)$ and $\partial_b(\Gamma)$ are 2-BMGs, and $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$, then $\partial_{y}(\Gamma)$ is a 2-BMG.
+Let $(G,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(G)$ and $\partial_b(G)$ are 2-BMGs, and $\partial_b(G)=\Delta_{rb}(\partial_r(G))$, then $\partial_{y}(G)$ is a 2-BMG.
 \end{proposition}
 \begin{proof}
 Denote by $\sigma_y$ the color map that preserves the color of the vertices in $Y$, while it colors in orange all other vertices.
-The arguments in the proof of Theorem~\ref{thm:sufficient_condition} yield $(\partial_{y}(\Gamma),\sigma_y)$ being sink-free. 
+The arguments in the proof of Theorem~\ref{thm:sufficient_condition} yield $(\partial_{y}(G),\sigma_y)$ being sink-free. 
 
-By~\cite[Proposition~2.3]{korchmaros2021quasi}, the yellow derivative $\partial_{y}(\Gamma)$ is a 2-BMG whenever $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(\Gamma)$ and does not display any forbidden triple of $\partial_{y}(\Gamma)$. Let $ab|b'$be a triple of $\partial_{y}(\Gamma)$ such that $\sigma_y(a)\ne \sigma_y(b)=\sigma_y(b')$ and $ab\in E(\partial_{y}(\Gamma))$. Suppose that either $\sigma(a)$ or $\sigma(b)$ is a red, then $ab\in E(\partial_{r}(\Gamma))$ up to changing colors (from yellow and orange to red and green); hence, $ab|b'$is a triple of $\partial_{r}(\Gamma)$. Moreover $ab|b'$is informative (forbidden) in $\partial_{r}(\Gamma)$ if $ab|b'$is informative (forbidden) in $\partial_{y}(\Gamma)$, as the red-color derivative preserves all the neighbors in $\Gamma$ of a red vertex. Since $\partial_{r}(\Gamma)$ is supposed to be a 2-BMG, if $ab|b'$is informative in $\partial_{y}(\Gamma)$ then $ab|b'$ is displayed in $(T_r,\sigma_r)$ and then in $(T_r,\sigma_y)$. We also have that if $ab|b'$is forbidden in $\partial_{y}(\Gamma)$ then $ab|b'$is not displayed in $(T_r,\sigma_r)$ and then not in $(T_r,\sigma_y)$.
+By~\cite[Proposition~2.3]{korchmaros2021quasi}, the yellow derivative $\partial_{y}(G)$ is a 2-BMG whenever $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(G)$ and does not display any forbidden triple of $\partial_{y}(G)$. Let $ab|b'$be a triple of $\partial_{y}(G)$ such that $\sigma_y(a)\ne \sigma_y(b)=\sigma_y(b')$ and $ab\in E(\partial_{y}(G))$. Suppose that either $\sigma(a)$ or $\sigma(b)$ is a red, then $ab\in E(\partial_{r}(G))$ up to changing colors (from yellow and orange to red and green); hence, $ab|b'$is a triple of $\partial_{r}(G)$. Moreover $ab|b'$is informative (forbidden) in $\partial_{r}(G)$ if $ab|b'$is informative (forbidden) in $\partial_{y}(G)$, as the red-color derivative preserves all the neighbors in $G$ of a red vertex. Since $\partial_{r}(G)$ is supposed to be a 2-BMG, if $ab|b'$is informative in $\partial_{y}(G)$ then $ab|b'$ is displayed in $(T_r,\sigma_r)$ and then in $(T_r,\sigma_y)$. We also have that if $ab|b'$is forbidden in $\partial_{y}(G)$ then $ab|b'$is not displayed in $(T_r,\sigma_r)$ and then not in $(T_r,\sigma_y)$.
 
-Assume that neither $\sigma(a)$ nor $\sigma(b)$ is a red, therefore one of them is of blue color in $\Gamma$, and then $ab\in E(\partial_{b}(\Gamma))$ up to changing colors (from yellow and orange to blue and pink); hence, $ab|b'$is a triple of $\partial_{b}(\Gamma)$. Using the previous argument, $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(\Gamma)$ and does not display any forbidden triple of $\partial_{y}(\Gamma)$ where at least one of the vertices is of blue color.
+Assume that neither $\sigma(a)$ nor $\sigma(b)$ is a red, therefore one of them is of blue color in $G$, and then $ab\in E(\partial_{b}(G))$ up to changing colors (from yellow and orange to blue and pink); hence, $ab|b'$is a triple of $\partial_{b}(G)$. Using the previous argument, $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(G)$ and does not display any forbidden triple of $\partial_{y}(G)$ where at least one of the vertices is of blue color.
 \end{proof}
 
 
@@ -455,42 +460,42 @@ happy ! but just for now, I want to get some more consitent notion, that allows 
 
 
 \mh{
-%In this section, we always consider 3-colored digraphs $(\Gamma,\sigma)$. 
-We introduce now 2-colored graphs that are based on the idea of identifying certain colors in  $(\Gamma,\sigma)$.
+%In this section, we always consider 3-colored digraphs $(G,\sigma)$. 
+We introduce now 2-colored graphs that are based on the idea of identifying certain colors in  $(G,\sigma)$.
 }
-\OLD{In this section, $(\Gamma,\sigma)$ denotes a 3-colored digraph with colors red, blue and yellow. 
-We introduce two operators arising from the idea of merging two of the above colors into a unique color. The first operator formalizes the color merging process in $\Gamma$. Preserving one color, for instance red, and merging the other two, blue and yellow, into a unique new color named green.}
+\OLD{In this section, $(G,\sigma)$ denotes a 3-colored digraph with colors red, blue and yellow. 
+We introduce two operators arising from the idea of merging two of the above colors into a unique color. The first operator formalizes the color merging process in $G$. Preserving one color, for instance red, and merging the other two, blue and yellow, into a unique new color named green.}
 
 
 
 
 \begin{definition}
 \label{def:color-derivative-old}
-\mh{Let $(\Gamma,\sigma)$ be an $n$-colored digraph where $\sigma\colon V(\Gamma) \to S$ 
+\mh{Let $(G,\sigma)$ be an $n$-colored digraph where $\sigma\colon V(G) \to S$ 
 and $S = \{1,\dots,n\}$. Let $i\in S$ be some color. We define
-$\sigma_i\colon V(\Gamma) \to \{i,c\}$ where $c\notin S$
-by \[\sigma_i(x)=c \iff \sigma(x)\neq i, \text{ for all } x\in V(\Gamma).\]
+$\sigma_i\colon V(G) \to \{i,c\}$ where $c\notin S$
+by \[\sigma_i(x)=c \iff \sigma(x)\neq i, \text{ for all } x\in V(G).\]
 Hence, $\sigma_i$ keeps the colors of all vertices with color $i$ while
 all other vertices obtain color $c$. 
-We define the digraph $\Gamma_i$ by putting
+We define the digraph $G_i$ by putting
 \begin{enumerate}
-    \item $V(\Gamma_i) \coloneqq V(\Gamma)$ and
+    \item $V(G_i) \coloneqq V(G)$ and
     
-    \item $xy\in E(\Gamma_i)$  presicely if $xy\in E(\Gamma)$ and 
+    \item $xy\in E(G_i)$  presicely if $xy\in E(G)$ and 
     	  $\sigma(x)=i	$ or  $\sigma(y)=i$.
     	  
-    	  In other words, the edges of $\Gamma_i$ are precisely those edges 
-    	  of $\Gamma$ that are incident to a vertex with color $i$.
+    	  In other words, the edges of $G_i$ are precisely those edges 
+    	  of $G$ that are incident to a vertex with color $i$.
 \end{enumerate}
 %
-The \emph{$i$-color derivative} $\partial_i(\Gamma,\sigma)$ is the 2-colored
-digraph $(\Gamma_i,\sigma_i)$ \OLD{and $\Delta_{ij}(\Gamma,\sigma)$ denotes the
-2-colored graph $(\Gamma_i,\sigma_j)$ where $i,j\in S$ are distinct. 
+The \emph{$i$-color derivative} $\partial_i(G,\sigma)$ is the 2-colored
+digraph $(G_i,\sigma_i)$ \OLD{and $\Delta_{ij}(G,\sigma)$ denotes the
+2-colored graph $(G_i,\sigma_j)$ where $i,j\in S$ are distinct. 
 }} 
 
 
 
-\OLD{\TODO{to complicated and can be simplfied . not needed here!}\ak{Suppose $\partial_i(\Gamma,\sigma)$ is a 2-BMG explained by $(T_i,\sigma_i)$,  $\Delta_{ij}(\partial_i(\Gamma,\sigma))$ denotes the
+\OLD{\TODO{to complicated and can be simplfied . not needed here!}\ak{Suppose $\partial_i(G,\sigma)$ is a 2-BMG explained by $(T_i,\sigma_i)$,  $\Delta_{ij}(\partial_i(G,\sigma))$ denotes the
 2-BMG explained by $(T_i,\sigma_j)$ where $i,j\in S$ are distinct. 
 }
 \TODO{MH: completely lost here! in your previous def you never used 2-BMG and even not the existence of some
@@ -502,33 +507,33 @@ tree explaining anything.  just the edges and certain colors -- why do I need tr
 
 
 \OLD{
-The \emph{red-color derivative} $\partial_c(\Gamma)$ of
-\OLD{$\Gamma$}\mh{$(\Gamma,\sigma)$} is the 2-colored digraph
-\OLD{$\Sigma$}\mh{$(\Gamma',\sigma')$} with colors red and yellow such that
+The \emph{red-color derivative} $\partial_c(G)$ of
+\OLD{$G$}\mh{$(G,\sigma)$} is the 2-colored digraph
+\OLD{$\Sigma$}\mh{$(G',\sigma')$} with colors red and yellow such that
 \begin{enumerate}
-    \item $\Gamma$ and $\Sigma$ have the same vertex set. 
-    \item $\Gamma$ and $\Sigma$ have the same red vertices whereas any other vertex of $\Sigma$ is green. 
-    \item The edges of $\Sigma$ are those of $\Gamma$ incident with a red vertex. 
+    \item $G$ and $\Sigma$ have the same vertex set. 
+    \item $G$ and $\Sigma$ have the same red vertices whereas any other vertex of $\Sigma$ is green. 
+    \item The edges of $\Sigma$ are those of $G$ incident with a red vertex. 
 \end{enumerate}
-The blue- and yellow-color derivative of $\Gamma$ are analogously defined and
-denoted by $\partial_b(\Gamma)$ and $\partial_y(\Gamma)$, respectively. }
+The blue- and yellow-color derivative of $G$ are analogously defined and
+denoted by $\partial_b(G)$ and $\partial_y(G)$, respectively. }
 \end{definition} 
  
 
 
-\TODO{MH: recheck latter def, but as I can see, we can define $\sigma_i$ and $\Gamma_i$
+\TODO{MH: recheck latter def, but as I can see, we can define $\sigma_i$ and $G_i$
 inependent from each other -- this also simplifies that def of $\Delta_{ij}$. 
 
-Note also, that $\partial_i(\Gamma,\sigma)$ and $\Delta_{ij}(\Gamma,\sigma)$
-contains both $\Gamma$ and $\sigma$ and thus, must be adjusted below!
+Note also, that $\partial_i(G,\sigma)$ and $\Delta_{ij}(G,\sigma)$
+contains both $G$ and $\sigma$ and thus, must be adjusted below!
 }
 
 
 
 %\OLD{
-%In the general case, \emph{s-color derivative} denotes $\partial_s(\Gamma)$ for a color $s$, and \emph{color derivatives} denotes $\partial_s(\Gamma)$ for any color $s$. An example of the color derivatives of $\Gamma$ is in Figure~\ref{fig:color_derivatives}. When $\partial_s(\Gamma)$ is a 2-BMG, $T_s$ denotes a tree explaining it.
+%In the general case, \emph{s-color derivative} denotes $\partial_s(G)$ for a color $s$, and \emph{color derivatives} denotes $\partial_s(G)$ for any color $s$. An example of the color derivatives of $G$ is in Figure~\ref{fig:color_derivatives}. When $\partial_s(G)$ is a 2-BMG, $T_s$ denotes a tree explaining it.
 %}
-%In general, color derivatives of $\Gamma$ are not 2-BMGs even though $\Gamma$ is a 3-BMG, as \mh{illustrated in Fig.\ \ref{fig:color_derivatives}.}
+%In general, color derivatives of $G$ are not 2-BMGs even though $G$ is a 3-BMG, as \mh{illustrated in Fig.\ \ref{fig:color_derivatives}.}
 %\OLD{it is shown in the following example.}
 
 %%\begin{example}
@@ -537,15 +542,15 @@ contains both $\Gamma$ and $\sigma$ and thus, must be adjusted below!
 %  \centering
 %    \includegraphics[width=16cm]{figures/color_derivatives.png}
 %    \caption{Color derivatives of a 3-BMG.
-%    Digraph $\Gamma$ in Figure~\ref{fig:color_derivatives} is a 3-BMG
+%    Digraph $G$ in Figure~\ref{fig:color_derivatives} is a 3-BMG
 %    \TODO{why? could we add a tree to support the statement?}. However,
 %    none of its color derivatives are 2-BMGs, as they all contain either an
 %    induced F1-subgraph or an induced F2-subgraph. Indeed, $x'\rightarrow
 %    y'\rightarrow x$ and $z\rightarrow x$ define an induced F1-subgraph for
-%    $\partial_r(\Gamma)$; an induced F2-subgraph for $\partial_b(\Gamma)$ is
+%    $\partial_r(G)$; an induced F2-subgraph for $\partial_b(G)$ is
 %    given by $y'\rightarrow x\rightarrow y\rightarrow z\rightarrow y'$; the
 %    edges $x'\rightarrow z'\rightarrow y'$ and $z \rightarrow y'$ define an
-%    induced F1-subgraph for $\partial_y(\Gamma)$.
+%    induced F1-subgraph for $\partial_y(G)$.
 %}
 %      \label{fig:color_derivatives}
 %\end{figure}
@@ -561,13 +566,13 @@ contains both $\Gamma$ and $\sigma$ and thus, must be adjusted below!
 %\begin{figure}[ht]
 %  \centering
 %    \includegraphics[width=16cm]{figures/different_trees.png}
-%    \caption{Red- and blue-derivative of $\Gamma$ which is not 3-BMG. The tree $T_r$ explains $\partial_r(\Gamma)$ while the tree $T_b$ explains $\partial_b(\Gamma)$.
+%    \caption{Red- and blue-derivative of $G$ which is not 3-BMG. The tree $T_r$ explains $\partial_r(G)$ while the tree $T_b$ explains $\partial_b(G)$.
 %    	In Figure~\ref{fig:different_trees}, the uncolored trees associated to
 %    	$T_r$ and $T_b$ are isomorphic but do not coincide. Let $t$ be the
 %    	parent of $y'$ in $T_r$, and let $t'$ be the parent of $y$ in $T_b$. The
 %    	bijection $\phi:V(T_r)\rightarrow V(T_b)$ defined by
 %    	$\phi(t)=t',\phi(z')=z$ and $\phi(v)=v$ for any $v\in V(T_r)$, is a tree
-%    	isomorphism. Furthermore, $\Gamma$ is not a 3-BMG, as it contains an
+%    	isomorphism. Furthermore, $G$ is not a 3-BMG, as it contains an
 %    	induced F2-subgraph, namely $x\rightarrow y$ together with $y\rightarrow
 %    	x'\leftarrow y'$. }
 %    \label{fig:different_trees}
@@ -580,29 +585,29 @@ Therefore, we introduce the \emph{color-delta operator} $\Delta_{rb}$ to charact
 %\mh{
 %\begin{definition}
 %\label{def:delta_operator}
-%Let $(\Gamma,\sigma)$ be an $n$-colored digraph where $\sigma\colon V(\Gamma) \to S$, 
-%$S = \{1,\dots,n\}$ and $i,j\in S$ are distinct. Moreover, let $(\Gamma_i,\sigma_i)$
-%be the $i$-color derivative of $(\Gamma,\sigma)$.
-%Then $(\Delta_{ij}(\Sigma,\sigma)$ is defined to be the 2-colored digraph $(\Gamma_i^j,\sigma_i^j)$
+%Let $(G,\sigma)$ be an $n$-colored digraph where $\sigma\colon V(G) \to S$, 
+%$S = \{1,\dots,n\}$ and $i,j\in S$ are distinct. Moreover, let $(G_i,\sigma_i)$
+%be the $i$-color derivative of $(G,\sigma)$.
+%Then $(\Delta_{ij}(\Sigma,\sigma)$ is defined to be the 2-colored digraph $(G_i^j,\sigma_i^j)$
 %such that 
 %\begin{enumerate}
-%    \item $\Gamma$ and $\Gamma_i^j$ have the same vertex set, i.e.,  $V(\Gamma_i^j) \coloneqq V(\Gamma)$.
-%    \item $\sigma_i\colon V(\Gamma_i) \to \{i,c\}$ where $c\notin S$
+%    \item $G$ and $G_i^j$ have the same vertex set, i.e.,  $V(G_i^j) \coloneqq V(G)$.
+%    \item $\sigma_i\colon V(G_i) \to \{i,c\}$ where $c\notin S$
 %    	  and $\sigma_i(x)=c$ if and only if $\sigma(x)\neq i$. 
 %    	  
-%    	  In other words,  $\Gamma$ and $\Gamma_i$ have the same vertices with color $i$ 
-%    	  whereas any other vertex of $\Gamma_i$ has color $c$.  
+%    	  In other words,  $G$ and $G_i$ have the same vertices with color $i$ 
+%    	  whereas any other vertex of $G_i$ has color $c$.  
 %    
-%    \item An edge $xy\in E(\Gamma)$ is an edge of $\Gamma_i$ presicely if 
+%    \item An edge $xy\in E(G)$ is an edge of $G_i$ presicely if 
 %    	  $\sigma(x)=i	$ or  $\sigma(y)=i$.
 %    	  
-%    	  In other words, the edges of $\Gamma_i$ are precisely those edges 
-%    	  of $\Gamma$ that are incident to a vertex with color $i$.
+%    	  In other words, the edges of $G_i$ are precisely those edges 
+%    	  of $G$ that are incident to a vertex with color $i$.
 %\end{enumerate}
 
 
 
-%on the vertex set of $\Gamma$ such that
+%on the vertex set of $G$ such that
 %\begin{equation}\label{def:sigma-b}
 %\sigma_b(v)= \begin{cases} 
 %    blue & v\in B \\
@@ -617,10 +622,10 @@ Therefore, we introduce the \emph{color-delta operator} $\Delta_{rb}$ to charact
 \begin{definition}
 %\label{def:delta_operator}
 
-Let $(\Gamma,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively.
+Let $(G,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively.
 \TODO{confused now, are $R,B,Y$ really sets? and if not, a unified notion for colors must be used, either all
 capital or small letters }
-Let $(\Sigma,\sigma_r)$ be the 2-colored digraph on the vertex set of $\Gamma$ such that
+Let $(\Sigma,\sigma_r)$ be the 2-colored digraph on the vertex set of $G$ such that
 \begin{equation}\label{def:sigma-r}
 \sigma_r(v)= \begin{cases} 
       red & v\in R \\
@@ -628,7 +633,7 @@ Let $(\Sigma,\sigma_r)$ be the 2-colored digraph on the vertex set of $\Gamma$ s
    \end{cases}
 \end{equation}
 Then
-$(\Delta_{rb}(\Sigma),\sigma_b)$ is defined to be the 2-colored digraph on the vertex set of $\Gamma$ such that
+$(\Delta_{rb}(\Sigma),\sigma_b)$ is defined to be the 2-colored digraph on the vertex set of $G$ such that
 \TODO{what are its edges?}
 \begin{equation}\label{def:sigma-b}
 \sigma_b(v)= \begin{cases} 
@@ -639,19 +644,19 @@ $(\Delta_{rb}(\Sigma),\sigma_b)$ is defined to be the 2-colored digraph on the v
 $\Delta_{rb}$ and your (formerly defined ) blue-color derivative ?  }
  \end{definition}
  
-\OLD{We stress that $\partial_b(\Gamma)$ and $\Delta_{(r,b)}(\partial_r(\Gamma))$ have the same vertex set with the same coloring 
+\OLD{We stress that $\partial_b(G)$ and $\Delta_{(r,b)}(\partial_r(G))$ have the same vertex set with the same coloring 
 but they may have different edge sets. }
 
 \begin{remark}
 \label{obs:delta_operator}
-$T_r$ and $T_b$ have the same uncolored \TODO{least-resolved ??? } tree if and only if $\Delta_{rb}(\partial_r(\Gamma))=\partial_b(\Gamma)$. In this case, the following diagram commutes.
-\TODO{should be adjusted to new def, but possibly becomes trivial, } % since former $\Delta_{rb}(\partial_r(\Gamma))$ is (\Gamma_)}
+$T_r$ and $T_b$ have the same uncolored \TODO{least-resolved ??? } tree if and only if $\Delta_{rb}(\partial_r(G))=\partial_b(G)$. In this case, the following diagram commutes.
+\TODO{should be adjusted to new def, but possibly becomes trivial, } % since former $\Delta_{rb}(\partial_r(G))$ is (G_)}
 \begin{figure}[ht]
   \centering
 \begin{tikzcd}
-(\partial_b(\Gamma),\sigma_b) 
-& [3em](\Gamma,\sigma) \arrow{l}[sloped,above]{\text{}} \arrow[r]
-& [3em](\partial_r(\Gamma),\sigma_r) \arrow[d,blue] \arrow[ll,{bend left=30},"\Delta_{(r,b)}",red]\\
+(\partial_b(G),\sigma_b) 
+& [3em](G,\sigma) \arrow{l}[sloped,above]{\text{}} \arrow[r]
+& [3em](\partial_r(G),\sigma_r) \arrow[d,blue] \arrow[ll,{bend left=30},"\Delta_{(r,b)}",red]\\
 [3em](T_r,\sigma_b)\arrow[u, blue] &[2em]  (T_r,\sigma)\arrow[l,blue] 
 & [3em] (T_r,\sigma_r) \arrow[l,blue]
 \end{tikzcd}
@@ -665,38 +670,38 @@ $T_r$ and $T_b$ have the same uncolored \TODO{least-resolved ??? } tree if and o
 In this section, we will show how color operators may be used to give a sufficient condition for a 3-colored digraph to be a 3-BMG.
 
 \begin{theorem}\label{thm:sufficient_condition-old}
-\mh{Let $(\Gamma,\sigma)$ be a 3-colored digraph. Suppose that, 
+\mh{Let $(G,\sigma)$ be a 3-colored digraph. Suppose that, 
 for some distinct colors $i,j\in S$, $(G_i,\sigma_i)$ and $(G_j,\sigma_j)$
 are BMGs and  that $(G_i,\sigma_i)$ is explained by $(T,\sigma_i)$.
-If $\mathcal{G}(T,\sigma_j) = (G_j,\sigma_j)$, then $\Gamma$ is a 3-BMG.  }
+If $\mathcal{G}(T,\sigma_j) = (G_j,\sigma_j)$, then $G$ is a 3-BMG.  }
 
 
 \TODO{OLD below}
-Let $(\Gamma,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(\Gamma)$ and $\partial_b(\Gamma)$ are 2-BMGs, and $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$, then $\Gamma$ is a 3-BMG. \TODO{MH: to be a pea-picker, this results that does not hold
-for  $\partial_r(\Gamma)$ and $\partial_y(\Gamma)$ as you fixed the colors only to red and blue, but the colors should be picked arbitrarily... ;)  }
+Let $(G,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(G)$ and $\partial_b(G)$ are 2-BMGs, and $\partial_b(G)=\Delta_{rb}(\partial_r(G))$, then $G$ is a 3-BMG. \TODO{MH: to be a pea-picker, this results that does not hold
+for  $\partial_r(G)$ and $\partial_y(G)$ as you fixed the colors only to red and blue, but the colors should be picked arbitrarily... ;)  }
 \end{theorem}
 
 \begin{proof}
-We begin by showing that $\Gamma$ is color-sink free. If a vertex $x\in V$ is red then it has an out-neighbour in $\partial_{r}(\Gamma)$. Since $\partial_{r}(\Gamma)$ is a 2-BMG by hypothesis, this yields that $x$ is not a sink of $\partial_{r}(\Gamma)$ and hence neither of $\Gamma$. For a blue vertex $x$, the hypothesis that $\partial_b(\Gamma)$ is a 2-BMG yields that it is sink free, and hence some red or yellow vertex is an out-neighbor of $x$ in $\Gamma$. For a yellow vertex $x$, the last argument still applies showing that some red or blue vertex is an out-neighbor of $x$ in $\Gamma$. Thus, $\Gamma$ is sink free.
+We begin by showing that $G$ is color-sink free. If a vertex $x\in V$ is red then it has an out-neighbour in $\partial_{r}(G)$. Since $\partial_{r}(G)$ is a 2-BMG by hypothesis, this yields that $x$ is not a sink of $\partial_{r}(G)$ and hence neither of $G$. For a blue vertex $x$, the hypothesis that $\partial_b(G)$ is a 2-BMG yields that it is sink free, and hence some red or yellow vertex is an out-neighbor of $x$ in $G$. For a yellow vertex $x$, the last argument still applies showing that some red or blue vertex is an out-neighbor of $x$ in $G$. Thus, $G$ is sink free.
 
-Since $\partial_{r}(\Gamma)$ is supposed to be a 2-BMG, $T_r$ is a tree explaining it, and its leaves are red or green colored as in Definition~\ref{def:delta_operator}. By~\cite[Proposition~2.3]{korchmaros2021quasi}, to prove that $\Gamma$ is a 3-BMG is enough to show that $(T_r,\sigma)$ displays all informative but none of the forbidden triples of $(\Gamma,\sigma)$, so that the pair $(\mathscr{R}(\Gamma),\mathscr{F}(\Gamma))$ is consistent.
+Since $\partial_{r}(G)$ is supposed to be a 2-BMG, $T_r$ is a tree explaining it, and its leaves are red or green colored as in Definition~\ref{def:delta_operator}. By~\cite[Proposition~2.3]{korchmaros2021quasi}, to prove that $G$ is a 3-BMG is enough to show that $(T_r,\sigma)$ displays all informative but none of the forbidden triples of $(G,\sigma)$, so that the pair $(\mathscr{R}(G),\mathscr{F}(G))$ is consistent.
 
-Let $ab|b'$be a triple of $\Gamma$ such that $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E(\Gamma)$. We have to prove that $(T_r,\sigma)$ displays $ab|b'$ if $ab'\notin E(\Gamma)$ ($ abb'$ is informative) and does not display $ab|b'$otherwise ($ab|b'$is forbidden). Suppose that either $a$ or $b$ is a red vertex. Then $ab|b'\in \mathscr{R}(\partial_{r}(\Gamma))$ if $ab|b'$is informative, and $ab|b'\in \mathscr{F}(\partial_{r}(\Gamma))$ if $ab|b'$is forbidden, as $\partial_{r}$ preserves all edges headed or tailed on a red vertex and $\sigma_r(a)\ne \sigma_r(b)=\sigma_r(b')$. Hence, in the former case $ab|b'$ is displayed in $(T_r,\sigma_r)$ and the latter case $ab|b'$is not displayed in $(T_r,\sigma_r)$. This follows from~\cite[Proposition~2.3]{korchmaros2021quasi} since $\partial_{r}(\Gamma)$ is a 2-BMG. Assume neither $a$ nor $b$ is a red vertex; therefore, one between $a$ and $b$ is blue colored, and the previous argument shows that $ab|b'$ is displayed in $(T_b,\sigma_b)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_b,\sigma_b)$ if $ab|b'$is forbidden in $\Gamma$. Condition $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$ ensures that $T_r$ and $T_b$ have the same uncolored tree. Hence, $ab|b'$ is displayed in $(T_r,\sigma)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_r,\sigma)$ if $ab|b'$is forbidden.
+Let $ab|b'$be a triple of $G$ such that $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E(G)$. We have to prove that $(T_r,\sigma)$ displays $ab|b'$ if $ab'\notin E(G)$ ($ abb'$ is informative) and does not display $ab|b'$otherwise ($ab|b'$is forbidden). Suppose that either $a$ or $b$ is a red vertex. Then $ab|b'\in \mathscr{R}(\partial_{r}(G))$ if $ab|b'$is informative, and $ab|b'\in \mathscr{F}(\partial_{r}(G))$ if $ab|b'$is forbidden, as $\partial_{r}$ preserves all edges headed or tailed on a red vertex and $\sigma_r(a)\ne \sigma_r(b)=\sigma_r(b')$. Hence, in the former case $ab|b'$ is displayed in $(T_r,\sigma_r)$ and the latter case $ab|b'$is not displayed in $(T_r,\sigma_r)$. This follows from~\cite[Proposition~2.3]{korchmaros2021quasi} since $\partial_{r}(G)$ is a 2-BMG. Assume neither $a$ nor $b$ is a red vertex; therefore, one between $a$ and $b$ is blue colored, and the previous argument shows that $ab|b'$ is displayed in $(T_b,\sigma_b)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_b,\sigma_b)$ if $ab|b'$is forbidden in $G$. Condition $\partial_b(G)=\Delta_{rb}(\partial_r(G))$ ensures that $T_r$ and $T_b$ have the same uncolored tree. Hence, $ab|b'$ is displayed in $(T_r,\sigma)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_r,\sigma)$ if $ab|b'$is forbidden.
 \end{proof}
 
 The 3-BMG condition only requires that two of the possible three color derivative graphs are 2-BMGs, assuming that they have the same uncolored explaining tree. This condition cannot be dropped as shown in \OLD{Example~\ref{ex:2BMGcolor-derivative_no3BMG}.}\mh{Fig.\ \ref{fig:different_trees}.}
- However, such a condition guaranties that also the yellow-color derivative of $\Gamma$ is a 3-BMG, as proven in the following proposition. 
+ However, such a condition guaranties that also the yellow-color derivative of $G$ is a 3-BMG, as proven in the following proposition. 
 
 \begin{proposition}\label{prop:yellow-derv}
-Let $(\Gamma,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(\Gamma)$ and $\partial_b(\Gamma)$ are 2-BMGs, and $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$, then $\partial_{y}(\Gamma)$ is a 2-BMG.
+Let $(G,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(G)$ and $\partial_b(G)$ are 2-BMGs, and $\partial_b(G)=\Delta_{rb}(\partial_r(G))$, then $\partial_{y}(G)$ is a 2-BMG.
 \end{proposition}
 \begin{proof}
 Denote by $\sigma_y$ the color map that preserves the color of the vertices in $Y$, while it colors in orange all other vertices.
-The arguments in the proof of Theorem~\ref{thm:sufficient_condition} yield $(\partial_{y}(\Gamma),\sigma_y)$ being sink-free. 
+The arguments in the proof of Theorem~\ref{thm:sufficient_condition} yield $(\partial_{y}(G),\sigma_y)$ being sink-free. 
 
-By~\cite[Proposition~2.3]{korchmaros2021quasi}, the yellow derivative $\partial_{y}(\Gamma)$ is a 2-BMG whenever $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(\Gamma)$ and does not display any forbidden triple of $\partial_{y}(\Gamma)$. Let $ab|b'$be a triple of $\partial_{y}(\Gamma)$ such that $\sigma_y(a)\ne \sigma_y(b)=\sigma_y(b')$ and $ab\in E(\partial_{y}(\Gamma))$. Suppose that either $\sigma(a)$ or $\sigma(b)$ is a red, then $ab\in E(\partial_{r}(\Gamma))$ up to changing colors (from yellow and orange to red and green); hence, $ab|b'$is a triple of $\partial_{r}(\Gamma)$. Moreover $ab|b'$is informative (forbidden) in $\partial_{r}(\Gamma)$ if $ab|b'$is informative (forbidden) in $\partial_{y}(\Gamma)$, as the red-color derivative preserves all the neighbors in $\Gamma$ of a red vertex. Since $\partial_{r}(\Gamma)$ is supposed to be a 2-BMG, if $ab|b'$is informative in $\partial_{y}(\Gamma)$ then $ab|b'$ is displayed in $(T_r,\sigma_r)$ and then in $(T_r,\sigma_y)$. We also have that if $ab|b'$is forbidden in $\partial_{y}(\Gamma)$ then $ab|b'$is not displayed in $(T_r,\sigma_r)$ and then not in $(T_r,\sigma_y)$.
+By~\cite[Proposition~2.3]{korchmaros2021quasi}, the yellow derivative $\partial_{y}(G)$ is a 2-BMG whenever $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(G)$ and does not display any forbidden triple of $\partial_{y}(G)$. Let $ab|b'$be a triple of $\partial_{y}(G)$ such that $\sigma_y(a)\ne \sigma_y(b)=\sigma_y(b')$ and $ab\in E(\partial_{y}(G))$. Suppose that either $\sigma(a)$ or $\sigma(b)$ is a red, then $ab\in E(\partial_{r}(G))$ up to changing colors (from yellow and orange to red and green); hence, $ab|b'$is a triple of $\partial_{r}(G)$. Moreover $ab|b'$is informative (forbidden) in $\partial_{r}(G)$ if $ab|b'$is informative (forbidden) in $\partial_{y}(G)$, as the red-color derivative preserves all the neighbors in $G$ of a red vertex. Since $\partial_{r}(G)$ is supposed to be a 2-BMG, if $ab|b'$is informative in $\partial_{y}(G)$ then $ab|b'$ is displayed in $(T_r,\sigma_r)$ and then in $(T_r,\sigma_y)$. We also have that if $ab|b'$is forbidden in $\partial_{y}(G)$ then $ab|b'$is not displayed in $(T_r,\sigma_r)$ and then not in $(T_r,\sigma_y)$.
 
-Assume that neither $\sigma(a)$ nor $\sigma(b)$ is a red, therefore one of them is of blue color in $\Gamma$, and then $ab\in E(\partial_{b}(\Gamma))$ up to changing colors (from yellow and orange to blue and pink); hence, $ab|b'$is a triple of $\partial_{b}(\Gamma)$. Using the previous argument, $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(\Gamma)$ and does not display any forbidden triple of $\partial_{y}(\Gamma)$ where at least one of the vertices is of blue color.
+Assume that neither $\sigma(a)$ nor $\sigma(b)$ is a red, therefore one of them is of blue color in $G$, and then $ab\in E(\partial_{b}(G))$ up to changing colors (from yellow and orange to blue and pink); hence, $ab|b'$is a triple of $\partial_{b}(G)$. Using the previous argument, $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(G)$ and does not display any forbidden triple of $\partial_{y}(G)$ where at least one of the vertices is of blue color.
 \end{proof}
 
 \section{Some necessary conditions for 3-BMGs}
@@ -708,83 +713,83 @@ In this section, we explore sufficient conditions in terms of color derivatives 
 \subsection{Color nuclei}
 We begin by introducing the concept of \emph{color nucleus} of a 3-BMG. 
 \begin{definition}
-Let $(\Gamma,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively, explained by $(T,\sigma)$. The $red_T${\emph{-nucleus}} $\Gamma_r$ of $\Gamma$ is the 2-BMG explained by $(T,\sigma_r)$ where $\sigma_r$ is defined as in (\ref{def:sigma-r}). The $blue_T$ and $yellow_T${\emph{-nucleus}} of $\Gamma$ are analogously defined and denoted by $\Gamma_b$ and $\Gamma_y$, respectively. 
+Let $(G,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively, explained by $(T,\sigma)$. The $red_T${\emph{-nucleus}} $G_r$ of $G$ is the 2-BMG explained by $(T,\sigma_r)$ where $\sigma_r$ is defined as in (\ref{def:sigma-r}). The $blue_T$ and $yellow_T${\emph{-nucleus}} of $G$ are analogously defined and denoted by $G_b$ and $G_y$, respectively. 
 \end{definition}
-The term \emph{s-nucleus} denotes $\Gamma_s$ for any color $s$ of the vertices of $\Gamma$, and all s-nuclei of $\Gamma$ are also named \emph{color nuclei}. Figure~\ref{fig:color_nuclei} shows all color nuclei of the 3-BMG in Figure~\ref{fig:color_derivatives}.
+The term \emph{s-nucleus} denotes $G_s$ for any color $s$ of the vertices of $G$, and all s-nuclei of $G$ are also named \emph{color nuclei}. Figure~\ref{fig:color_nuclei} shows all color nuclei of the 3-BMG in Figure~\ref{fig:color_derivatives}.
 \begin{figure}[ht]
   \centering
     \includegraphics[width=16cm]{figures/color_nuclei.jpeg}
-    \caption{Color nuclei of a 3-BMG explained by $(T,\sigma)$. The graph $\Gamma$ in Figure~\ref{fig:color_derivatives} is explained by $T$.}
+    \caption{Color nuclei of a 3-BMG explained by $(T,\sigma)$. The graph $G$ in Figure~\ref{fig:color_derivatives} is explained by $T$.}
       \label{fig:color_nuclei}
 \end{figure}
-The s-derivative of $(\Gamma,\sigma)$ preserves all neighbours of any vertex $x$ with $\sigma(x)=s$. This is not always the case for the s-nucleus, and all possible scenarios are described in the following lemma. 
+The s-derivative of $(G,\sigma)$ preserves all neighbours of any vertex $x$ with $\sigma(x)=s$. This is not always the case for the s-nucleus, and all possible scenarios are described in the following lemma. 
 \begin{lemma}
 \label{lemma:neighbours_condition}
-Let $(\Gamma,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively. For every red vertex $x$, one of the following cases occurs.
+Let $(G,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively. For every red vertex $x$, one of the following cases occurs.
 \begin{itemize}
-\item[(i)] $N_{\Gamma_r}(x)=N_{\Gamma}^{B}(x)$;
-\item[(ii)] $N_{\Gamma_r}(x)=N_{\Gamma}^{Y}(x)$;
-\item[(iii)] $N_{\Gamma_r}(x)=N_{\Gamma}^{B}(x)\cup N_{\Gamma}^{Y}(x)$;
+\item[(i)] $N_{G_r}(x)=N_{G}^{B}(x)$;
+\item[(ii)] $N_{G_r}(x)=N_{G}^{Y}(x)$;
+\item[(iii)] $N_{G_r}(x)=N_{G}^{B}(x)\cup N_{G}^{Y}(x)$;
 \end{itemize}
 \end{lemma}
 \begin{proof} 
-Assume $(\Gamma,\sigma)$ is explained by the tree $(T,\sigma)$. Now, take $y\in N_{\Gamma}^{B}(x)$ and $z\in N_{\Gamma}^{Y}(x)$, as $\Gamma$ is sink-free.  We have one the following three possibilities:
+Assume $(G,\sigma)$ is explained by the tree $(T,\sigma)$. Now, take $y\in N_{G}^{B}(x)$ and $z\in N_{G}^{Y}(x)$, as $G$ is sink-free.  We have one the following three possibilities:
 \begin{itemize}
 \item[(I)] $\lca(x,y)\prec_T \lca(x,z)$;
 \item[(II)] $\lca(x,z)\prec_T \lca(x,y)$;
 \item[(III)] $\lca(x,y)=_T \lca(x,z)$.
 \end{itemize}
-To prove the statement, we use the fact that the out-neighbors of a vertex $x \in R$ in $\Gamma_r$ are also out-neighbors of $x$ in $\Gamma$ (the viceversa is not always true).
-If (I) occurs $xz\not\in E(\Gamma_r)$, as $\sigma_r(y)=\sigma_r(z)$. Take any $z'$ from $N_{\Gamma}^{Y}(x)$. Then $\lca(x,z)=_T \lca(x,z')$ and hence (I) also holds for $z'$. Similarly, (II) implies $xy'\not\in E(\Gamma_r)$ for any $y'\in N_{\Gamma}^{B}(x)$. Moreover, in case of (III),  $xy\in E(\Gamma)$ if and only if $xz\in E(\Gamma)$ and hence $xy\in E(\Gamma_r)$ if and only if $xz\in E(\Gamma)$. The claim follows from  $\lca(x,y')=_T \lca(x,y)=_T\lca(x,z)=_T \lca(x,z')$ for any $y'\in N_{\Gamma}^{B}(x)$ and $z'\in N_{\Gamma}^{Y}(x)$.
+To prove the statement, we use the fact that the out-neighbors of a vertex $x \in R$ in $G_r$ are also out-neighbors of $x$ in $G$ (the viceversa is not always true).
+If (I) occurs $xz\not\in E(G_r)$, as $\sigma_r(y)=\sigma_r(z)$. Take any $z'$ from $N_{G}^{Y}(x)$. Then $\lca(x,z)=_T \lca(x,z')$ and hence (I) also holds for $z'$. Similarly, (II) implies $xy'\not\in E(G_r)$ for any $y'\in N_{G}^{B}(x)$. Moreover, in case of (III),  $xy\in E(G)$ if and only if $xz\in E(G)$ and hence $xy\in E(G_r)$ if and only if $xz\in E(G)$. The claim follows from  $\lca(x,y')=_T \lca(x,y)=_T\lca(x,z)=_T \lca(x,z')$ for any $y'\in N_{G}^{B}(x)$ and $z'\in N_{G}^{Y}(x)$.
 \end{proof}
 
-It may be noted that if $\Gamma$ is the 3-BMG in Figure~\ref{fig:color_derivatives}, then each of its color nuclei is strictly contained in its corresponding color derivative. Actually, this is true in general, and the two graphs coincide when the color derivative is a 2-BMG.
+It may be noted that if $G$ is the 3-BMG in Figure~\ref{fig:color_derivatives}, then each of its color nuclei is strictly contained in its corresponding color derivative. Actually, this is true in general, and the two graphs coincide when the color derivative is a 2-BMG.
 
 \begin{proposition}
 \label{prop:nucleus2BMG}
-Let $(\Gamma,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively, explained by $(T,\sigma)$. Then $\Gamma_r\subseteq \partial_r(\Gamma)$, and $\Gamma_r$ coincides with $\partial_r(\Gamma)$ if the red derivative is a 2-BMG.
+Let $(G,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively, explained by $(T,\sigma)$. Then $G_r\subseteq \partial_r(G)$, and $G_r$ coincides with $\partial_r(G)$ if the red derivative is a 2-BMG.
 \end{proposition}
 \begin{proof}
-First, observe that red-nucleus and derivative have the same vertex set $V=L(T)$ and vertex coloring $\sigma_r$. Merging vertices in $\Gamma$ and leaves in $T$ always preserves the red out-neighbours in $B\cup Y$. However, from Lemma~\ref{lemma:neighbours_condition}, red vertices may lose some blue or yellow out-neighbours in $\Gamma_r$. Hence, $\Gamma_r$ is an induced subgraph of $\partial_r(\Gamma)$.
+First, observe that red-nucleus and derivative have the same vertex set $V=L(T)$ and vertex coloring $\sigma_r$. Merging vertices in $G$ and leaves in $T$ always preserves the red out-neighbours in $B\cup Y$. However, from Lemma~\ref{lemma:neighbours_condition}, red vertices may lose some blue or yellow out-neighbours in $G_r$. Hence, $G_r$ is an induced subgraph of $\partial_r(G)$.
 
-Suppose $\partial_r(\Gamma)$ is a 2-BMG. By definition of red-nucleus, $(T,\sigma_r)$ explains $\Gamma_r$. Suppose that $(T_r,\sigma^*)$ explains the red derivative of $\Gamma$.
-Since $L(T)$ and $L(T_r)$ coincide and $\sigma^*=\sigma_r$, the claim $T_r=T$ actually reads $(T_r,\sigma_r)=(T, \sigma^*)$. Therefore, it suffices to prove that all informative triples in $\mathscr{R}(\Gamma_r)$ are displayed in $T_r$ but none of the forbidden triples in $\mathscr{F}(\Gamma_r)$ are displayed in $T_r$.
+Suppose $\partial_r(G)$ is a 2-BMG. By definition of red-nucleus, $(T,\sigma_r)$ explains $G_r$. Suppose that $(T_r,\sigma^*)$ explains the red derivative of $G$.
+Since $L(T)$ and $L(T_r)$ coincide and $\sigma^*=\sigma_r$, the claim $T_r=T$ actually reads $(T_r,\sigma_r)=(T, \sigma^*)$. Therefore, it suffices to prove that all informative triples in $\mathscr{R}(G_r)$ are displayed in $T_r$ but none of the forbidden triples in $\mathscr{F}(G_r)$ are displayed in $T_r$.
 
-Let $ab|b'\in \mathscr{R}(\Gamma_r)$. Then $ab\in E(\Gamma_r)$ but $ab'\not\in E(\Gamma_r)$. From Lemma~\ref{lemma:neighbours_condition}, $ab\in E(\Gamma_r)$ implies $ab\in E(\Gamma)$. Since $\sigma_r(a)=\sigma^*(a)$ and $\sigma_r(b)=\sigma_r(b')=\sigma^*(b')=\sigma^*(b)$, this yields
-$ab\in E(\partial_r(\Gamma))$. Assume on the contrary $ab'\in E(\partial_r(\Gamma))$. Then $ab'\in E(\Gamma)$ together with $ab\in E(\Gamma_r)\subset E(\Gamma)$ yields that $ab|b'$is a forbidden triple in $(T,\sigma)$. But this a contradiction as $(T,\sigma_r)$ also explains $\Gamma_r$.
-Let $ab|b'\in\mathscr{F}(\Gamma_r)$. Then $ab\in E(\Gamma_r)$ and $ab'\in E(\Gamma_r)$. Thus $ab\in E(\Gamma)$ and $ab'\in E(\Gamma)$ whence $ab\in E(\partial_r(\Gamma))$ and $ab'\in E(\partial_r\Gamma))$. Therefore $ab|b'$is a forbidden triple of $\partial_r(\Gamma)$.
+Let $ab|b'\in \mathscr{R}(G_r)$. Then $ab\in E(G_r)$ but $ab'\not\in E(G_r)$. From Lemma~\ref{lemma:neighbours_condition}, $ab\in E(G_r)$ implies $ab\in E(G)$. Since $\sigma_r(a)=\sigma^*(a)$ and $\sigma_r(b)=\sigma_r(b')=\sigma^*(b')=\sigma^*(b)$, this yields
+$ab\in E(\partial_r(G))$. Assume on the contrary $ab'\in E(\partial_r(G))$. Then $ab'\in E(G)$ together with $ab\in E(G_r)\subset E(G)$ yields that $ab|b'$is a forbidden triple in $(T,\sigma)$. But this a contradiction as $(T,\sigma_r)$ also explains $G_r$.
+Let $ab|b'\in\mathscr{F}(G_r)$. Then $ab\in E(G_r)$ and $ab'\in E(G_r)$. Thus $ab\in E(G)$ and $ab'\in E(G)$ whence $ab\in E(\partial_r(G))$ and $ab'\in E(\partial_rG))$. Therefore $ab|b'$is a forbidden triple of $\partial_r(G)$.
 \end{proof}
 
 \begin{remark}
 \label{rm:derivative2nucleus}
-Lemma~\ref{lemma:neighbours_condition} together with Proposition~\ref{prop:nucleus2BMG} yields a procedure to obtain color nuclei from their corresponding color derivatives. Indeed, the arguments of Proposition~\ref{prop:nucleus2BMG} proves that the subgraph induced by $B \cup Y$ is common to the red-nucleus and red-derivative, and we only need to delete the out-neighbours of any red vertex according to the arguments of Lemma~\ref{lemma:neighbours_condition}. In case (I), we have to remove from $\partial_r(\Gamma)$ the edges $xy$ with $y\in Y$, and in case (II) those with $y\in B$. If case (III) occurs, then no edge $xy$ has to be removed. 
+Lemma~\ref{lemma:neighbours_condition} together with Proposition~\ref{prop:nucleus2BMG} yields a procedure to obtain color nuclei from their corresponding color derivatives. Indeed, the arguments of Proposition~\ref{prop:nucleus2BMG} proves that the subgraph induced by $B \cup Y$ is common to the red-nucleus and red-derivative, and we only need to delete the out-neighbours of any red vertex according to the arguments of Lemma~\ref{lemma:neighbours_condition}. In case (I), we have to remove from $\partial_r(G)$ the edges $xy$ with $y\in Y$, and in case (II) those with $y\in B$. If case (III) occurs, then no edge $xy$ has to be removed. 
 \end{remark}
 Now, we show that under certain circumstances, case (III) of Lemma~\ref{lemma:neighbours_condition} can only occur. 
 \begin{proposition}
 \label{prop:ch-2-BMGs-caseiii}
-Let $(\Gamma,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively. Then its red-derivative is a 2-BMG if and only if $N_{\Gamma_r}(x)=N_{\Gamma}^{B}(x)\cup N_{\Gamma}^{Y}(x)$ for every vertex $x\in R$.
+Let $(G,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively. Then its red-derivative is a 2-BMG if and only if $N_{G_r}(x)=N_{G}^{B}(x)\cup N_{G}^{Y}(x)$ for every vertex $x\in R$.
 \end{proposition}
 \begin{proof}
-From Remark~\ref{rm:derivative2nucleus}, if Case (III) in Lemma~\ref{lemma:neighbours_condition} occurs for any red vertex $x\in V$ then $\partial_r(T)=\Gamma_r$, and the red-derivative is a 2-BMG by definition of red-nucleus.
+From Remark~\ref{rm:derivative2nucleus}, if Case (III) in Lemma~\ref{lemma:neighbours_condition} occurs for any red vertex $x\in V$ then $\partial_r(T)=G_r$, and the red-derivative is a 2-BMG by definition of red-nucleus.
 
-On the other hand, if $\partial_{r}(\Gamma)$ is a 2-BMG, then $\partial_{r}(\Gamma)=\Gamma_{r}$, as they are both explained by $(T,\sigma_r)$ by the arguments of Proposition~\ref{prop:nucleus2BMG}. Therefore, $N_{\Gamma_{r}}(x)= N_{\partial_{r}(\Gamma)}(x)=N_{\Gamma}^{B}(x)\cup N_{\Gamma}^{Y}(x)$ for all $x\in R$, as the red derivative preserves all neighbours of any red vertex.
+On the other hand, if $\partial_{r}(G)$ is a 2-BMG, then $\partial_{r}(G)=G_{r}$, as they are both explained by $(T,\sigma_r)$ by the arguments of Proposition~\ref{prop:nucleus2BMG}. Therefore, $N_{G_{r}}(x)= N_{\partial_{r}(G)}(x)=N_{G}^{B}(x)\cup N_{G}^{Y}(x)$ for all $x\in R$, as the red derivative preserves all neighbours of any red vertex.
 \end{proof}
 We have observed that the viceversa of Theorem~\ref{thm:sufficient_condition} is not true in general, as being a 3-BMG does not imply that the color derivatives are 2-BMGs; however, the second hypothesis in Theorem~\ref{thm:sufficient_condition} is guaranteed when the color derivatives are 2-BMGs. 
 \begin{proposition}\label{prop:3BMGs_(D)}
-Let $\Gamma$ be a 3-colored digraph such that $\partial_r(\Gamma)$ and $\partial_b(\Gamma)$ are 2-BMGs. If $(\Gamma,\sigma)$ is a 3-BMG explained by $(T,\sigma)$, then $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$.
+Let $G$ be a 3-colored digraph such that $\partial_r(G)$ and $\partial_b(G)$ are 2-BMGs. If $(G,\sigma)$ is a 3-BMG explained by $(T,\sigma)$, then $\partial_b(G)=\Delta_{rb}(\partial_r(G))$.
 \end{proposition}
 \begin{proof}
-If the red- and blue-derivative are 2-BMGs, they coincide with their corresponding nuclei by Proposition~\ref{prop:nucleus2BMG}; hence, they are explained by $(T,\sigma_r)$ and $(T,\sigma_b)$, respectively, where $\sigma_b$ is defined as in (\ref{def:sigma-b}). Therefore, $(T_r,\sigma_r)=(T,\sigma_r)$ and $(T_r,\sigma_b)=(T,\sigma_b)$ making the diagram in Figure~\ref{fig:diagram} commutative. Hence, $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$ by Remark~\ref{obs:delta_operator}.
+If the red- and blue-derivative are 2-BMGs, they coincide with their corresponding nuclei by Proposition~\ref{prop:nucleus2BMG}; hence, they are explained by $(T,\sigma_r)$ and $(T,\sigma_b)$, respectively, where $\sigma_b$ is defined as in (\ref{def:sigma-b}). Therefore, $(T_r,\sigma_r)=(T,\sigma_r)$ and $(T_r,\sigma_b)=(T,\sigma_b)$ making the diagram in Figure~\ref{fig:diagram} commutative. Hence, $\partial_b(G)=\Delta_{rb}(\partial_r(G))$ by Remark~\ref{obs:delta_operator}.
 \end{proof}
 
 In case of 2-colored sink-free digraphs, Schaller et al.~\cite{schaller2021complexity} proved that 2-BMGs are characterized by forbidden three families of four vertices digraphs. In particular, 2-BMGs do not admit any directed 4-cycle~\cite[Theorem~4.4]{schaller2021complexity}. Now, we show that the same result holds true under the hypotheses of 3-BMG condition.     
 \begin{proposition}
-Let $(\Gamma,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(\Gamma)$ and $\partial_b(\Gamma)$ are 2-BMGs, and $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$, then $\Gamma$ does not admit any directed $4$-cycle.
+Let $(G,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(G)$ and $\partial_b(G)$ are 2-BMGs, and $\partial_b(G)=\Delta_{rb}(\partial_r(G))$, then $G$ does not admit any directed $4$-cycle.
 \end{proposition}
 \begin{proof}
-Let $x_1\rightarrow x_2\rightarrow x_3 \rightarrow x_4 \rightarrow x_1$ be a directed $4$-cycle in $\Gamma$. Observe that at least two vertices in the cycle must have the same color, and assume that this color is red; hence, either $x_1,x_3\in R$ or $x_2,x_4\in R$ , as $\Gamma$ is properly vertex-colored. Now consider the subgraph induced by $\{x_1,\ldots, x_4\}$; this is contained in $\partial_r(\Gamma)$, as the red derivative preserves every neighbour of any red vertex. However, this contradicts the fact that 2-BMGs do not admit any directed 4-cycle~\cite[Theorem~4.4]{schaller2021complexity}.
+Let $x_1\rightarrow x_2\rightarrow x_3 \rightarrow x_4 \rightarrow x_1$ be a directed $4$-cycle in $G$. Observe that at least two vertices in the cycle must have the same color, and assume that this color is red; hence, either $x_1,x_3\in R$ or $x_2,x_4\in R$ , as $G$ is properly vertex-colored. Now consider the subgraph induced by $\{x_1,\ldots, x_4\}$; this is contained in $\partial_r(G)$, as the red derivative preserves every neighbour of any red vertex. However, this contradicts the fact that 2-BMGs do not admit any directed 4-cycle~\cite[Theorem~4.4]{schaller2021complexity}.
 
-Recall that $\partial_y(\Gamma)$ is also 2-BMG by Proposition~\ref{prop:yellow-derv}. Therefore, the previous argument applies to any colored directed 4-cycle.
+Recall that $\partial_y(G)$ is also 2-BMG by Proposition~\ref{prop:yellow-derv}. Therefore, the previous argument applies to any colored directed 4-cycle.
 \end{proof}
 
 \subsection{Forbidden 3-vertex subgraphs}
@@ -799,10 +804,10 @@ A 3-colored digraph $\Sigma$ on three distinct vertices $\{x,y,z\}$ of different
 F$^R$-graphs on a red vertex $x$ are induced subgraphs of a 3-BMG when case (i) in Lemma~\ref{lemma:neighbours_condition} occurs for $x$, as proven in the following lemma.
 \begin{lemma}
 \label{lemma:caseI-red_triangular}
-Let $(\Gamma,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively.  If $x$ is a red vertex such that $N_{\Gamma_r}(x)=N^B(x)$, then $\Gamma$ contains an induced F$^R$-subgraph on $x$.
+Let $(G,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively.  If $x$ is a red vertex such that $N_{G_r}(x)=N^B(x)$, then $G$ contains an induced F$^R$-subgraph on $x$.
 \end{lemma}
 \begin{proof}
-$\Gamma$ is color-sink-free by~\cite[Proposition~2.3]{korchmaros2021quasi}. Let $y\in N^B(x)$ and $z\in N^Y(x)$. Since $N_{\Gamma_r}(x)=N^B(x)$, Case (I) in the proof of Lemma~\ref{lemma:neighbours_condition} yields $\lca(x,y)\prec \lca(x,z)$. Take $z'\in N^Y(y)$, and assume that $\lca(z',y)\preceq \lca(x,y)$. Then $\lca(x,z')=\lca(x,y)$. On the other hand, $\lca(x,z)\preceq \lca(x,z')$, as $z$ is a best match of $x$ and $\sigma(z)=\sigma(z')$, contradicting $\lca(x,y) \prec \lca(x,z)$. Therefore, we must have $\lca(x,y)\prec \lca(z',y)$.
+$G$ is color-sink-free by~\cite[Proposition~2.3]{korchmaros2021quasi}. Let $y\in N^B(x)$ and $z\in N^Y(x)$. Since $N_{G_r}(x)=N^B(x)$, Case (I) in the proof of Lemma~\ref{lemma:neighbours_condition} yields $\lca(x,y)\prec \lca(x,z)$. Take $z'\in N^Y(y)$, and assume that $\lca(z',y)\preceq \lca(x,y)$. Then $\lca(x,z')=\lca(x,y)$. On the other hand, $\lca(x,z)\preceq \lca(x,z')$, as $z$ is a best match of $x$ and $\sigma(z)=\sigma(z')$, contradicting $\lca(x,y) \prec \lca(x,z)$. Therefore, we must have $\lca(x,y)\prec \lca(z',y)$.
 
 Now, we show that $z\in N^Y(y)$. Assume on the contrary $z\notin N^Y(y)$. Then $\lca(z',y)\prec \lca(z,y)$, as $z'$ is a best match of $y$. This together with $\lca(x,y)\prec \lca(z',y)$ yield $z'\in N^Y(x)$. Hence, $\lca(x,z')=\lca(x,z)$ by $z\in N^Y(x)$. Finally, $\lca(y,z')=\lca(y,z)$, as $\lca(x,y)\prec \lca(z',y)$ and $\lca(x,y)\prec \lca(z,y)$. Therefore, $z\in N^Y(y)$.
 \end{proof}
@@ -811,63 +816,63 @@ Up to interchanging blue and yellow colors, the arguments in the proof of Lemma~
 
 \begin{corollary}
 \label{cor:caseII-red_triangular}
-Let $(\Gamma,\sigma)$ be a 3-BMG with colors red, blue, yellow and color sets $R,B,Y$ respectively. If $x$ is a red vertex such that $N_{\Gamma_r}(x)=N^Y(x)$, then $\Gamma$ contains an induced F$^R$-subgraph on $x$.
+Let $(G,\sigma)$ be a 3-BMG with colors red, blue, yellow and color sets $R,B,Y$ respectively. If $x$ is a red vertex such that $N_{G_r}(x)=N^Y(x)$, then $G$ contains an induced F$^R$-subgraph on $x$.
 \end{corollary}
 
 Therefore, avoiding F$^R$-subgraphs ensures that case (iii) in Lemma~\ref{lemma:neighbours_condition} holds for any red vertex.
 
 \begin{proposition}
 \label{prop:caseiii-suf_cond}
-Let $(\Gamma,\sigma)$ be a 3-BMG with colors red, blue, yellow  and color sets $R,B,Y$ respectively. If $\Gamma$ does not contain any induced F$^R$-subgraph, then $N_{\Gamma_r}(x)=N^B(x)\cup N^Y(x)$ for every $x\in R$.
+Let $(G,\sigma)$ be a 3-BMG with colors red, blue, yellow  and color sets $R,B,Y$ respectively. If $G$ does not contain any induced F$^R$-subgraph, then $N_{G_r}(x)=N^B(x)\cup N^Y(x)$ for every $x\in R$.
 \end{proposition}
 \begin{proof}
-For any red vertex $x\in V(\Gamma)$, case (i) in Lemma~\ref{lemma:neighbours_condition} does not occur by Lemma~\ref{lemma:caseI-red_triangular}. Also, case (ii) in Lemma~\ref{lemma:neighbours_condition} does not occur by Corollary~\ref{cor:caseII-red_triangular}. Hence, $x$ must satisfy case (iii) in Lemma~\ref{lemma:neighbours_condition}, and $N_{\Gamma_r}(x)=N^B(x)\cup N^Y(x)$. 
+For any red vertex $x\in V(G)$, case (i) in Lemma~\ref{lemma:neighbours_condition} does not occur by Lemma~\ref{lemma:caseI-red_triangular}. Also, case (ii) in Lemma~\ref{lemma:neighbours_condition} does not occur by Corollary~\ref{cor:caseII-red_triangular}. Hence, $x$ must satisfy case (iii) in Lemma~\ref{lemma:neighbours_condition}, and $N_{G_r}(x)=N^B(x)\cup N^Y(x)$. 
 \end{proof}
 
 Proposition~\ref{prop:ch-2-BMGs-caseiii} together with Proposition~\ref{prop:caseiii-suf_cond} gives the following corollary.
 
 \begin{corollary}
 \label{cor:2BMGsD-forbidden}
-Let $(\Gamma,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\Gamma$ does not contain an induced F$^R$-subgraph, then $\partial_r(\Gamma)$ is a 2-BMG.
+Let $(G,\sigma)$ be a 3-BMG with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $G$ does not contain an induced F$^R$-subgraph, then $\partial_r(G)$ is a 2-BMG.
 \end{corollary}
 
 Theorem~\ref{thm:sufficient_condition} together with Proposition~\ref{prop:3BMGs_(D)} and Corollary~\ref{cor:2BMGsD-forbidden} gives a 3-BMG characterization for any 3-colored digraph free from induced F$^B$- and F$^R$-subgraphs.
 
 \begin{theorem}\label{thm:characterization3BMG_forbidden}
-Let $\Gamma$ be a 3-colored graph free from induced F$^B$- and F$^R$-subgraphs. Then $\Gamma$ is a 3-BMG if and only if $\partial_{r}(\Gamma)$ and $\partial_{b}(\Gamma)$ are 2-BMGs and $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$.
+Let $G$ be a 3-colored graph free from induced F$^B$- and F$^R$-subgraphs. Then $G$ is a 3-BMG if and only if $\partial_{r}(G)$ and $\partial_{b}(G)$ are 2-BMGs and $\partial_b(G)=\Delta_{rb}(\partial_r(G))$.
 \end{theorem}
 
 Theorem~\ref{thm:characterization3BMG_forbidden} begs the question whether a 3-BMG is free from induced F$^R$-subgraphs. This is not true in general. Indeed, the 3-BMG in Figure~\ref{fig:color_derivatives} has a F$^R$-subgraph, namely, $x \rightarrow y \rightarrow z$ together with $x\rightarrow z$.
 
 \subsection{Symmetric edges}\label{sec:sym_edges}
-In case $\Gamma$ has a symmetric edge incident a yellow vertex and a blue vertex, forbidding F$^R$-subgraphs may be rephrased in the following way.
+In case $G$ has a symmetric edge incident a yellow vertex and a blue vertex, forbidding F$^R$-subgraphs may be rephrased in the following way.
 
 \begin{remark}\label{rmk:sym_F^R}
-Suppose that a 3-colored graph $\Gamma$ with colors red, blue, yellow vertices is free of F$^R$-subgraphs. Observe that if it has a symmetric edge incident a yellow and a blue vertex, then they cannot have a common in-neighbour. 
+Suppose that a 3-colored graph $G$ with colors red, blue, yellow vertices is free of F$^R$-subgraphs. Observe that if it has a symmetric edge incident a yellow and a blue vertex, then they cannot have a common in-neighbour. 
 \end{remark}
 
 Therefore, forbidding F$^R$-subgraphs restricts the possible common red in-neighbours of the vertices of a symmetric edge by Remark~\ref{rmk:sym_F^R}. In this section, we show that there is a symmetric edge for every pair of different colors in a BMG. Let us recall that BMGs are color-sink-free by~\cite[Proposition~2.3]{korchmaros2021quasi}. First, we will see when such a hypothesis ensures the presence of at least one symmetric edge. 
 
 \begin{proposition}
 \label{prop:sink-free_sym}
-Let $\Gamma$ be a properly colored digraph which is color-sink-free. If $\Gamma$ has no directed cycle of length at least $3$, then $\Gamma$ has a symmetric edge.
+Let $G$ be a properly colored digraph which is color-sink-free. If $G$ has no directed cycle of length at least $3$, then $G$ has a symmetric edge.
 \end{proposition}
 \begin{proof} 
-Let $x_1\rightarrow x_2\cdots\rightarrow x_{n-1}\rightarrow x_n$ be a directed path in $\Gamma$. Since $\Gamma$ is sink-free, $x_n$ has at least one out-neighbour, say $x_{n+1}\in V(\Gamma)$. If $x_{n+1}\neq x_i$ for all vertices in the path, add $x_{n+1}$ at the end of the path. Repeating this process gives an infinite sequence of vertices of $V(\Gamma)$, contradicting the finiteness of the vertex-set of $\Gamma$. Therefore, we may assume that $x_j=x_i$ for some $1\leq i<j$. Not having any directed cycle of length $\ge 3$ yields $j=i+1$, and then $x_i x_{i+1}$ is a symmetric edge of $\Gamma$.
+Let $x_1\rightarrow x_2\cdots\rightarrow x_{n-1}\rightarrow x_n$ be a directed path in $G$. Since $G$ is sink-free, $x_n$ has at least one out-neighbour, say $x_{n+1}\in V(G)$. If $x_{n+1}\neq x_i$ for all vertices in the path, add $x_{n+1}$ at the end of the path. Repeating this process gives an infinite sequence of vertices of $V(G)$, contradicting the finiteness of the vertex-set of $G$. Therefore, we may assume that $x_j=x_i$ for some $1\leq i<j$. Not having any directed cycle of length $\ge 3$ yields $j=i+1$, and then $x_i x_{i+1}$ is a symmetric edge of $G$.
 \end{proof}
 
-The lower bound on the length of the forbidden direct cycles in Proposition~\ref{prop:sink-free_sym} can be dropped when $\Gamma$ is a 2-BMG.
+The lower bound on the length of the forbidden direct cycles in Proposition~\ref{prop:sink-free_sym} can be dropped when $G$ is a 2-BMG.
 
 \begin{lemma}
 \label{lemma:2BMG-sym}
 Every directed cycle in a 2-BMG is a symmetric edge.
 \end{lemma}
 \begin{proof}
-Let $\Gamma$ be a 2-colored bi-transitive digraph, and let $x_1\rightarrow x_2\rightarrow \cdots \rightarrow x_{n} \rightarrow x_1$ be a directed cycle of length $n>2$ in $\Gamma$. We prove that there is not such a cycle by induction on $n$; therefore, we must have $n=2$, and $x_1x_2$ is symmetric in $\Gamma$.
+Let $G$ be a 2-colored bi-transitive digraph, and let $x_1\rightarrow x_2\rightarrow \cdots \rightarrow x_{n} \rightarrow x_1$ be a directed cycle of length $n>2$ in $G$. We prove that there is not such a cycle by induction on $n$; therefore, we must have $n=2$, and $x_1x_2$ is symmetric in $G$.
 
-Since $\Gamma$ is a properly 2-colored digraph, it has no cycle of odd size; hence, $n\neq3,5$. Actually we have $n\neq4$, as directed $4$-cycles are prohibited in 2-BMGs by~\cite[Corollary~3.6]{schaller2021complexity}; hence, $n\geq 6$.
+Since $G$ is a properly 2-colored digraph, it has no cycle of odd size; hence, $n\neq3,5$. Actually we have $n\neq4$, as directed $4$-cycles are prohibited in 2-BMGs by~\cite[Corollary~3.6]{schaller2021complexity}; hence, $n\geq 6$.
 
-Now, assume that $\Gamma$ does not contain any directed $m$-cycle with $6\leq m<n$. Recall that 2-BMGs are bi-transitive; hence, $x_1x_4\in E(\Gamma)$. Therefore, there is also a directed $(n-2)$-cycle, namely, $x_1\rightarrow x_4\rightarrow \cdots \rightarrow x_{n} \rightarrow x_1$ in $\Gamma$, contradicting our inductive hypothesis.
+Now, assume that $G$ does not contain any directed $m$-cycle with $6\leq m<n$. Recall that 2-BMGs are bi-transitive; hence, $x_1x_4\in E(G)$. Therefore, there is also a directed $(n-2)$-cycle, namely, $x_1\rightarrow x_4\rightarrow \cdots \rightarrow x_{n} \rightarrow x_1$ in $G$, contradicting our inductive hypothesis.
 \end{proof}
 
 Actually, the following proposition shows that a 2-BMG always contain a symmetric edge. In the general case, there are at least as many symmetric edges as the number of pair of different colors  
@@ -875,9 +880,9 @@ Actually, the following proposition shows that a 2-BMG always contain a symmetri
 An n-BMG contains at least $\binom{n}{2}$ symmetric edges.
 \end{proposition}
 \begin{proof}
-Suppose on the contrary that there are two colors, namely red and blue, such there is no symmetric edge connecting a red vertex to a blue vertex of $\Gamma$.
+Suppose on the contrary that there are two colors, namely red and blue, such there is no symmetric edge connecting a red vertex to a blue vertex of $G$.
 
-Let $x$ be a red vertex of $\Gamma$. There is a vertex $y$ in the blue out-neighbour of $x$, as $\Gamma$ is color-sink-free from~\cite[Proposition~2.3]{korchmaros2021quasi}. Since $xy$ is not symmetric, $y$ admits a red out-neighbour $x_1$ such that $x\neq x_1$. Now, choose a blue out-neighbour $y_1$ of $x_1$. Then, there is a red out-neighbour $x_2$ of $y_1$ such that $x_2\neq x_1$, as $x_1y_1$ is not symmetric. Repeating this construction leads to an infinite sequence of distinct vertices $\{x,x_1,x_2,\ldots\,x_n\}$, contradicting $|V(\Gamma)|< \infty$. Therefore, there are $i,j$ such that $1\leq i<j\leq n$ and $x_i=x_j$. We may assume $j-i>1$, otherwise we have a symmetric edge $x_iy_i$ with $y_i\in B$, contradicting the hypothesis. Hence, there is a directed 2-colored cycle in $\Gamma$, namely, $xyx_1y_1\cdots x_iy_i\cdots y_{j-1}x_i$. From~\cite[Theorem~9]{schaller2021corrigendum}, the subgraph of $\Gamma$ induced by the vertices of this cycle is a 2-BMG, contradicting Lemma~\ref{lemma:2BMG-sym}. Hence, there is at least one symmetric edge between a blue and red vertex of $\Gamma$.
+Let $x$ be a red vertex of $G$. There is a vertex $y$ in the blue out-neighbour of $x$, as $G$ is color-sink-free from~\cite[Proposition~2.3]{korchmaros2021quasi}. Since $xy$ is not symmetric, $y$ admits a red out-neighbour $x_1$ such that $x\neq x_1$. Now, choose a blue out-neighbour $y_1$ of $x_1$. Then, there is a red out-neighbour $x_2$ of $y_1$ such that $x_2\neq x_1$, as $x_1y_1$ is not symmetric. Repeating this construction leads to an infinite sequence of distinct vertices $\{x,x_1,x_2,\ldots\,x_n\}$, contradicting $|V(G)|< \infty$. Therefore, there are $i,j$ such that $1\leq i<j\leq n$ and $x_i=x_j$. We may assume $j-i>1$, otherwise we have a symmetric edge $x_iy_i$ with $y_i\in B$, contradicting the hypothesis. Hence, there is a directed 2-colored cycle in $G$, namely, $xyx_1y_1\cdots x_iy_i\cdots y_{j-1}x_i$. From~\cite[Theorem~9]{schaller2021corrigendum}, the subgraph of $G$ induced by the vertices of this cycle is a 2-BMG, contradicting Lemma~\ref{lemma:2BMG-sym}. Hence, there is at least one symmetric edge between a blue and red vertex of $G$.
 
 The statement follows by observing that there are $\binom{n}{2}$ possible pairs of different colors among $n$ colors. 
 \end{proof}
