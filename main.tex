@@ -194,7 +194,26 @@ In this paper, $L=L(T)$ is the leaf set of a tree $T$. The notation $(T,\sigma)$
 
 Let $T_1$ and $T_2$ be two rooted trees. A bijection $\phi:V(T_1) \rightarrow V(T_2)$ is a \emph{tree isomorphism} if it maps adjacent vertices of $T_1$ to adjacent vertices $T_2$ and  $\phi(\rho_{T_1})=\rho_{T_2}$.
 
-For any three pairwise distinct vertices $a,b,c$, the associated (rooted) \emph{triple} is a rooted tree $T$ on three leaves $a,b,c$ and two inner nodes. In the case, ${\rm{lca}}(a,b)\prec_T {\rm{lca}}(a,c)=_T{\rm{lca}}(b,c)=\rho_T$, the symbol $ab|c$ is used. Let $\mathscr{R}$ and $\mathscr{F}$ be two sets of triples. The pair $(\mathscr{R},\mathscr{F})$ is \emph{consistent} if there exists a tree $T$ containing all leaves occurring in the triples of $\mathscr{R}$ and $\mathscr{F}$ such that $T$ displays all triples of $\mathscr{R}$ but none of $\mathscr{F}$. For a digraph $(\Gamma,\sigma)$, a triple $ab|b'$ with $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E$ is either {\emph{informative}} or {\emph{forbidden}} according as $ab'\not\in E(\Gamma)$ or $ab'\in E(\Gamma)$. The set $\mathscr{R}(\Gamma)$ denotes the set of all informative triples of $\Gamma$, and the set of forbidden triples of $\Gamma$ is $\mathscr{F}(\Gamma)$. 
+For any three pairwise distinct vertices $a,b,c$, the associated (rooted) \emph{triple} is a rooted tree $T$ on three leaves $a,b,c$ and two inner nodes. In the case, ${\rm{lca}}(a,b)\prec_T {\rm{lca}}(a,c)=_T{\rm{lca}}(b,c)=\rho_T$, the symbol $ab|c$ is used. 
+\OLD{Let $\mathscr{R}$ and $\mathscr{F}$ be two sets of triples. The pair $(\mathscr{R},\mathscr{F})$ is \emph{consistent} if there exists a tree $T$ containing all leaves occurring in the triples of $\mathscr{R}$ and $\mathscr{F}$ such that $T$ displays all triples of $\mathscr{R}$ but none of $\mathscr{F}$. For a digraph $(\Gamma,\sigma)$, a triple $ab|b'$ with $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E$ is either {\emph{informative}} or {\emph{forbidden}} according as $ab'\not\in E(\Gamma)$ or $ab'\in E(\Gamma)$. The set $\mathscr{R}(\Gamma)$ denotes the set of all informative triples of $\Gamma$, and the set of forbidden triples of $\Gamma$ is $\mathscr{F}(\Gamma)$.}
+
+\mh{
+\begin{definition}
+Let $(G,\sigma)$ be a vertex-colored digraph. Then the set of
+  \emph{informative triples} is
+  \begin{align*}
+    \mathscr{R}(G,\sigma) \coloneqq \big\{&    ab|b' \colon
+    \sigma(a)\neq\sigma(b)=\sigma(b'),\,    ab\in E(G), \text{ and }
+    ab'\notin E(G) \big\},
+    \intertext{and the set of \emph{forbidden triples} is}
+    \mathscr{F}(G,\sigma) \coloneqq \big\{
+    &ab|b' \colon
+    \sigma(a)\neq\sigma(b)=\sigma(b'),\,
+    b\ne b',\, \text{ and }
+    ab,ab'\in E(G) \big\}.
+  \end{align*}
+\end{definition}
+} 
 
 \subsection{Best Match Graphs}
 Geiss et al.~\cite{Geiss:19a} \OLD{were the first to introduce}\mh{introduced} the concept of best match graph associated to a rooted tree $(T,\sigma)$. 
@@ -206,7 +225,22 @@ vertex set $L$ where the edges are the ordered pairs $xy$ with $x\rightarrow y$ 
 It is a properly colored digraph with vertices colored as the leaves of $T$ \TODO{latter to handwavy, to be made more precise}.
 \mh{A colored digraph $(\Gamma, \sigma)$ is a \emph{BMG}, whenever there is a tree $(T,\sigma)$ such that 
     $(\Gamma, \sigma) = \mathcal{G}(T,\sigma)$. In this case, $(T,\sigma)$ explains $(\Gamma, \sigma)$. }
-\OLD{ A colored digraph $\Gamma$ is a \emph{BMG} if it is color-invariantly isomorphic to a BMG associated to a leaf colored rooted tree $(T,\sigma)$. When this occurs then $(T,\sigma)$ is said to explain $(\Gamma,\sigma)$. A best match graph with $n$ colors is also known as n-BMG.} Moreover, from~\cite[Proposition~2.3]{korchmaros2021quasi}, $(\Gamma,\sigma)$ is a BMG if and only if it is color-sink free and $(\mathscr{R}(\Gamma),\mathscr{F}(\Gamma))$ is a consistent pair. 
+\OLD{ A colored digraph $\Gamma$ is a \emph{BMG} if it is color-invariantly isomorphic to a BMG associated to a leaf colored rooted tree $(T,\sigma)$. When this occurs then $(T,\sigma)$ is said to explain $(\Gamma,\sigma)$. A best match graph with $n$ colors is also known as n-BMG.} 
+
+
+\OLD{
+Moreover, from~\cite[Proposition~2.3]{korchmaros2021quasi} \TODO{bad style ;) - it was not shown there }, $(\Gamma,\sigma)$ is a BMG if and only if it is color-sink free and $(\mathscr{R}(\Gamma),\mathscr{F}(\Gamma))$ is a consistent pair. }
+
+\mh{
+\begin{proposition}[\cite{Schaller:21b}, Lemma~3.4 and Thm.~3.5]
+  \label{prop:BMG-triple-charac}
+  A properly colored graph $(G,\sigma)$ is a BMG if and only if (i) it is
+  color-sink-free and (ii) $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$
+  is consistent.  In this case, every tree $(T,\sigma)$ with leaf set
+  $V(G)$ that agrees with $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$
+  explains $(G,\sigma)$.
+\end{proposition}
+}
 
 Let $W=\{x_1,x_2,y_1,y_2\}$ be a set of four vertices colored by a color map $\sigma$ such that $\sigma(x_1)=\sigma(x_2),\sigma(y_1)=\sigma(y_2),$ and $\sigma(x_1)\neq \sigma(y_1)$. A properly 2-colored digraph $G=(W,F)$ is a \emph{F1-graph} if \TODO{here picture might be helpful - can copy ot from the BMG paper}$x_1y_1,y_2x_2,y_1x_2 \in F$ and $x_1 y_2,y_2x_1 \notin F$; when $x_1y_1,y_1x_2,x_2y_2 \in F$ and $x_1y_2 \notin F$, $G$ is a \emph{F2-graph}. A 2-colored digraph containing either an induced F1- or F2-subgraph cannot be a 2-BMG~\cite[Lemma 4.2]{schaller2021complexity}. On the other hand, 2-BMGs must be \emph{bi-transitive}, which requires that for all vertices $x_1, x_2, y_1, y_2$ with directed edges $x_1y_1, y_1x_2, x_2y_2$, $x_1y_2$ is also a directed edge~\cite{Korchmaros:21a}.
 
@@ -329,6 +363,37 @@ $(\Gamma,\sigma)$ satisfies the $(j,i)$-DT.}
 
 
 
+\begin{lemma}\label{lem:sufficient_condition}
+\mh{If a 3-colored digraph $(\Gamma,\sigma)$ satisfies $(i,j)$-DT for some 
+distinct $i,j\in S$, then $(\Gamma,\sigma)$ is a 3-BMG.}
+\end{lemma}
+\begin{proof}
+
+
+
+
+
+We begin by showing that $\Gamma$ is color-sink free. If a vertex $x\in V$ is red then it has an out-neighbour in $\partial_{r}(\Gamma)$. Since $\partial_{r}(\Gamma)$ is a 2-BMG by hypothesis, this yields that $x$ is not a sink of $\partial_{r}(\Gamma)$ and hence neither of $\Gamma$. For a blue vertex $x$, the hypothesis that $\partial_b(\Gamma)$ is a 2-BMG yields that it is sink free, and hence some red or yellow vertex is an out-neighbor of $x$ in $\Gamma$. For a yellow vertex $x$, the last argument still applies showing that some red or blue vertex is an out-neighbor of $x$ in $\Gamma$. Thus, $\Gamma$ is sink free.
+
+Since $\partial_{r}(\Gamma)$ is supposed to be a 2-BMG, $T_r$ is a tree explaining it, and its leaves are red or green colored as in Definition~\ref{def:delta_operator}. By~\cite[Proposition~2.3]{korchmaros2021quasi}, to prove that $\Gamma$ is a 3-BMG is enough to show that $(T_r,\sigma)$ displays all informative but none of the forbidden triples of $(\Gamma,\sigma)$, so that the pair $(\mathscr{R}(\Gamma),\mathscr{F}(\Gamma))$ is consistent.
+
+Let $ab|b'$be a triple of $\Gamma$ such that $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E(\Gamma)$. We have to prove that $(T_r,\sigma)$ displays $ab|b'$ if $ab'\notin E(\Gamma)$ ($ abb'$ is informative) and does not display $ab|b'$otherwise ($ab|b'$is forbidden). Suppose that either $a$ or $b$ is a red vertex. Then $ab|b'\in \mathscr{R}(\partial_{r}(\Gamma))$ if $ab|b'$is informative, and $ab|b'\in \mathscr{F}(\partial_{r}(\Gamma))$ if $ab|b'$is forbidden, as $\partial_{r}$ preserves all edges headed or tailed on a red vertex and $\sigma_r(a)\ne \sigma_r(b)=\sigma_r(b')$. Hence, in the former case $ab|b'$ is displayed in $(T_r,\sigma_r)$ and the latter case $ab|b'$is not displayed in $(T_r,\sigma_r)$. This follows from~\cite[Proposition~2.3]{korchmaros2021quasi} since $\partial_{r}(\Gamma)$ is a 2-BMG. Assume neither $a$ nor $b$ is a red vertex; therefore, one between $a$ and $b$ is blue colored, and the previous argument shows that $ab|b'$ is displayed in $(T_b,\sigma_b)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_b,\sigma_b)$ if $ab|b'$is forbidden in $\Gamma$. Condition $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$ ensures that $T_r$ and $T_b$ have the same uncolored tree. Hence, $ab|b'$ is displayed in $(T_r,\sigma)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_r,\sigma)$ if $ab|b'$is forbidden.
+\end{proof}
+
+The 3-BMG condition only requires that two of the possible three color derivative graphs are 2-BMGs, assuming that they have the same uncolored explaining tree. This condition cannot be dropped as shown in \OLD{Example~\ref{ex:2BMGcolor-derivative_no3BMG}.}\mh{Fig.\ \ref{fig:different_trees}.}
+ However, such a condition guaranties that also the yellow-color derivative of $\Gamma$ is a 3-BMG, as proven in the following proposition. 
+
+\begin{proposition}\label{prop:yellow-derv}
+Let $(\Gamma,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(\Gamma)$ and $\partial_b(\Gamma)$ are 2-BMGs, and $\partial_b(\Gamma)=\Delta_{rb}(\partial_r(\Gamma))$, then $\partial_{y}(\Gamma)$ is a 2-BMG.
+\end{proposition}
+\begin{proof}
+Denote by $\sigma_y$ the color map that preserves the color of the vertices in $Y$, while it colors in orange all other vertices.
+The arguments in the proof of Theorem~\ref{thm:sufficient_condition} yield $(\partial_{y}(\Gamma),\sigma_y)$ being sink-free. 
+
+By~\cite[Proposition~2.3]{korchmaros2021quasi}, the yellow derivative $\partial_{y}(\Gamma)$ is a 2-BMG whenever $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(\Gamma)$ and does not display any forbidden triple of $\partial_{y}(\Gamma)$. Let $ab|b'$be a triple of $\partial_{y}(\Gamma)$ such that $\sigma_y(a)\ne \sigma_y(b)=\sigma_y(b')$ and $ab\in E(\partial_{y}(\Gamma))$. Suppose that either $\sigma(a)$ or $\sigma(b)$ is a red, then $ab\in E(\partial_{r}(\Gamma))$ up to changing colors (from yellow and orange to red and green); hence, $ab|b'$is a triple of $\partial_{r}(\Gamma)$. Moreover $ab|b'$is informative (forbidden) in $\partial_{r}(\Gamma)$ if $ab|b'$is informative (forbidden) in $\partial_{y}(\Gamma)$, as the red-color derivative preserves all the neighbors in $\Gamma$ of a red vertex. Since $\partial_{r}(\Gamma)$ is supposed to be a 2-BMG, if $ab|b'$is informative in $\partial_{y}(\Gamma)$ then $ab|b'$ is displayed in $(T_r,\sigma_r)$ and then in $(T_r,\sigma_y)$. We also have that if $ab|b'$is forbidden in $\partial_{y}(\Gamma)$ then $ab|b'$is not displayed in $(T_r,\sigma_r)$ and then not in $(T_r,\sigma_y)$.
+
+Assume that neither $\sigma(a)$ nor $\sigma(b)$ is a red, therefore one of them is of blue color in $\Gamma$, and then $ab\in E(\partial_{b}(\Gamma))$ up to changing colors (from yellow and orange to blue and pink); hence, $ab|b'$is a triple of $\partial_{b}(\Gamma)$. Using the previous argument, $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(\Gamma)$ and does not display any forbidden triple of $\partial_{y}(\Gamma)$ where at least one of the vertices is of blue color.
+\end{proof}
 
 
 
@@ -579,7 +644,7 @@ but they may have different edge sets. }
 
 \begin{remark}
 \label{obs:delta_operator}
-$T_r$ and $T_b$ have the same uncolored tree if and only if $\Delta_{rb}(\partial_r(\Gamma))=\partial_b(\Gamma)$. In this case, the following diagram commutes.
+$T_r$ and $T_b$ have the same uncolored \TODO{least-resolved ??? } tree if and only if $\Delta_{rb}(\partial_r(\Gamma))=\partial_b(\Gamma)$. In this case, the following diagram commutes.
 \TODO{should be adjusted to new def, but possibly becomes trivial, } % since former $\Delta_{rb}(\partial_r(\Gamma))$ is (\Gamma_)}
 \begin{figure}[ht]
   \centering
@@ -599,7 +664,7 @@ $T_r$ and $T_b$ have the same uncolored tree if and only if $\Delta_{rb}(\partia
 \label{sec:3-BMG condition}
 In this section, we will show how color operators may be used to give a sufficient condition for a 3-colored digraph to be a 3-BMG.
 
-\begin{theorem}\label{thm:sufficient_condition}
+\begin{theorem}\label{thm:sufficient_condition-old}
 \mh{Let $(\Gamma,\sigma)$ be a 3-colored digraph. Suppose that, 
 for some distinct colors $i,j\in S$, $(G_i,\sigma_i)$ and $(G_j,\sigma_j)$
 are BMGs and  that $(G_i,\sigma_i)$ is explained by $(T,\sigma_i)$.
