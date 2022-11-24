@@ -124,39 +124,28 @@ The paper is organized as follows. In Section~\ref{sec:background}, we fix our n
 \label{sec:background}
 \subsection{Vertex-colored digraphs}
 
-\mh{
+
 We consider \emph{directed graphs} $G=(V,E)$ with vertex set $V(G)\coloneqq V$ and edge set $E(G)\coloneqq E$
 where $E\subseteq (V\times V)\setminus \{(x,x)\mid x\in V\}$. Hence, by definition, $G$ does not contain 
 loops or multiple edges. We denote edges $e=(x,y)\in E$ simply by $xy$. For $xy\in E$, vertex $x$ is the \emph{tail} of $e$
-and $y$ the \emph{head} of $e$. We call an edge $xy$ \emph{symmetric} if $yx\in E$. }
-\OLD{
-digraphs (directed graphs) are without loops and multiple edges. For a digraph $G$ with vertex set $G(V)$ and edge set $G(E)$, the notation $G=G(V,E)$ is also used. For $x,y\in V$,
-the edge with tail $x$ and head $y$ is denoted by $xy$. If $xy,yx\in E$ then $xy$ (and $yx)$ is a {\emph{symmetric edge}}.
-}
+and $y$ the \emph{head} of $e$. We call an edge $xy$ \emph{symmetric} if $yx\in E$. 
 
 For a vertex $x\in V$, the out-neighbors and the in-neighbors of $x$ in $G$
 are those vertices $z\in V$ for which $xz\in E$ and $zx\in E$, respectively. The
 out-neighborhood of $x$ is denoted by $N_G(x)$, or 
-\mh{simply by  $N(x)$ if there is no risk of confusion.}
-\OLD{briefly by $N(x)$ when
-this clearly refers to $G$.} A digraph $G$ is called sink-free if each
+simply by $N(x)$ if there is no risk of confusion. A digraph $G$ is called sink-free if each
 of its vertices has at least one out-neighbor.
 
-\mh{
 A \emph{directed path} from $x_0$ to $x_m$ in $G = (V,E)$ is a sequence of 
 pairwise distinct vertices $x_0\rightarrow x_1 \rightarrow \cdots\rightarrow x_m
 \rightarrow x_{m+1}$ such that $x_ix_{i+1}\in E$ for every
 $0\le i \le m$. 
-We call a sequence $x_0\rightarrow x_1 \rightarrow \cdots\rightarrow x_m\rightarrow  x_0$, $m\geq 2$
-of vertices a directed cycle if  $x_0\rightarrow x_1 \rightarrow \cdots\rightarrow x_m$
+We call a sequence $x_0\rightarrow x_1 \rightarrow \cdots\rightarrow x_m\rightarrow  x_0$, $m\geq 1$
+of vertices a directed cycle if $x_0\rightarrow x_1 \rightarrow \cdots\rightarrow x_m$
 is a directed path and $x_mx_0\in E$
 The \emph{length} of a directed path or cycle is the number of its edges.
-}
 
-\TODO{MH: is $x\rightarrow y \rightarrow x$ to be considered as cycle? if so put 
-$m\geq 1$ above instead of $m\geq 2$}
-
-\OLD{\TODO{MH: cant see that this is ever used, so for now I made it shorter:}
+\OLD{\TODO{MH: cant see that this is ever used, so for now I made it shorter \ak{yes, we can ignore it}:}
 A \emph{directed walk} from $x$ to $y$ in $G$ is a sequence of \mh{(not necessarily
 distinct)} vertices
 \OLD{$x=$} $x_0\rightarrow x_1 \rightarrow x_2 \rightarrow \cdots\rightarrow x_m
@@ -168,30 +157,24 @@ A directed trail in which all vertices but the first and last are distinct is a
 \emph{directed cycle}. 
 }
 
-Let $S$ be a finite set \mh{of colors}. \OLD{of size $n$ whose elements are called colors.} \OLD{If a}
-\mh{A} digraph $G=(V,E)$ is colored by the colors in $S$, \OLD{then the} 
-\mh{if there is a} surjective \mh{map}\OLD{color
-function} $\sigma: V\to S$ \mh{where 
+Let $S$ be a finite set of colors. A digraph $G=(V,E)$ is colored by the colors in $S$,
+if there is a surjective map $\sigma: V\to S$ where 
 $\sigma(x)$ is called the \emph{color} of $x$. We use $(G,\sigma)$ to specify
 that $G$ is equipped with such a map $\sigma$ and often say that $G$ 
 is an $|S|$-colored graphs to specify the number of colors used in $G$. 
 A colored digraph $(G, \sigma)$ 
-is \emph{properly colored} or, equivelently, $\sigma$ is a \emph{proper coloring}
-of $G$, if $\sigma(x)\neq \sigma(y)$ for all $xy\in E$. }
+is \emph{properly colored} or, equivalently, $\sigma$ is a \emph{proper coloring}
+of $G$, if $\sigma(x)\neq \sigma(y)$ for all $xy\in E$. 
 
 
-\OLD{If the neighborhood of any vertex contains
-vertices for all colors, $G$ is \emph{color-sink free}. 
-}
-
-\mh{For every color $s\in S\setminus \{\sigma(x)\}$
-we write $N(x,s)$ for the  sets of out-neighbors 
-of $x$ with color $s$, respectively.  We say that
+For every color $s\in S\setminus \{\sigma(x)\}$
+we write $N(x,s)$ for the sets of out-neighbors 
+of $x$ with color $s$, respectively. We say that
 $(G,\sigma)$ is \emph{color-sink-free} if $N(x,s)\ne\emptyset$ for all
 $x\in V(G)$ and all $s\in \sigma(V)\setminus\{\sigma(x)\}$.
-}
 
 
+\TODO{AK:We should recheck this last paragraph later}
 In this paper, we mostly concern with 3-colored digraphs, and we assume that the vertex colors to be red, blue and yellow. Therefore, the vertex set is partitioned in three \emph{color classes} as $V=R\,\dot{\cup}\, B\,\dot{\cup}\, Y$; we name such classes $R,B$ and $Y$ when they contain red, blue and yellow vertices, respectively. For a red vertex $x$, its out-neighbourhood $N(x)$ splits into two colored out-neighbourhoods, namely of blue and yellow vertices, denoted by $N^{B}(x)$ and $N^{Y}(x)$. 
 
 \subsection{Rooted trees and triples} \TODO{MH: needs some clean-up later - I can do}
