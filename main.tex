@@ -179,8 +179,17 @@ A colored digraph $(G, \sigma)$
 is \emph{properly colored} or, equivelently, $\sigma$ is a \emph{proper coloring}
 of $G$, if $\sigma(x)\neq \sigma(y)$ for all $xy\in E$. }
 
-If the neighborhood of any vertex contains
+
+\OLD{If the neighborhood of any vertex contains
 vertices for all colors, $G$ is \emph{color-sink free}. 
+}
+
+\mh{For every color $s\in S\setminus \{\sigma(x)\}$
+we write $N(x,s)$ for the  sets of out-neighbors 
+of $x$ with color $s$, respectively.  We say that
+$(G,\sigma)$ is \emph{color-sink-free} if $N(x,s)\ne\emptyset$ for all
+$x\in V(G)$ and all $s\in \sigma(V)\setminus\{\sigma(x)\}$.
+}
 
 
 In this paper, we mostly concern with 3-colored digraphs, and we assume that the vertex colors to be red, blue and yellow. Therefore, the vertex set is partitioned in three \emph{color classes} as $V=R\,\dot{\cup}\, B\,\dot{\cup}\, Y$; we name such classes $R,B$ and $Y$ when they contain red, blue and yellow vertices, respectively. For a red vertex $x$, its out-neighbourhood $N(x)$ splits into two colored out-neighbourhoods, namely of blue and yellow vertices, denoted by $N^{B}(x)$ and $N^{Y}(x)$. 
@@ -369,36 +378,51 @@ distinct $i,j\in S$, then $(G,\sigma)$ is a 3-BMG.}
 \end{lemma}
 \begin{proof}
 \mh{
-Let  3-colored digraph $(G,\sigma)$ satisfies $(i,j)$-DT for some 
-distinct $i,j\in S$. By Prop.\ \ref{prop:BMG-triple-charac}, we must show that
-$(G,\sigma)$ is
-  color-sink-free and that $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$
-  is consistent in order to verify that $(G,\sigma)$ is a 3-BMG.
+Let 3-colored digraph $(G,\sigma)$ satisfies $(i,j)$-DT for some distinct
+$i,j\in S$. By Prop.\ \ref{prop:BMG-triple-charac}, we must show that
+$(G,\sigma)$ is color-sink-free and that
+$(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$ is consistent in order to verify
+that $(G,\sigma)$ is a 3-BMG.
+  
+We show first that $(G,\sigma)$ is color-sink free.  Assume, for contradiction, that 
+$G$ is not  color-sink free. Hence, there is a vertex $x$ in $G$ does not have 
+out-neighbors in each color different from $\sigma(x)$.
+
+
+
+
+To this end, let $x\in V(G)$
+be chosen arbitrarily.
+Suppose first that $\sigma(x)=i$. The fact that
+$(G_{|i},\sigma_{|i})$ is a 2-BMG together with Prop.\
+\ref{prop:BMG-triple-charac} implies that $(G_{|i},\sigma_{|i})$ is
+color-sink-free. Hence, there is an out-neighbor $y$ of $x$ in $G_{|i}$ such
+that $\sigma_{|i}(y)\neq i$ and so, $\sigma(y)\in S\setminus \{i\}$.
+By similar arguments applied on $(G_{|j},\sigma_{|j})$, 
+there is an out-neighbor $y'$ of $x$ in $G_{|j}$ such
+that $\sigma_{|j}(y)\neq j$ and so, $\sigma(y')\in S\setminus \{j\}$.
+\TODO{cases $y=y'$ and $\sigma(y)=\sigma(y')\neq i,j$}
+
+
 }
+
+
+
+
 \TODO{.. in progress ... }
 
-We begin by showing that $(G,\sigma)$ is color-sink free. If a vertex $x\in V$ is red then it has an out-neighbour in $\partial_{r}(G)$. Since $\partial_{r}(G)$ is a 2-BMG by hypothesis, this yields that $x$ is not a sink of $\partial_{r}(G)$ and hence neither of $G$. For a blue vertex $x$, the hypothesis that $\partial_b(G)$ is a 2-BMG yields that it is sink free, and hence some red or yellow vertex is an out-neighbor of $x$ in $G$. For a yellow vertex $x$, the last argument still applies showing that some red or blue vertex is an out-neighbor of $x$ in $G$. Thus, $G$ is sink free.
+Let $(G,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(G)$ and $\partial_b(G)$ are 2-BMGs, and $\partial_b(G)=\Delta_{rb}(\partial_r(G))$, then $G$ is a 3-BMG. \TODO{MH: to be a pea-picker, this results that does not hold
+for  $\partial_r(G)$ and $\partial_y(G)$ as you fixed the colors only to red and blue, but the colors should be picked arbitrarily... ;)  }
+
+
+We begin by showing that $(G,\sigma)$ is color-sink free. If a vertex $x\in V$ is red then it has an out-neighbour in $\partial_{r}(G)$. Since $\partial_{r}(G)$ is a 2-BMG by hypothesis, this yields that $x$ is not a sink of $\partial_{r}(G)$ and hence neither of $G$
+\TODO{not sufficent as argument!! maybe some $x$ has some outneighbot of the unique other color in the $\partial_{r}(G)$ this does not imply that $x$ has outneighbors of 2 different colors in $G$!}
+. For a blue vertex $x$, the hypothesis that $\partial_b(G)$ is a 2-BMG yields that it is sink free, and hence some red or yellow vertex is an out-neighbor of $x$ in $G$. For a yellow vertex $x$, the last argument still applies showing that some red or blue vertex is an out-neighbor of $x$ in $G$. Thus, $G$ is sink free.
 
 Since $\partial_{r}(G)$ is supposed to be a 2-BMG, $T_r$ is a tree explaining it, and its leaves are red or green colored as in Definition~\ref{def:delta_operator}. By~\cite[Proposition~2.3]{korchmaros2021quasi}, to prove that $G$ is a 3-BMG is enough to show that $(T_r,\sigma)$ displays all informative but none of the forbidden triples of $(G,\sigma)$, so that the pair $(\mathscr{R}(G),\mathscr{F}(G))$ is consistent.
 
 Let $ab|b'$be a triple of $G$ such that $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E(G)$. We have to prove that $(T_r,\sigma)$ displays $ab|b'$ if $ab'\notin E(G)$ ($ abb'$ is informative) and does not display $ab|b'$otherwise ($ab|b'$is forbidden). Suppose that either $a$ or $b$ is a red vertex. Then $ab|b'\in \mathscr{R}(\partial_{r}(G))$ if $ab|b'$is informative, and $ab|b'\in \mathscr{F}(\partial_{r}(G))$ if $ab|b'$is forbidden, as $\partial_{r}$ preserves all edges headed or tailed on a red vertex and $\sigma_r(a)\ne \sigma_r(b)=\sigma_r(b')$. Hence, in the former case $ab|b'$ is displayed in $(T_r,\sigma_r)$ and the latter case $ab|b'$is not displayed in $(T_r,\sigma_r)$. This follows from~\cite[Proposition~2.3]{korchmaros2021quasi} since $\partial_{r}(G)$ is a 2-BMG. Assume neither $a$ nor $b$ is a red vertex; therefore, one between $a$ and $b$ is blue colored, and the previous argument shows that $ab|b'$ is displayed in $(T_b,\sigma_b)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_b,\sigma_b)$ if $ab|b'$is forbidden in $G$. Condition $\partial_b(G)=\Delta_{rb}(\partial_r(G))$ ensures that $T_r$ and $T_b$ have the same uncolored tree. Hence, $ab|b'$ is displayed in $(T_r,\sigma)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_r,\sigma)$ if $ab|b'$is forbidden.
 \end{proof}
-
-The 3-BMG condition only requires that two of the possible three color derivative graphs are 2-BMGs, assuming that they have the same uncolored explaining tree. This condition cannot be dropped as shown in \OLD{Example~\ref{ex:2BMGcolor-derivative_no3BMG}.}\mh{Fig.\ \ref{fig:different_trees}.}
- However, such a condition guaranties that also the yellow-color derivative of $G$ is a 3-BMG, as proven in the following proposition. 
-
-\begin{proposition}\label{prop:yellow-derv}
-Let $(G,\sigma)$ be a 3-colored digraph with colors red, blue, yellow, and color sets $R,B,Y$ respectively. If $\partial_r(G)$ and $\partial_b(G)$ are 2-BMGs, and $\partial_b(G)=\Delta_{rb}(\partial_r(G))$, then $\partial_{y}(G)$ is a 2-BMG.
-\end{proposition}
-\begin{proof}
-Denote by $\sigma_y$ the color map that preserves the color of the vertices in $Y$, while it colors in orange all other vertices.
-The arguments in the proof of Theorem~\ref{thm:sufficient_condition} yield $(\partial_{y}(G),\sigma_y)$ being sink-free. 
-
-By~\cite[Proposition~2.3]{korchmaros2021quasi}, the yellow derivative $\partial_{y}(G)$ is a 2-BMG whenever $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(G)$ and does not display any forbidden triple of $\partial_{y}(G)$. Let $ab|b'$be a triple of $\partial_{y}(G)$ such that $\sigma_y(a)\ne \sigma_y(b)=\sigma_y(b')$ and $ab\in E(\partial_{y}(G))$. Suppose that either $\sigma(a)$ or $\sigma(b)$ is a red, then $ab\in E(\partial_{r}(G))$ up to changing colors (from yellow and orange to red and green); hence, $ab|b'$is a triple of $\partial_{r}(G)$. Moreover $ab|b'$is informative (forbidden) in $\partial_{r}(G)$ if $ab|b'$is informative (forbidden) in $\partial_{y}(G)$, as the red-color derivative preserves all the neighbors in $G$ of a red vertex. Since $\partial_{r}(G)$ is supposed to be a 2-BMG, if $ab|b'$is informative in $\partial_{y}(G)$ then $ab|b'$ is displayed in $(T_r,\sigma_r)$ and then in $(T_r,\sigma_y)$. We also have that if $ab|b'$is forbidden in $\partial_{y}(G)$ then $ab|b'$is not displayed in $(T_r,\sigma_r)$ and then not in $(T_r,\sigma_y)$.
-
-Assume that neither $\sigma(a)$ nor $\sigma(b)$ is a red, therefore one of them is of blue color in $G$, and then $ab\in E(\partial_{b}(G))$ up to changing colors (from yellow and orange to blue and pink); hence, $ab|b'$is a triple of $\partial_{b}(G)$. Using the previous argument, $(T_r,\sigma_y)$ displays any informative triple of $\partial_{y}(G)$ and does not display any forbidden triple of $\partial_{y}(G)$ where at least one of the vertices is of blue color.
-\end{proof}
-
 
 
 
