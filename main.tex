@@ -276,11 +276,36 @@ just be $i$-color derivative $\partial_{|i}(\Gamma,\sigma)$ etc }
    \label{fig:color_derivatives}
 \end{figure}
 
+%\begin{example}
+%\label{ex:2BMGcolor-derivative_no3BMG}
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=16cm]{figures/different_trees.png}
+    \caption{
+    	\TODO{adjust to new def/notation + the same comments as in Fig \ref{fig:color_derivatives}}
+    	Red- and blue-derivative of $\Gamma$ which is not 3-BMG. The tree $T_r$ explains $\partial_r(\Gamma)$ while the tree $T_b$ explains $\partial_b(\Gamma)$.
+    	In Figure~\ref{fig:different_trees}, the uncolored trees associated to
+    	$T_r$ and $T_b$ are isomorphic but do not coincide. Let $t$ be the
+    	parent of $y'$ in $T_r$, and let $t'$ be the parent of $y$ in $T_b$. The
+    	bijection $\phi:V(T_r)\rightarrow V(T_b)$ defined by
+    	$\phi(t)=t',\phi(z')=z$ and $\phi(v)=v$ for any $v\in V(T_r)$, is a tree
+    	isomorphism. Furthermore, $\Gamma$ is not a 3-BMG, as it contains an
+    	induced F2-subgraph, namely $x\rightarrow y$ together with $y\rightarrow
+    	x'\leftarrow y'$. }
+    \label{fig:different_trees}
+\end{figure}
+
+
 \mh{
 Note that, in general, $i$-color derivatives $(\Gamma_{|i},\sigma_{|i})$ are not
 2-BMGs even though $(\Gamma,\sigma)$ is a 3-BMG, as illustrated in Fig.\
-\ref{fig:color_derivatives}. To characterize 3-BMGs at least two of the three
-color derivatives must satisfied a particular condition as provided in 
+\ref{fig:color_derivatives}. 
+Even, if $(\Gamma_{|i},\sigma_{|i})$ and $(\Gamma_{|j},\sigma_{|j})$ are 2-BMGs
+their trees that explain them may differ in their topology as shown 
+in Fig.\ \ref{fig:different_trees}.
+As we shall see later,  to characterize 3-BMGs we must ensure that 
+at least two of the three color derivatives must be 2-BMGs that are explained by 
+trees having the same topology (but possibly different leaf-colorings). 
 }
 \begin{definition}
 \mh{
@@ -293,6 +318,7 @@ if
 \end{enumerate}
 }
 \end{definition}
+
 
 \begin{fact}
 \mh{Let $(\Gamma,\sigma)$ be an $n$-colored digraph and $i,j\in S$ be distinct. 
@@ -374,7 +400,7 @@ We introduce two operators arising from the idea of merging two of the above col
 
 
 \begin{definition}
-\label{def:color-derivative}
+\label{def:color-derivative-old}
 \mh{Let $(\Gamma,\sigma)$ be an $n$-colored digraph where $\sigma\colon V(\Gamma) \to S$ 
 and $S = \{1,\dots,n\}$. Let $i\in S$ be some color. We define
 $\sigma_i\colon V(\Gamma) \to \{i,c\}$ where $c\notin S$
@@ -434,53 +460,53 @@ contains both $\Gamma$ and $\sigma$ and thus, must be adjusted below!
 
 
 
-\OLD{
-In the general case, \emph{s-color derivative} denotes $\partial_s(\Gamma)$ for a color $s$, and \emph{color derivatives} denotes $\partial_s(\Gamma)$ for any color $s$. An example of the color derivatives of $\Gamma$ is in Figure~\ref{fig:color_derivatives}. When $\partial_s(\Gamma)$ is a 2-BMG, $T_s$ denotes a tree explaining it.
-}
-In general, color derivatives of $\Gamma$ are not 2-BMGs even though $\Gamma$ is a 3-BMG, as \mh{illustrated in Fig.\ \ref{fig:color_derivatives}.}
-\OLD{it is shown in the following example.}
+%\OLD{
+%In the general case, \emph{s-color derivative} denotes $\partial_s(\Gamma)$ for a color $s$, and \emph{color derivatives} denotes $\partial_s(\Gamma)$ for any color $s$. An example of the color derivatives of $\Gamma$ is in Figure~\ref{fig:color_derivatives}. When $\partial_s(\Gamma)$ is a 2-BMG, $T_s$ denotes a tree explaining it.
+%}
+%In general, color derivatives of $\Gamma$ are not 2-BMGs even though $\Gamma$ is a 3-BMG, as \mh{illustrated in Fig.\ \ref{fig:color_derivatives}.}
+%\OLD{it is shown in the following example.}
 
-%\begin{example}
-%\label{ex:color-derNo2BMG_3BMG}
-\begin{figure}[ht]
-  \centering
-    \includegraphics[width=16cm]{figures/color_derivatives.png}
-    \caption{Color derivatives of a 3-BMG.
-    Digraph $\Gamma$ in Figure~\ref{fig:color_derivatives} is a 3-BMG
-    \TODO{why? could we add a tree to support the statement?}. However,
-    none of its color derivatives are 2-BMGs, as they all contain either an
-    induced F1-subgraph or an induced F2-subgraph. Indeed, $x'\rightarrow
-    y'\rightarrow x$ and $z\rightarrow x$ define an induced F1-subgraph for
-    $\partial_r(\Gamma)$; an induced F2-subgraph for $\partial_b(\Gamma)$ is
-    given by $y'\rightarrow x\rightarrow y\rightarrow z\rightarrow y'$; the
-    edges $x'\rightarrow z'\rightarrow y'$ and $z \rightarrow y'$ define an
-    induced F1-subgraph for $\partial_y(\Gamma)$.
-}
-      \label{fig:color_derivatives}
-\end{figure}
+%%\begin{example}
+%%\label{ex:color-derNo2BMG_3BMG}
+%\begin{figure}[ht]
+%  \centering
+%    \includegraphics[width=16cm]{figures/color_derivatives.png}
+%    \caption{Color derivatives of a 3-BMG.
+%    Digraph $\Gamma$ in Figure~\ref{fig:color_derivatives} is a 3-BMG
+%    \TODO{why? could we add a tree to support the statement?}. However,
+%    none of its color derivatives are 2-BMGs, as they all contain either an
+%    induced F1-subgraph or an induced F2-subgraph. Indeed, $x'\rightarrow
+%    y'\rightarrow x$ and $z\rightarrow x$ define an induced F1-subgraph for
+%    $\partial_r(\Gamma)$; an induced F2-subgraph for $\partial_b(\Gamma)$ is
+%    given by $y'\rightarrow x\rightarrow y\rightarrow z\rightarrow y'$; the
+%    edges $x'\rightarrow z'\rightarrow y'$ and $z \rightarrow y'$ define an
+%    induced F1-subgraph for $\partial_y(\Gamma)$.
+%}
+%      \label{fig:color_derivatives}
+%\end{figure}
 
 %\end{example}
 
-In case the color derivatives of a 3-colored digraph are 2-BMGs, they may not behave as excepted. For instance, the associated uncolored trees may not coincide, as 
-\mh{illustrated in Fig.\ \ref{fig:different_trees}.}
-\OLD{it is shown in the following example. }
+%In case the color derivatives of a 3-colored digraph are 2-BMGs, they may not behave as excepted. For instance, the associated uncolored trees may not coincide, as 
+%\mh{illustrated in Fig.\ \ref{fig:different_trees}.}
+%\OLD{it is shown in the following example. }
 
-%\begin{example}
-%\label{ex:2BMGcolor-derivative_no3BMG}
-\begin{figure}[ht]
-  \centering
-    \includegraphics[width=16cm]{figures/different_trees.png}
-    \caption{Red- and blue-derivative of $\Gamma$ which is not 3-BMG. The tree $T_r$ explains $\partial_r(\Gamma)$ while the tree $T_b$ explains $\partial_b(\Gamma)$.
-    	In Figure~\ref{fig:different_trees}, the uncolored trees associated to
-    	$T_r$ and $T_b$ are isomorphic but do not coincide. Let $t$ be the
-    	parent of $y'$ in $T_r$, and let $t'$ be the parent of $y$ in $T_b$. The
-    	bijection $\phi:V(T_r)\rightarrow V(T_b)$ defined by
-    	$\phi(t)=t',\phi(z')=z$ and $\phi(v)=v$ for any $v\in V(T_r)$, is a tree
-    	isomorphism. Furthermore, $\Gamma$ is not a 3-BMG, as it contains an
-    	induced F2-subgraph, namely $x\rightarrow y$ together with $y\rightarrow
-    	x'\leftarrow y'$. }
-    \label{fig:different_trees}
-\end{figure}
+%%\begin{example}
+%%\label{ex:2BMGcolor-derivative_no3BMG}
+%\begin{figure}[ht]
+%  \centering
+%    \includegraphics[width=16cm]{figures/different_trees.png}
+%    \caption{Red- and blue-derivative of $\Gamma$ which is not 3-BMG. The tree $T_r$ explains $\partial_r(\Gamma)$ while the tree $T_b$ explains $\partial_b(\Gamma)$.
+%    	In Figure~\ref{fig:different_trees}, the uncolored trees associated to
+%    	$T_r$ and $T_b$ are isomorphic but do not coincide. Let $t$ be the
+%    	parent of $y'$ in $T_r$, and let $t'$ be the parent of $y$ in $T_b$. The
+%    	bijection $\phi:V(T_r)\rightarrow V(T_b)$ defined by
+%    	$\phi(t)=t',\phi(z')=z$ and $\phi(v)=v$ for any $v\in V(T_r)$, is a tree
+%    	isomorphism. Furthermore, $\Gamma$ is not a 3-BMG, as it contains an
+%    	induced F2-subgraph, namely $x\rightarrow y$ together with $y\rightarrow
+%    	x'\leftarrow y'$. }
+%    \label{fig:different_trees}
+%\end{figure}
 
 %\end{example}
 
