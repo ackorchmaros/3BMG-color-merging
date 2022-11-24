@@ -368,17 +368,16 @@ $(G,\sigma)$ satisfies the $(j,i)$-DT.}
 distinct $i,j\in S$, then $(G,\sigma)$ is a 3-BMG.}
 \end{lemma}
 \begin{proof}
+\mh{
 Let  3-colored digraph $(G,\sigma)$ satisfies $(i,j)$-DT for some 
 distinct $i,j\in S$. By Prop.\ \ref{prop:BMG-triple-charac}, we must show that
 $(G,\sigma)$ is
   color-sink-free and that $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$
-  is consistent in order to verify that $(G,\sigma)$ is a .  In this case, every tree $(T,\sigma)$ with leaf set
-  $V(G)$ that agrees with
+  is consistent in order to verify that $(G,\sigma)$ is a 3-BMG.
+}
+\TODO{.. in progress ... }
 
-
-
-
-We begin by showing that $G$ is color-sink free. If a vertex $x\in V$ is red then it has an out-neighbour in $\partial_{r}(G)$. Since $\partial_{r}(G)$ is a 2-BMG by hypothesis, this yields that $x$ is not a sink of $\partial_{r}(G)$ and hence neither of $G$. For a blue vertex $x$, the hypothesis that $\partial_b(G)$ is a 2-BMG yields that it is sink free, and hence some red or yellow vertex is an out-neighbor of $x$ in $G$. For a yellow vertex $x$, the last argument still applies showing that some red or blue vertex is an out-neighbor of $x$ in $G$. Thus, $G$ is sink free.
+We begin by showing that $(G,\sigma)$ is color-sink free. If a vertex $x\in V$ is red then it has an out-neighbour in $\partial_{r}(G)$. Since $\partial_{r}(G)$ is a 2-BMG by hypothesis, this yields that $x$ is not a sink of $\partial_{r}(G)$ and hence neither of $G$. For a blue vertex $x$, the hypothesis that $\partial_b(G)$ is a 2-BMG yields that it is sink free, and hence some red or yellow vertex is an out-neighbor of $x$ in $G$. For a yellow vertex $x$, the last argument still applies showing that some red or blue vertex is an out-neighbor of $x$ in $G$. Thus, $G$ is sink free.
 
 Since $\partial_{r}(G)$ is supposed to be a 2-BMG, $T_r$ is a tree explaining it, and its leaves are red or green colored as in Definition~\ref{def:delta_operator}. By~\cite[Proposition~2.3]{korchmaros2021quasi}, to prove that $G$ is a 3-BMG is enough to show that $(T_r,\sigma)$ displays all informative but none of the forbidden triples of $(G,\sigma)$, so that the pair $(\mathscr{R}(G),\mathscr{F}(G))$ is consistent.
 
