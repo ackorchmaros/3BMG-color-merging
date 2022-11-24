@@ -125,7 +125,7 @@ The paper is organized as follows. In Section~\ref{sec:background}, we fix our n
 \subsection{Vertex-colored digraphs}
 
 
-We consider \emph{directed graphs} $G=(V,E)$ with vertex set $V(G)\coloneqq V$ and edge set $E(G)\coloneqq E$
+We consider \emph{directed graphs} \ak{, unless $G$ is specified as undirected,} $G=(V,E)$ with vertex set $V(G)\coloneqq V$ and edge set $E(G)\coloneqq E$
 where $E\subseteq (V\times V)\setminus \{(x,x)\mid x\in V\}$. Hence, by definition, $G$ does not contain 
 loops or multiple edges. We denote edges $e=(x,y)\in E$ simply by $xy$. For $xy\in E$, vertex $x$ is the \emph{tail} of $e$
 and $y$ the \emph{head} of $e$. We call an edge $xy$ \emph{symmetric} if $yx\in E$. 
@@ -178,7 +178,7 @@ $x\in V(G)$ and all $s\in \sigma(V)\setminus\{\sigma(x)\}$.
 In this paper, we mostly concern with 3-colored digraphs, and we assume that the vertex colors to be red, blue and yellow. Therefore, the vertex set is partitioned in three \emph{color classes} as $V=R\,\dot{\cup}\, B\,\dot{\cup}\, Y$; we name such classes $R,B$ and $Y$ when they contain red, blue and yellow vertices, respectively. For a red vertex $x$, its out-neighbourhood $N(x)$ splits into two colored out-neighbourhoods, namely of blue and yellow vertices, denoted by $N^{B}(x)$ and $N^{Y}(x)$. 
 
 \subsection{Rooted trees and triples} \TODO{MH: needs some clean-up later - I can do}
-Any acyclic undirected \TODO{undirected not clear, since mentioned above "only directed considered"} and connected graph is a tree. A tree $T$ is
+Any acyclic undirected \TODO{undirected not clear, since mentioned above "only directed considered"}\ak{kind of fixed it, see first line of the sec 2.1} and connected graph is a tree. A tree $T$ is
 \emph{rooted} whenever one of its vertices is named as root; in this case, we
 use the symbol $\rho_T$, or briefly $\rho$, to indicate such a vertex.  
 
@@ -187,9 +187,7 @@ In this paper, $L=L(T)$ is the leaf set of a tree $T$. The notation $(T,\sigma)$
 Let $T_1$ and $T_2$ be two rooted trees. A bijection $\phi:V(T_1) \rightarrow V(T_2)$ is a \emph{tree isomorphism} if it maps adjacent vertices of $T_1$ to adjacent vertices $T_2$ and  $\phi(\rho_{T_1})=\rho_{T_2}$.
 
 For any three pairwise distinct vertices $a,b,c$, the associated (rooted) \emph{triple} is a rooted tree $T$ on three leaves $a,b,c$ and two inner nodes. In the case, ${\rm{lca}}(a,b)\prec_T {\rm{lca}}(a,c)=_T{\rm{lca}}(b,c)=\rho_T$, the symbol $ab|c$ is used. 
-\OLD{Let $\mathscr{R}$ and $\mathscr{F}$ be two sets of triples. The pair $(\mathscr{R},\mathscr{F})$ is \emph{consistent} if there exists a tree $T$ containing all leaves occurring in the triples of $\mathscr{R}$ and $\mathscr{F}$ such that $T$ displays all triples of $\mathscr{R}$ but none of $\mathscr{F}$. For a digraph $(G,\sigma)$, a triple $ab|b'$ with $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E$ is either {\emph{informative}} or {\emph{forbidden}} according as $ab'\not\in E(G)$ or $ab'\in E(G)$. The set $\mathscr{R}(G)$ denotes the set of all informative triples of $G$, and the set of forbidden triples of $G$ is $\mathscr{F}(G)$.}
 
-\mh{
 \begin{definition}
 Let $(G,\sigma)$ be a vertex-colored digraph. Then the set of
   \emph{informative triples} is
@@ -205,7 +203,7 @@ Let $(G,\sigma)$ be a vertex-colored digraph. Then the set of
     ab,ab'\in E(G) \big\}.
   \end{align*}
 \end{definition}
-} 
+
 
 \subsection{Best Match Graphs}
 Geiss et al.~\cite{Geiss:19a} \OLD{were the first to introduce}\mh{introduced} the concept of best match graph associated to a rooted tree $(T,\sigma)$. 
