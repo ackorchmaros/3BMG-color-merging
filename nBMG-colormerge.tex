@@ -225,7 +225,7 @@ Let $(G,\sigma)$ be a vertex-colored digraph. Then the set of
 
 
 
-\begin{definition}
+\begin{definition} \TODO{below is a unified version of these two types defined here! **** }
 \label{def:color-derivative}
 	Let $(G,\sigma)$ be an $n$-colored digraph and $S'\subseteq S$. We
     define $\sigma_{|S'}\colon V(G) \to S'\cup \{c\}$ where $c\notin S$ by
@@ -286,10 +286,34 @@ and $(G_{|i},\sigma_{|i})$ are identical up to recoloring vertices with color $c
 in $(G^2_{|S'},\sigma^2_{|S'})$ by color $i$.
 	
 	
+	
+\begin{definition}
+	Let $(G,\sigma)$ be an $n$-colored digraph and $\Pi = \{S_1,\dots,S_k\}$, $k\geq 1$
+	be a partition of $S$. The $k$-colored graph $(G_{\Pi},\sigma_{\Pi})$ is defined as follows. 
+	
+	
+	Define $\sigma_{\Pi}\colon V(G) \to \{c_1,\dots,c_k\}$ by putting, for all $x\in V(G)$, 
+    \[\sigma_{\Pi}(x)=c_i \iff x\in S_i\in \Pi..\] 
+    
+    Define  $G_{\Pi}$ by putting
+	\begin{enumerate}
+    	\item $V(G_{\Pi}) \coloneqq V(G)$ and
+    
+    \item $xy\in E(G_{\Pi})$  presicely if $xy\in E(G)$ and 
+    	  $\sigma_{\Pi}(x)\neq \sigma_{\Pi}(y)$. 
+    	  
+    	  In other words,  $G_{\Pi}$ 
+    	  is obtained from $(G,\sigma)$ by removing all
+    	  edges between vertices $x$ and $y$ that are 
+    	  in a common class $S_i\in \Pi$. 
+\end{enumerate}
+\end{definition}	
+	
+	
 
 
 
-\TODO{MH:what are necassary/sufficient conditions on collections $\mathcal{S}$ of subsets $S'\subseteq S$
+\TODO{MH:what are necassary/sufficient conditions on $\Pi$ and $(G_{\Pi},\sigma_{\Pi})$
 such that we get $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$ for color-sink free $(G,\sigma)$
 ? as this lies at the heart of all the 3BMG proofs as well. }
 
