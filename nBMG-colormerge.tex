@@ -1,0 +1,314 @@
+\documentclass[final,3p,times]{elsarticle}
+\usepackage{amsmath, amssymb, amsfonts, amsfonts, amsthm,latexsym}
+\DeclareSymbolFont{yhlargesymbols}{OMX}{yhex}{m}{n}
+\DeclareMathAccent{\overarc}{\mathord}{yhlargesymbols}{"F3}
+\usepackage[mathscr]{euscript}
+\usepackage[noend]{algorithmic}
+\usepackage{comment}
+\usepackage{algorithm}
+\renewcommand{\algorithmiccomment}[1]{\hfill$\rhd$\textit{#1}}
+\usepackage{graphics}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage[usenames]{color}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem}
+\usepackage{import}
+\usepackage{comment}
+\usepackage{wrapfig}
+\usepackage{optidef}
+\usepackage{epsfig}
+\usepackage{tikz-cd}
+\usepackage{color}
+\DeclareMathOperator{\Tr}{Tr}
+% Plots
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[font=scriptsize,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{positioning,chains,fit,shapes,calc}
+\usepackage[all]{xy}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}%[section]
+\newtheorem{lemma}[theorem]{Lemma}%[section]
+\newtheorem{question}{Question}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{fact}{Observation}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{corollary}[theorem]{Corollary}%[section]
+\newtheorem{corollary*}{Corollary}%[section]
+\newtheorem{remark}[theorem]{Remark}%[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{observ}{Observation}
+
+\newcommand{\TODO}[1]{\begingroup\color{red}#1\endgroup}
+\def\TODOO#1{\marginpar{\tiny\raggedright\color{red}#1}}
+
+\newcommand{\ak}[1]{\begingroup\color{orange}#1\endgroup}
+\newcommand{\OLD}[1]{\begingroup\tiny\color{gray}#1\endgroup}
+\newcommand{\PFS}[1]{\begingroup\color{magenta}#1\endgroup}
+\newcommand{\mh}[1]{\begingroup\color{blue}#1\endgroup}
+
+%\journal{Discrete Applied Mathematics}
+%\journal{Journal of Combinatorial Theory, Series B}
+
+\DeclareMathOperator{\lca}{lca}
+
+\begin{document}
+
+\begin{frontmatter}
+  \title{How merging colors characterizes 3-BMGs}
+
+  \author[LEI]{Annachiara Korchmaros}
+  \ead{annachiara@bioinf.uni-leipzig.de}
+
+  \author[STOCK]{Marc Hellmuth}
+  \ead{marc.hellmuth@math.su.se}
+
+  \author[LEI,LEI-other,MIS,TBI,BOG,SFI]{Peter F. Stadler}
+  \ead{stadler@bioinf.uni-leipzig.de}
+
+\address[LEI]{Bioinformatics Group, Department of Computer Science \&
+  Interdisciplinary Center for Bioinformatics, Universit{\"a}t Leipzig,
+  H{\"a}rtelstra{\ss}e 16-18, D-04107 Leipzig, Germany}
+
+\address[STOCK]{Department of Mathematics, Faculty of Science,
+Stockholm University, SE-10691 Stockholm, Sweden}
+
+\address[LEI-other]{German Centre for Integrative Biodiversity Research
+  (iDiv) Halle-Jena-Leipzig, Competence Center for Scalable Data Services
+  and Solutions Dresden-Leipzig, Leipzig Research Center for Civilization
+  Diseases, and Centre for Biotechnology and Biomedicine at Leipzig
+  University at Universit{\"a}t Leipzig}
+
+\address[MIS]{Max Planck Institute for Mathematics in the Sciences,
+  Inselstra{\ss}e 22, D-04103 Leipzig, Germany}
+
+\address[TBI]{Institute for Theoretical Chemistry, University of Vienna,
+  W{\"a}hringerstrasse 17, A-1090 Wien, Austria}
+
+\address[BOG]{Facultad de Ciencias, Universidad National de Colombia, Sede
+  Bogot{\'a}, Colombia}
+
+\address[SFI]{Santa Fe Institute, 1399 Hyde Park Rd., Santa Fe NM 87501,
+  USA}
+
+
+\begin{abstract}
+  
+\end{abstract}
+
+
+\begin{keyword}
+ Colored directed graphs; rooted trees; phylogenetic
+  combinatorics; best matches
+\end{keyword}
+
+\end{frontmatter}
+
+\sloppy
+
+\section{Introduction}
+
+\section{Background}
+\label{sec:background}
+\subsection{Vertex-colored digraphs}
+
+
+We consider \emph{directed graphs} $G=(V,E)$ with vertex set $V(G)\coloneqq V$
+and edge set $E(G)\coloneqq E$ where $E\subseteq (V\times V)\setminus
+\{(x,x)\mid x\in V\}$. Hence, by definition, $G$ does not contain loops or
+multiple edges. We denote edges $e=(x,y)\in E$ simply by $xy$. 
+An edge $xy\in E$ is \emph{symmetric} if $yx\in E$. 
+
+For a vertex $x\in V$, the out-neighbors of $x$ in $G$
+are those vertices $z\in V$ for which $xz\in E$, respectively. The 
+out-neighborhood of $x$, i.e., the set of out-neighbors of $x$ is denoted by $N_G(x)$, or 
+simply by $N(x)$ if there is no risk of confusion. 
+A digraph $G$ is called sink-free if each of its vertices has at least one out-neighbor.
+
+Let $S$ be a finite set of colors. A digraph $G=(V,E)$ is colored by the colors
+in $S$, if there is a surjective map $\sigma: V\to S$ where $\sigma(x)$ is
+called the \emph{color} of $x$. We use $(G,\sigma)$ to specify that $G$ is
+equipped with such a map $\sigma$ and often say that $G$ is an $|S|$-colored
+graphs to specify the number of colors used in $G$. A colored digraph $(G,
+\sigma)$ is \emph{properly colored} or, equivalently, $\sigma$ is a \emph{proper
+coloring} of $G$, if $\sigma(x)\neq \sigma(y)$ for all $xy\in E$. 
+
+For every color $s\in S\setminus \{\sigma(x)\}$ we write $N(x,s)$ for the sets
+of out-neighbors of $x$ with color $s$, respectively. We say that $(G,\sigma)$
+is \emph{color-sink-free} if $N(x,s)\ne\emptyset$ for all $x\in V(G)$ and all
+$s\in \sigma(V)\setminus\{\sigma(x)\}$.
+
+
+\subsection{Rooted trees and triples, and leaf-colored trees} 
+We consider rooted trees $T$. The root of $T$ is a distinguished vertex
+$\rho_T\in V(T)$. For two vertices $x,y\in V(T)$, we write $y \preceq_{T} x$ if
+$x$ lies on the unique path from the root to $y$, in which case $x$ is called an
+\emph{ancestor} of $y$, and $y$ is called a \emph{descendant} of $x$. Note that
+edges $e=xy\in E(T)$ imply that $y\preceq_T x$. In the latter case, $y$ is a
+\emph{child} of $x$. Moreover, we say that $x$ and $y$ are \emph{comparable} if
+$y\preceq_{T} x$ or $x\preceq_{T} y$ holds and, otherwise, $x$ and $y$ are
+\emph{incomparable}. Note that $\preceq_{T}$ is a partial order with a unique
+maximal element $\rho$. The \emph{leaves} $L=L(T)\subseteq V(T)$ of $T$ are
+precisely the $\preceq_{T}$-minimal elements.
+
+From here on, we assume that the root $\rho_T$ as well as every non-leaf vertex
+of a tree have always at least two children. 
+
+For a set of leaves $A\subseteq L$, we write $\lca_T(A)$ for the the \emph{last
+common ancestor} of $A$, i.e., the unique $\preceq_T$-minimal vertex in $V(T)$
+such that $x\preceq \lca_T(A)$ for all $x\in A$. For simplicity, we write
+$\lca_T(x,y)$ instead of $\lca_T(\{x,y\})$. 
+
+A (rooted) triple is a binary rooted tree on three vertices.  We denote by
+$xy|z$ the rooted triple $t$ with leaf set $\{x,y,z\}$ and
+$\lca_t(x,y) \prec_T \lca_t (x,z) = \lca_t(y,z)$. A tree $T$ \emph{displays}
+$xy| z$ if $\lca_T(x,y) \prec_T \lca_T (x,z) = \lca_T(y,z)$.  
+
+
+Two rooted trees $T_1=(V_1,E_1)$ and $T_2=(V_2,E_2)$ are \emph{isomorphic}, if
+there is a bijection $\varphi:V(T_1) \rightarrow V(T_2)$ such that
+$\varphi(\rho_{T_1}) = \rho_{T_2}$ and, in addition, $xy\in E_1$ if and only if
+$\varphi(x)\varphi(y)\in E_2$. 
+
+
+We consider trees $(T,\sigma)$ that are equipped with a coloring if its leaves, 
+i.e., a surjective map $\sigma: L(T)\to S$.  
+
+
+\subsection{Best Match Graphs}
+
+Given a leaf-colored rooted tree $(T,\sigma)$, a leaf $y\in L(T)$ is a
+{\emph{best match of}} $x\in L(T)$, in symbols $x\rightarrow y$, if
+${\lca_T}(x,y)\preceq {\lca_T}(x,y')$ for all $y'\in L$ with
+$\sigma(y')=\sigma(y)$. The \emph{best match graph} (\emph{BMG})
+$\mathcal{G}(T,\sigma)$ associated to $(T,\sigma)$ is the digraph with vertex
+set $L$ where the edges are the ordered pairs $xy$ with $x\rightarrow y$ and
+$x\neq y$. A colored digraph $(G, \sigma)$ is a \emph{BMG}, whenever there is a
+tree $(T,\sigma)$ such that $(G, \sigma) = \mathcal{G}(T,\sigma)$. In this case,
+$(T,\sigma)$ \emph{explains} $(G, \sigma)$. 
+    
+
+
+\begin{definition}
+Let $(G,\sigma)$ be a vertex-colored digraph. Then the set of
+  \emph{informative triples} is
+  \begin{align*}
+    \mathscr{R}(G,\sigma) \coloneqq \big\{&    ab|b' \colon
+    \sigma(a)\neq\sigma(b)=\sigma(b'),\,    ab\in E(G), \text{ and }
+    ab'\notin E(G) \big\},
+    \intertext{and the set of \emph{forbidden triples} is}
+    \mathscr{F}(G,\sigma) \coloneqq \big\{
+    &ab|b' \colon
+    \sigma(a)\neq\sigma(b)=\sigma(b'),\,
+    b\ne b',\, \text{ and }
+    ab,ab'\in E(G) \big\}.
+  \end{align*}
+\end{definition}
+
+\begin{proposition}[\cite{Schaller:21b}, Prop.~3.4 and Thm.~3.5]
+  \label{prop:BMG-triple-charac}
+  A properly colored graph $(G,\sigma)$ is a BMG if and only if (i) it is
+  color-sink-free and (ii) $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$
+  is consistent. 
+  
+  In particular, a leaf-colored tree $(T , \sigma)$  explains $(G, \sigma )$ 
+  if and only if $(T , \sigma)$ agrees with $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$. 
+\end{proposition}
+
+\section{Color Merging}
+\label{sec:operators}
+
+
+
+\begin{definition}
+\label{def:color-derivative}
+	Let $(G,\sigma)$ be an $n$-colored digraph and $S'\subseteq \in S$. We
+    define $\sigma_{|S'}\colon V(G) \to S'\cup \{c\}$ where $c\notin S$ by
+    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in V(G).\] 
+    Hence, $\sigma_{|S'}$ keeps the colors of all vertices with
+    color $i\in S'$ while all other vertices obtain a common color $c$ that is
+    not contained in $S$. 
+    Moreover, we define a 2-coloring 
+    $\sigma^2_{|S'}\colon V(G) \to \{c',c\}$ where $c,c'\notin S$ by
+    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in V(G).\] 
+    In this case, all vertices in $S'$ obtain color $c'$ while all vertices with a color in $S\setminus S'$ 
+    obtain color $c$.\smallskip
+    
+    \noindent
+    We define the digraph $G_{|S'}$ by putting
+\begin{enumerate}
+    \item $V(G_{|S'}) \coloneqq V(G)$ and
+    
+    \item $xy\in E(G_{|S'})$  presicely if $xy\in E(G)$ and 
+    	  $\sigma(x)\in S'$ or  $\sigma(y)\in S'$.
+    	  
+    	  In other words, the edges of $G_{|S'}$ are precisely those edges 
+    	  of $G$ that are incident to a vertex with color $i\in S'$.
+\end{enumerate}
+%
+	The \emph{$S'$-color derivative} $\partial_{|S'}(G,\sigma)$ is the
+	$(|S'|+1)$-colored digraph $(G_{|S'},\sigma_{|S'})$. 
+	The \emph{$(S',2)$-color derivative} $\partial^2_{|S'}(G,\sigma)$ is the
+	$2$-colored digraph $(G_{|S'},\sigma^2_{|S'})$. \smallskip
+	
+	\noindent
+	In case that $S' = \{i\}$, we replace, for simplicity, ``$S'$'' by ``$i$'',
+	in which case, the $i$-color derivative $\partial_{|i}(G,\sigma)$ is
+	the the 2-colored digraph $(G_{|i},\sigma_{|i})$.
+	Note, for $S' = \{i\}$, the colorings $(G_{|S'},\sigma^2_{|S'})$
+	and $(G_{|i},\sigma_{|i})$ are identical up to recoloring vertices with color $c'$
+	in $(G_{|S'},\sigma^2_{|S'})$ by color $i$ and we also write 
+	 $(G_{|i},\sigma^2_{|i})$ instead.
+	
+	
+
+%\TODO{\small MH: if we see that we dont need this general def, we may replace it at the end 
+%just be $i$-color derivative $\partial_{|i}(G,\sigma)$ etc }
+\end{definition} 
+
+
+
+\TODO{MH:what are necassary/sufficient conditions on collections $\mathcal{S}$ of subsets $S'\subseteq S$
+such that we get $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$ for color-sink free $(G,\sigma)$
+? as this lies at the heart of all the 3BMG proofs as well. }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -184,7 +184,10 @@ use the symbol $\rho_T$, or briefly $\rho$, to indicate such a vertex.
 
 In this paper, $L=L(T)$ is the leaf set of a tree $T$. The notation $(T,\sigma)$ is customary when the leaves of $T$ are colored by the color map $\sigma$. There is a partial ordering $\preceq_T$ on $L(T)$ such that $x\preceq_T y$ holds if $y$ lies on the path from $x$ to $\rho_T$. For any two leaves $x,y\in L(T)$, their \emph{least common ancestor} ${\rm{lca_T}}(x,y)$ is the unique $\preceq_T$-smallest vertex that is an ancestor of both of them.
 
-Let $T_1$ and $T_2$ be two rooted trees. A bijection $\phi:V(T_1) \rightarrow V(T_2)$ is a \emph{tree isomorphism} if it maps adjacent vertices of $T_1$ to adjacent vertices $T_2$ and  $\phi(\rho_{T_1})=\rho_{T_2}$.
+Let $T_1$ and $T_2$ be two rooted trees. A bijection $\phi:V(T_1) \rightarrow V(T_2)$ is a \emph{tree isomorphism}
+ if it maps adjacent vertices of $T_1$ to adjacent vertices $T_2$ and  $\phi(\rho_{T_1})=\rho_{T_2}$.
+ \TODO{this defines only spanning-subgraph isomorphism -- also adjacent vertices in $T_2$ must be mapped
+ to adjacent vertices in $T_1$!}
 
 For any three pairwise distinct vertices $a,b,c$, the associated (rooted) \emph{triple} is a rooted tree $T$ on three leaves $a,b,c$ and two inner nodes. In the case, ${\rm{lca}}(a,b)\prec_T {\rm{lca}}(a,c)=_T{\rm{lca}}(b,c)=\rho_T$, the symbol $ab|c$ is used. 
 
@@ -222,13 +225,14 @@ It is a properly colored digraph with vertices colored as the leaves of $T$ \TOD
 Moreover, from~\cite[Proposition~2.3]{korchmaros2021quasi} \TODO{bad style ;) - it was not shown there }, $(G,\sigma)$ is a BMG if and only if it is color-sink free and $(\mathscr{R}(G),\mathscr{F}(G))$ is a consistent pair. }
 
 \mh{
-\begin{proposition}[\cite{Schaller:21b}, Lemma~3.4 and Thm.~3.5]
+\begin{proposition}[\cite{Schaller:21b}, Prop.~3.4 and Thm.~3.5]
   \label{prop:BMG-triple-charac}
   A properly colored graph $(G,\sigma)$ is a BMG if and only if (i) it is
   color-sink-free and (ii) $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$
-  is consistent.  In this case, every tree $(T,\sigma)$ with leaf set
-  $V(G)$ that agrees with $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$
-  explains $(G,\sigma)$.
+  is consistent. 
+  
+  In particular, a leaf-colored tree $(T , \sigma)$  explains $(G, \sigma )$ 
+  if and only if $(T , \sigma)$ agrees with $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$. 
 \end{proposition}
 }
 
@@ -253,10 +257,18 @@ it holds that $S = \{1,\dots,n\}$}
 \label{def:color-derivative}
 \mh{Let $(G,\sigma)$ be an $n$-colored digraph and $S'\subseteq \in S$. We
     define $\sigma_{|S'}\colon V(G) \to S'\cup \{c\}$ where $c\notin S$ by
-    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in
-    V(G).\] Hence, $\sigma_{|S'}$ keeps the colors of all vertices with
+    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in V(G).\] 
+    Hence, $\sigma_{|S'}$ keeps the colors of all vertices with
     color $i\in S'$ while all other vertices obtain a common color $c$ that is
-    not contained in $S$. We define the digraph $G_{|S'}$ by putting
+    not contained in $S$. 
+
+    \TODO{we may also think of:
+    $\sigma_{|S'}\colon V(G) \to \{c',c\}$ where $c,c'\notin S$ by
+    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in V(G).\] 
+    In this case, all vertices in $S'$ obtain color $c'$ while all other colors obtain
+    color $c$}
+    
+    We define the digraph $G_{|S'}$ by putting
 \begin{enumerate}
     \item $V(G_{|S'}) \coloneqq V(G)$ and
     
