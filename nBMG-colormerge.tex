@@ -224,67 +224,67 @@ Let $(G,\sigma)$ be a vertex-colored digraph. Then the set of
 \label{sec:operators}
 
 
+%\OLD{
+%\begin{definition} \TODO{below is a unified version of these two types defined here! **** }
+%\label{def:color-derivative}
+%	Let $(G,\sigma)$ be an $n$-colored digraph and $S'\subseteq S$. We
+%    define $\sigma_{|S'}\colon V(G) \to S'\cup \{c\}$ where $c\notin S$ by
+%    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in V(G).\] 
+%    Hence, $\sigma_{|S'}$ keeps the colors of all vertices with
+%    color $i\in S'$ while all other vertices obtain a common color $c$ that is
+%    not contained in $S$. 
+%    Moreover, we define a 2-coloring 
+%    $\sigma^2_{|S'}\colon V(G) \to \{c',c\}$ where $c,c'\notin S$ by
+%    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in V(G).\] 
+%    In this case, all vertices in $S'$ obtain color $c'$ while all vertices with a color in $S\setminus S'$ 
+%    obtain color $c$.\smallskip
+%    
+%    \noindent
+%    We define the digraph $G_{|S'}$ by putting
+%\begin{enumerate}
+%    \item $V(G_{|S'}) \coloneqq V(G)$ and
+%    
+%    \item $xy\in E(G_{|S'})$  presicely if $xy\in E(G)$ and 
+%    	  $\sigma(x)\in S'$ or  $\sigma(y)\in S'$.
+%    	  
+%    	  In other words, the edges of $G_{|S'}$ are precisely those edges 
+%    	  of $G$ that are incident to a vertex with color $i\in S'$.
+%\end{enumerate}
 
-\begin{definition} \TODO{below is a unified version of these two types defined here! **** }
-\label{def:color-derivative}
-	Let $(G,\sigma)$ be an $n$-colored digraph and $S'\subseteq S$. We
-    define $\sigma_{|S'}\colon V(G) \to S'\cup \{c\}$ where $c\notin S$ by
-    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in V(G).\] 
-    Hence, $\sigma_{|S'}$ keeps the colors of all vertices with
-    color $i\in S'$ while all other vertices obtain a common color $c$ that is
-    not contained in $S$. 
-    Moreover, we define a 2-coloring 
-    $\sigma^2_{|S'}\colon V(G) \to \{c',c\}$ where $c,c'\notin S$ by
-    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in V(G).\] 
-    In this case, all vertices in $S'$ obtain color $c'$ while all vertices with a color in $S\setminus S'$ 
-    obtain color $c$.\smallskip
-    
-    \noindent
-    We define the digraph $G_{|S'}$ by putting
-\begin{enumerate}
-    \item $V(G_{|S'}) \coloneqq V(G)$ and
-    
-    \item $xy\in E(G_{|S'})$  presicely if $xy\in E(G)$ and 
-    	  $\sigma(x)\in S'$ or  $\sigma(y)\in S'$.
-    	  
-    	  In other words, the edges of $G_{|S'}$ are precisely those edges 
-    	  of $G$ that are incident to a vertex with color $i\in S'$.
-\end{enumerate}
+%	\noindent 
+%    We define the digraph $G^2_{|S'}$ by putting
+%	\begin{enumerate}
+%    \item $V(G^2_{|S'}) \coloneqq V(G)$ and
+%    
+%    \item $xy\in E(G^2_{|S'})$ presicely if $xy\in E(G)$ and 
+%    	  $\sigma^2_{S'}(x) \neq \sigma^2_{S'}(y)$.
+%    	  
+%    	  In other words, $G^2_{|S'}$ 
+%    	  is obtained from $(G,\sigma)$ by removing all
+%    	  edges between vertices $x$ and $y$ that have 
+%    	  either both a color in $S'$ or in $S\setminus S'$
+%\end{enumerate}
 
-	\noindent 
-    We define the digraph $G^2_{|S'}$ by putting
-	\begin{enumerate}
-    \item $V(G^2_{|S'}) \coloneqq V(G)$ and
-    
-    \item $xy\in E(G^2_{|S'})$ presicely if $xy\in E(G)$ and 
-    	  $\sigma^2_{S'}(x) \neq \sigma^2_{S'}(y)$.
-    	  
-    	  In other words, $G^2_{|S'}$ 
-    	  is obtained from $(G,\sigma)$ by removing all
-    	  edges between vertices $x$ and $y$ that have 
-    	  either both a color in $S'$ or in $S\setminus S'$
-\end{enumerate}
+%%
+%	The \emph{$S'$-color derivative} $\partial_{|S'}(G,\sigma)$ is the
+%	$(|S'|+1)$-colored digraph $(G_{|S'},\sigma_{|S'})$. 
+%	The \emph{$(S',2)$-color derivative} $\partial^2_{|S'}(G,\sigma)$ is the
+%	$2$-colored digraph $(G^2_{|S'},\sigma^2_{|S'})$. \smallskip
+%	
+%	\noindent
+%	In case that $S' = \{i\}$, we replace, for simplicity, ``$S'$'' by ``$i$'',
+%	in which case, the $i$-color derivative $\partial_{|i}(G,\sigma)$ is
+%	the the 2-colored digraph $(G_{|i},\sigma_{|i})$.
+%	"Analog 	 $(G^2_{|i},\sigma^2_{|i})$ instead."
 
-%
-	The \emph{$S'$-color derivative} $\partial_{|S'}(G,\sigma)$ is the
-	$(|S'|+1)$-colored digraph $(G_{|S'},\sigma_{|S'})$. 
-	The \emph{$(S',2)$-color derivative} $\partial^2_{|S'}(G,\sigma)$ is the
-	$2$-colored digraph $(G^2_{|S'},\sigma^2_{|S'})$. \smallskip
-	
-	\noindent
-	In case that $S' = \{i\}$, we replace, for simplicity, ``$S'$'' by ``$i$'',
-	in which case, the $i$-color derivative $\partial_{|i}(G,\sigma)$ is
-	the the 2-colored digraph $(G_{|i},\sigma_{|i})$.
-	"Analog 	 $(G^2_{|i},\sigma^2_{|i})$ instead."
+%%\TODO{\small MH: if we see that we dont need this general def, we may replace it at the end 
+%%just be $i$-color derivative $\partial_{|i}(G,\sigma)$ etc }
+%\end{definition} 
 
-%\TODO{\small MH: if we see that we dont need this general def, we may replace it at the end 
-%just be $i$-color derivative $\partial_{|i}(G,\sigma)$ etc }
-\end{definition} 
-
-maybe short arguments, that for $S' = \{i\}$, the graphs $(G^2_{|i},\sigma^2_{|S'})$
-and $(G_{|i},\sigma_{|i})$ are identical up to recoloring vertices with color $c'$
-in $(G^2_{|S'},\sigma^2_{|S'})$ by color $i$.
-	
+%maybe short arguments, that for $S' = \{i\}$, the graphs $(G^2_{|i},\sigma^2_{|S'})$
+%and $(G_{|i},\sigma_{|i})$ are identical up to recoloring vertices with color $c'$
+%in $(G^2_{|S'},\sigma^2_{|S'})$ by color $i$.
+%}	
 	
 	
 \begin{definition}
