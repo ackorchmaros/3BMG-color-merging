@@ -224,112 +224,117 @@ Let $(G,\sigma)$ be a vertex-colored digraph. Then the set of
 \label{sec:operators}
 
 
-%\OLD{
-%\begin{definition} \TODO{below is a unified version of these two types defined here! **** }
-%\label{def:color-derivative}
-%	Let $(G,\sigma)$ be an $n$-colored digraph and $S'\subseteq S$. We
-%    define $\sigma_{|S'}\colon V(G) \to S'\cup \{c\}$ where $c\notin S$ by
-%    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in V(G).\] 
-%    Hence, $\sigma_{|S'}$ keeps the colors of all vertices with
-%    color $i\in S'$ while all other vertices obtain a common color $c$ that is
-%    not contained in $S$. 
-%    Moreover, we define a 2-coloring 
-%    $\sigma^2_{|S'}\colon V(G) \to \{c',c\}$ where $c,c'\notin S$ by
-%    \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in V(G).\] 
-%    In this case, all vertices in $S'$ obtain color $c'$ while all vertices with a color in $S\setminus S'$ 
-%    obtain color $c$.\smallskip
-%    
-%    \noindent
-%    We define the digraph $G_{|S'}$ by putting
-%\begin{enumerate}
-%    \item $V(G_{|S'}) \coloneqq V(G)$ and
-%    
-%    \item $xy\in E(G_{|S'})$  presicely if $xy\in E(G)$ and 
-%    	  $\sigma(x)\in S'$ or  $\sigma(y)\in S'$.
-%    	  
-%    	  In other words, the edges of $G_{|S'}$ are precisely those edges 
-%    	  of $G$ that are incident to a vertex with color $i\in S'$.
-%\end{enumerate}
-
-%	\noindent 
-%    We define the digraph $G^2_{|S'}$ by putting
-%	\begin{enumerate}
-%    \item $V(G^2_{|S'}) \coloneqq V(G)$ and
-%    
-%    \item $xy\in E(G^2_{|S'})$ presicely if $xy\in E(G)$ and 
-%    	  $\sigma^2_{S'}(x) \neq \sigma^2_{S'}(y)$.
-%    	  
-%    	  In other words, $G^2_{|S'}$ 
-%    	  is obtained from $(G,\sigma)$ by removing all
-%    	  edges between vertices $x$ and $y$ that have 
-%    	  either both a color in $S'$ or in $S\setminus S'$
-%\end{enumerate}
-
-%%
-%	The \emph{$S'$-color derivative} $\partial_{|S'}(G,\sigma)$ is the
-%	$(|S'|+1)$-colored digraph $(G_{|S'},\sigma_{|S'})$. 
-%	The \emph{$(S',2)$-color derivative} $\partial^2_{|S'}(G,\sigma)$ is the
-%	$2$-colored digraph $(G^2_{|S'},\sigma^2_{|S'})$. \smallskip
-%	
-%	\noindent
-%	In case that $S' = \{i\}$, we replace, for simplicity, ``$S'$'' by ``$i$'',
-%	in which case, the $i$-color derivative $\partial_{|i}(G,\sigma)$ is
-%	the the 2-colored digraph $(G_{|i},\sigma_{|i})$.
-%	"Analog 	 $(G^2_{|i},\sigma^2_{|i})$ instead."
-
-%%\TODO{\small MH: if we see that we dont need this general def, we may replace it at the end 
-%%just be $i$-color derivative $\partial_{|i}(G,\sigma)$ etc }
-%\end{definition} 
-
-%maybe short arguments, that for $S' = \{i\}$, the graphs $(G^2_{|i},\sigma^2_{|S'})$
-%and $(G_{|i},\sigma_{|i})$ are identical up to recoloring vertices with color $c'$
-%in $(G^2_{|S'},\sigma^2_{|S'})$ by color $i$.
-%}	
 	
 	
-\begin{definition}
-	Let $(G,\sigma)$ be an $n$-colored digraph and $\Pi = \{S_1,\dots,S_k\}$, $k\geq 1$
-	be a partition of $S$. The $k$-colored graph $(G_{\Pi},\sigma_{\Pi})$ is defined as follows. 
-	
-	
-	Define $\sigma_{\Pi}\colon V(G) \to \{c_1,\dots,c_k\}$ by putting, for all $x\in V(G)$, 
-    \[\sigma_{\Pi}(x)=c_i \iff \sigma(x)\in S_i\in \Pi.\] 
-    
-    Define  $G_{\Pi}$ by putting
-	\begin{enumerate}
-    	\item $V(G_{\Pi}) \coloneqq V(G)$ and
-    
-    \item $xy\in E(G_{\Pi})$  presicely if $xy\in E(G)$ and 
-    	  $\sigma_{\Pi}(x)\neq \sigma_{\Pi}(y)$. 
-    	  
-    	  In other words,  $G_{\Pi}$ 
-    	  is obtained from $G$ by removing all
-    	  edges between vertices $x$ and $y$ that are 
-    	  in a common class $S_i\in \Pi$. 
-\end{enumerate}
-\end{definition}	
-
-\PFS{Why not even simpler, identifying the colors with classes of $\Pi$.
-
 
 \begin{definition}
   Let $(G,\sigma)$ be an $n$-colored digraph with color-set $S$ and $\Pi =
-  \{S_1,\dots,S_k\}$, $k\geq 1$ be a partition of $S$ and define the
-  colored graph $G_{\Pi},\sigma_{\Pi}$ with coloring $\sigma_{\Pi}\colon
-  V(G_{\Pi})\to \Pi$, as follows:
+  \{S_1,\dots,S_k\}$, $k\geq 1$ be a partition of $S$. Define the
+  $k$-colored graph $(G_{\Pi},\sigma_{\Pi})$ with color map
+  $\sigma_{\Pi}\colon V(G_{\Pi})\to \Pi$, as follows:
   \begin{enumerate}
-  \item $V(G_{\Pi})=V(G)$,
+  \item $V(G_{\Pi})\coloneqq V(G)$,
   \item $\sigma_{\Pi}(x)=S_i \iff \sigma(x)\in S_i\in\Pi$ 
   \item $xy\in E(G_{\Pi})$  if and only if $xy\in E(G)$ and 
     	  $\sigma_{\Pi}(x)\neq \sigma_{\Pi}(y)$. 
   \end{enumerate}
+  We call $(G_{\Pi},\sigma_{\Pi})$ a \emph{partition-color-merged (PCM) graph of $(G,\sigma)$.}
+  
 \end{definition}	
-}
+
+Thus, $G_{\Pi}$ is obtained from $G$ by removing all edges between vertices $x$
+and $y$ that are in a common class $S_i\in \Pi$. 
 	
 
+\mh{
+Note that there are cases, where  $(G_{\Pi},\sigma_{\Pi})$ is not a BMG 
+for all $\Pi$ with $|\Pi|>1$, for  BMGs $(G,\sigma)$. \TODO{fig}. 
+Nevertheless, one may ask how much information about the property
+``$(G,\sigma)$ is an  $n$-BMG'' is contained in certain
+$\Pi$-color-mergeds graph of $(G,\sigma)$. 
+}
+\begin{definition}
+\mh{
+Let $(G,\sigma)$ be an $n$-colored digraph 
+and $(G_{\Pi},\sigma_{\Pi})$ and $(G_{\Pi'},\sigma_{\Pi'})$ 
+be two of its PCM graphs. 
+Then, $(G,\sigma)$ satisfies the $(\Pi,\Pi')$-common-tree ($(\Pi,\Pi')$-cot) property
+if 
+\begin{enumerate}
+	\item $(G_{\Pi},\sigma_{\Pi})$ is a BMG that is explained by $(T,\sigma_{\Pi})$.
+	\item $(G_{\Pi'},\sigma_{\Pi'})$ is a BMG that is explained by $(T,\sigma_{\Pi'})$.
+\end{enumerate}
+}
+\end{definition}
+
+\TODO{MH: Is "cot" transitive? i.e., if $(G,\sigma)$ satisfies $(\Pi,\Pi')$-cot and $(\Pi',\Pi'')$-cot, then 
+		$(G,\sigma)$ satisfies $(\Pi,\Pi'')$-cot ? In particular, if 
+		$(G_{\Pi},\sigma_{\Pi})$  is explained by $(T,\sigma_{\Pi})$
+		and $(G_{\Pi'},\sigma_{\Pi'})$ is explained by $(T,\sigma_{\Pi'})$
+		can we the say that $(T,\sigma_{\Pi''})$ also explains 
+		$(G_{\Pi''},\sigma_{\Pi''})$  -- I guess not, or??
 
 
-\TODO{MH:
+If not transitive, we must talk about a collection of partitions $\Pi_1,\dots,\Pi_n$
+such that all are explained by the same tree, i.e.,  there is a tree $T$ such
+that each $(G_{\Pi_i},\sigma_{\Pi_i})$ is a BMG that is explained by $(T,\sigma_{\Pi_i})$
+in order to get a generalization of 2/3-BMGs for which 
+the partitions $\Pi = \{\{1\}, \{2,3\}\}$ and  $\Pi = \{\{2\}, \{1,3\}\}$ 
+and $(\Pi,\Pi')$-cot is trivially sufficient to get all triples
+in $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$ ... 
+}	 
+	 
+
+%\begin{lemma}[transitivity]
+%If $(G,\sigma)$ satisfies $(\Pi,\Pi')$-cot and $(\Pi',\Pi'')$-cot, then 
+%$(G,\sigma)$ satisfies $(\Pi,\Pi'')$-cot. 
+%\end{lemma}
+%\begin{proof}
+%Since $(G,\sigma)$ satisfies $(\Pi,\Pi')$-cot, there is a tree $T$ such
+%that  $(T,\sigma_{\Pi})$ explains $(G_{\Pi},\sigma_{\Pi})$ and
+%      $(T,\sigma_{\Pi'})$ explains $(G_{\Pi'},\sigma_{\Pi'})$. 
+%In particular, $T , \sigma_{\Pi'})$ agrees with $(\mathscr{R}(G_{\Pi'},\sigma_{\Pi'}),\mathscr{F}(G_{\Pi'},\sigma_{\Pi'}))$
+%and      
+
+%Since $(G,\sigma)$ satisfies $(\Pi',\Pi'')$-cot, there is a tree $T'$ such
+%that  $(T',\sigma_{\Pi'})$ explains $(G_{\Pi'},\sigma_{\Pi'})$ and
+%      $(T',\sigma_{\Pi''})$ explains $(G_{\Pi''},\sigma_{\Pi''})$. 
+%In particular, $(T', \sigma_{\Pi'})$ agrees with $(\mathscr{R}(G_{\Pi'},\sigma_{\Pi'}),\mathscr{F}(G_{\Pi'},\sigma_{\Pi'}))$
+
+%      
+%      
+%  
+%  {prop:BMG-triple-charac}
+%  A properly colored graph $(G,\sigma)$ is a BMG if and only if (i) it is
+%  color-sink-free and (ii) $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$
+%  is consistent. 
+%  
+%  In particular, a leaf-colored tree $(T , \sigma)$  explains $(G, \sigma )$ 
+%  if and only if $(T , \sigma)$ agrees with $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$.     
+%      
+%      
+%      
+
+
+%\end{proof}
+
+%\begin{lemma}
+%Let $(G,\sigma)$ be a properly $|S|$-colored digraph with $S =\{1,\dots,n\}$
+%and assume that $(G,\sigma)$ is color-sink-free.
+%Let $\Pi_1,\dots,\Pi_{n-1}$ be partitions of $S$ such that $\{\ell\}\in
+%\Pi_\ell$ for all $\ell\in \{1,\dots, n-1$. Moreover, assume that $(G,\sigma)$
+%satisfies the ($(\Pi,\Pi')$-cot) for all $i,j\in \in \{1,\dots, n-1\}$.
+%Then, $(G,\sigma)$ is an $|S|$-BMG. 
+
+%\TODO{MH:direct-translation-of-3colored-case  / but there are possibly other ways
+%to generalize}
+%\end{lemma}
+%\begin{proof}
+%By Prop.\ \ref{prop:BMG-triple-charac}, it suffices to show that 
+
+%\end{proof}
+
+\TODO{\smallskip
 \begin{itemize}
 \item what are necassary/sufficient conditions on $\Pi$ and $(G_{\Pi},\sigma_{\Pi})$
 such that we get $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$ for color-sink free $(G,\sigma)$
