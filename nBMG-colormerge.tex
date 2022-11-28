@@ -268,10 +268,10 @@ if
 \end{definition}
 
 \TODO{MH: Is "cot" transitive? i.e., if $(G,\sigma)$ satisfies $(\Pi,\Pi')$-cot and $(\Pi',\Pi'')$-cot, then 
-		$(G,\sigma)$ satisfies $(\Pi,\Pi'')$-cot ? In particular, if 
-		$(G_{\Pi},\sigma_{\Pi})$  is explained by $(T,\sigma_{\Pi})$
-		and $(G_{\Pi'},\sigma_{\Pi'})$ is explained by $(T,\sigma_{\Pi'})$
-		can we the say that $(T,\sigma_{\Pi''})$ also explains 
+		$(G,\sigma)$ satisfies $(\Pi,\Pi'')$-cot ? In particular, 
+		is there a common tree $T$ that together with the respective colorings explains, 
+		$(G_{\Pi},\sigma_{\Pi})$ 
+		and $(G_{\Pi'},\sigma_{\Pi'})$ and
 		$(G_{\Pi''},\sigma_{\Pi''})$. I think, its possibly not transitive,  since
 		there is not necessarily a tree that agrees with
 		$$(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi}))\ \cup\ 
@@ -280,7 +280,20 @@ if
 		
 
 
-If not transitive, we must talk about a collection of partitions $\Pi_1,\dots,\Pi_n$
+If not transitive, can we characterize when its transitive, so when 
+does compatibilty of  $(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi}))\ \cup\ 
+		(\mathscr{R}(G_{\Pi'},\sigma_{\Pi'}),\mathscr{F}(G_{\Pi'},\sigma_{\Pi'}))$
+		and compatibilty of 
+		and $
+		(\mathscr{R}(G_{\Pi'},\sigma_{\Pi'}),\mathscr{F}(G_{\Pi'},\sigma_{\Pi'}))\ \cup\ 
+		(\mathscr{R}(G_{\Pi''},\sigma_{\Pi''}),\mathscr{F}(G_{\Pi''},\sigma_{\Pi''}))$
+		imply comptability of 
+		$(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi}))\ \cup\ 
+		(\mathscr{R}(G_{\Pi''},\sigma_{\Pi''}),\mathscr{F}(G_{\Pi''},\sigma_{\Pi''}))$?
+		
+
+if we dont come up with such a transitive result, 
+we must talk about a collection of partitions $\Pi_1,\dots,\Pi_n$
 such that all are explained by the same tree, i.e.,  there is a tree $T$ such
 that each $(G_{\Pi_i},\sigma_{\Pi_i})$ is a BMG that is explained by $(T,\sigma_{\Pi_i})$
 in order to get a generalization of 2/3-BMGs for which 
