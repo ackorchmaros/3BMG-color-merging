@@ -308,7 +308,23 @@ Let $(G,\sigma)$ be a vertex-colored digraph. Then the set of
     	  in a common class $S_i\in \Pi$. 
 \end{enumerate}
 \end{definition}	
-	
+
+\PFS{Why not even simpler, identifying the colors with classes of $\Pi$.
+
+
+\begin{definition}
+  Let $(G,\sigma)$ be an $n$-colored digraph with color-set $S$ and $\Pi =
+  \{S_1,\dots,S_k\}$, $k\geq 1$ be a partition of $S$ and define the
+  colored graph $G_{\Pi},\sigma_{\Pi}$ with coloring $\sigma_{\Pi}\colon
+  V(G_{\Pi})\to \Pi$, as follows:
+  \begin{enumerate}
+  \item $V(G_{\Pi})=V(G)$,
+  \item $\sigma_{\Pi}(x)=S_i \iff \sigma(x)\in S_i\in\Pi$ 
+  \item $xy\in E(G_{\Pi})$  if and only if $xy\in E(G)$ and 
+    	  $\sigma_{\Pi}(x)\neq \sigma_{\Pi}(y)$. 
+  \end{enumerate}
+\end{definition}	
+}
 	
 
 
