@@ -255,7 +255,7 @@ it holds that $S = \{1,\dots,n\}$}
 
 \begin{definition}
 \label{def:color-derivative}
-\mh{Let $(G,\sigma)$ be an $n$-colored digraph and $S'\subseteq \in S$. We
+\mh{Let $(G,\sigma)$ be an $n$-colored digraph and $S'\subseteq S$. We
     define $\sigma_{|S'}\colon V(G) \to S'\cup \{c\}$ where $c\notin S$ by
     \[\sigma_{|S'}(x)=c \iff \sigma(x)\notin S', \text{ for all } x\in V(G).\] 
     Hence, $\sigma_{|S'}$ keeps the colors of all vertices with
@@ -272,7 +272,7 @@ it holds that $S = \{1,\dots,n\}$}
 \begin{enumerate}
     \item $V(G_{|S'}) \coloneqq V(G)$ and
     
-    \item $xy\in E(G_{|S'}$  presicely if $xy\in E(G)$ and 
+    \item $xy\in E(G_{|S'})$  presicely if $xy\in E(G)$ and 
     	  $\sigma(x)\in S'$ or  $\sigma(y)\in S'$.
     	  
     	  In other words, the edges of $G_{|S'}$ are precisely those edges 
@@ -294,12 +294,12 @@ just be $i$-color derivative $\partial_{|i}(G,\sigma)$ etc }
 \begin{figure}[ht]
   \centering
     \includegraphics[width=16cm]{figures/color_derivatives.png}
-    \caption{Color derivatives of a 3-BMG.
+    \caption{Color derivatives of a 3-BMG. \TODO{AK: we actually don't need a 3-BMG at this stage just a 3-colored digraph}
     Digraph $G$ in Figure~\ref{fig:color_derivatives} is a 3-BMG
-    \TODO{why? could we add a tree to support the statement?}.\\
+    \TODO{why? could we add a tree to support the statement? AK: it's tree is in Fig 4 }.\\
     \TODO{could we also replace $r,b,y$ by "1,2,3" and use simpy black/gray
-    for the new color $c$ in all figs}\\
-    \TODO{in the Fig is must always be $(G,\sigma)$ instead of $G$!}
+    for the new color $c$ in all figs AK: Yes!}\\
+    \TODO{in the Fig is must always be $(G,\sigma)$ instead of $G$! AK: Yes, also for all color-derivatives}
      However,
     none of its color derivatives are 2-BMGs, as they all contain either an
     induced F1-subgraph or an induced F2-subgraph. Indeed, $x'\rightarrow
@@ -368,6 +368,16 @@ $(G,\sigma)$ satisfies the $(j,i)$-DT.}
 \begin{lemma}\label{lem:sufficient_condition}
 \mh{If a 3-colored digraph $(G,\sigma)$ satisfies $(i,j)$-DT for some 
 distinct $i,j\in S$, then $(G,\sigma)$ is a 3-BMG.}
+\ak{I see three possible statements:
+
+1) If a color-sink-free 3-colored digraph $(G,\sigma)$ satisfies $(i,j)$-DT for some
+distinct $i,j\in S$, then $(G,\sigma)$ is a 3-BMG.
+
+2) If a 3-colored digraph $(G,\sigma)$ satisfies $(i,j)$-DT for all  
+distinct $i,j\in S$, then $(G,\sigma)$ is a 3-BMG.
+
+3) If a 3-colored digraph $(G,\sigma)$ satisfies $(i,j)$-DT for some  
+distinct $i,j\in S$ and all color derivatives are sink-free, then $(G,\sigma)$ is a 3-BMG.}
 \end{lemma}
 \begin{proof}
 \mh{
@@ -379,7 +389,7 @@ that $(G,\sigma)$ is a 3-BMG.
   
 We show first that $(G,\sigma)$ is color-sink free.  Assume, for contradiction, that 
 $G$ is not  color-sink free. Hence, there is a vertex $x$ in $G$ does not have 
-out-neighbors in each color different from $\sigma(x)$.
+out-neighbors in \OLD{each} \ak{at least one} color different from $\sigma(x)$.
 
 
 
@@ -395,7 +405,7 @@ By similar arguments applied on $(G_{|j},\sigma_{|j})$,
 there is an out-neighbor $y'$ of $x$ in $G_{|j}$ such
 that $\sigma_{|j}(y)\neq j$ and so, $\sigma(y')\in S\setminus \{j\}$.
 \TODO{cases $y=y'$ and $\sigma(y)=\sigma(y')\neq i,j$}
-
+\ak{the problem is when $\sigma(y')=\sigma(y)$, as in Fig.~\ref{prop:sink-free_sym}. However, if we suppose that all color-derivatives are 2-BMGs the previous arguments shows that $G$ is color-sink-free.}
 
 }
 
@@ -417,6 +427,13 @@ Since $\partial_{r}(G)$ is supposed to be a 2-BMG, $T_r$ is a tree explaining it
 Let $ab|b'$be a triple of $G$ such that $\sigma(a)\ne \sigma(b)=\sigma(b')$ and $ab\in E(G)$. We have to prove that $(T_r,\sigma)$ displays $ab|b'$ if $ab'\notin E(G)$ ($ abb'$ is informative) and does not display $ab|b'$otherwise ($ab|b'$is forbidden). Suppose that either $a$ or $b$ is a red vertex. Then $ab|b'\in \mathscr{R}(\partial_{r}(G))$ if $ab|b'$is informative, and $ab|b'\in \mathscr{F}(\partial_{r}(G))$ if $ab|b'$is forbidden, as $\partial_{r}$ preserves all edges headed or tailed on a red vertex and $\sigma_r(a)\ne \sigma_r(b)=\sigma_r(b')$. Hence, in the former case $ab|b'$ is displayed in $(T_r,\sigma_r)$ and the latter case $ab|b'$is not displayed in $(T_r,\sigma_r)$. This follows from~\cite[Proposition~2.3]{korchmaros2021quasi} since $\partial_{r}(G)$ is a 2-BMG. Assume neither $a$ nor $b$ is a red vertex; therefore, one between $a$ and $b$ is blue colored, and the previous argument shows that $ab|b'$ is displayed in $(T_b,\sigma_b)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_b,\sigma_b)$ if $ab|b'$is forbidden in $G$. Condition $\partial_b(G)=\Delta_{rb}(\partial_r(G))$ ensures that $T_r$ and $T_b$ have the same uncolored tree. Hence, $ab|b'$ is displayed in $(T_r,\sigma)$ if $ab|b'$is informative, and $ab|b'$is not displayed in $(T_r,\sigma)$ if $ab|b'$is forbidden.
 \end{proof}
 
+
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=16cm]{figures/sink_free_marc_ex.jpg}
+    \caption{$(G,\sigma)$ satisfies $(1,2)$-DT but it is not color-sink-free (red=$1$, blue=$2$, yellow=$3$). The vertex $y$ is the only out-neighbour of $x$ in both $\partial_{|1}(G,\sigma)$ and $\partial_{|2}(G,\sigma)$}
+    \label{fig:different_trees}
+\end{figure}
 
 
 
