@@ -572,11 +572,39 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 
 %\end{lemma}
 
-\TODO{MH- more interesting question: when is for a given partition $\Pi$ the graph $(G_\Pi,\sigma_\Pi)$ a BMG
-where $(G,\sigma)$ properly colored and color-sink-free?
+\begin{lemma}
+    Let $(G,\sigma)$ be a properly colored graph that is is color-sink-free. Let
+    $\Pi$ be a partition of the color set $S$. If 
+    $(\mathscr{R}(G_\Pi,\sigma_\Pi),
+    \mathscr{F}(G_\Pi,\sigma_\Pi))$ is consistent or if 
+    $(G_\Pi,\sigma_\Pi)$ 
+    satisfies or (R2) and (F2) and $(\mathscr{R}(G,\sigma),
+    \mathscr{F}(G,\sigma))$ is consistent (latter equivalent to $(G,\sigma)$  is BMG), 
+    then $(G_\Pi,\sigma_\Pi)$ is a BMG. 
+\end{lemma}
+\begin{proof}
+    Suppose that $(G,\sigma)$ is a properly colored and color-sink-free graph.
+   By Lemma \ref{lem:basicsPCM}, $(G_\Pi,\sigma_\Pi)$ is color-sink-free and
+   properly colored. Hence, if $(\mathscr{R}(G_\Pi,\sigma_\Pi),
+   \mathscr{F}(G_\Pi,\sigma_\Pi))$ is consistent, then Prop.\
+   \ref{prop:BMG-triple-charac} implies that $(G_\Pi,\sigma_\Pi)$ is a BMG. 
+     
+    Suppose now that $(G_\Pi,\sigma_\Pi)$ satisfies (R2) and (F2) and
+    $(\mathscr{R}(G,\sigma), \mathscr{F}(G,\sigma))$ is consistent. By Lemma
+    \ref{lem:R-Ri}, $\mathscr{R}(G_\Pi,\sigma_\Pi) \subseteq
+    \mathscr{R}(G,\sigma)$ and $\mathscr{F}(G_\Pi,\sigma_\Pi) \subseteq
+    \mathscr{F}(G,\sigma)$. Since $(\mathscr{R}(G,\sigma),
+    \mathscr{F}(G,\sigma))$ is consistent, $(\mathscr{R}(G_\Pi,\sigma_\Pi)
+    ,\mathscr{F}(G_\Pi,\sigma_\Pi) )$ is consistent. By the same arguments as
+    used in the first case, $(G_\Pi,\sigma_\Pi)$ is a BMG. 
+\end{proof}
+
+
+\TODO{MH- more interesting question: what are the properties CHARACTERIZE the graphs $(G_\Pi,\sigma_\Pi)$ that BMGs :
+	"	 $(G_\Pi,\sigma_\Pi)$ is a BMG if and	only if   WHAT ???"	
  }
  
-\TODO{do we have a "generic" exmple such that  $(G_\Pi,\sigma_\Pi)$ is / is not a BMG
+\TODO{do we have a "generic" examples such that  $(G_\Pi,\sigma_\Pi)$ is / is not a BMG
 for all partitions $\Pi$ in case $(G,\sigma)$ is / is not BMG? } 
 
 
@@ -599,7 +627,7 @@ for all partitions $\Pi$ in case $(G,\sigma)$ is / is not BMG? }
 
 \TODO{\bigskip \bigskip NEXT refers to starting point in case we have several partitions .... }
 \begin{definition}\TODO{translation of the 2nd-derivative stuff:}
-\mh{
+
 Let $(G,\sigma)$ be an $n$-colored digraph 
 and $(G_{\Pi},\sigma_{\Pi})$ and $(G_{\Pi'},\sigma_{\Pi'})$ 
 be two of its PCM graphs. 
@@ -609,7 +637,6 @@ if
 	\item $(G_{\Pi},\sigma_{\Pi})$ is a BMG that is explained by $(T,\sigma_{\Pi})$.
 	\item $(G_{\Pi'},\sigma_{\Pi'})$ is a BMG that is explained by $(T,\sigma_{\Pi'})$.
 \end{enumerate}
-}
 \end{definition}
 
 \TODO{MH: Is "cot" transitive? i.e., if $(G,\sigma)$ satisfies $(\Pi,\Pi')$-cot and $(\Pi',\Pi'')$-cot, then 
