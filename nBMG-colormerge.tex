@@ -286,7 +286,8 @@ that works for an arbirary number of colors. }
   In other words, Annachiaras idea is essentially just a translation
  into "which triples in the 3-colored case (when mergin 2 colors) 
  does one get to obtain $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)$". 
- So it is wrong to say, that this is a pure "graphtheoretic way"
+ So it is wrong to say, that this is a pure "graphtheoretic way
+ that does not involve triples"
  to describe/characterize 3-BMGS. \smallskip
  
  Note, in the general case, neither $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)
@@ -301,14 +302,16 @@ that works for an arbirary number of colors. }
  but still have some doubts, since everything is just a 
  "combinatorial" re-formulation of which triples do we get 
  from the $(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi})$
- (and we NEED to get all of $\mathscr{R}(G,\sigma)$ -- ie 
- $\mathscr{R}(G,\sigma)\subseteq \mathscr{R}(G_{\Pi},\sigma_{\Pi})$ must hold -- 
- and we ARE NOT ALLOWED to introduce further triples in 
- $\mathscr{F}(G_{\Pi},\sigma_{\Pi})$ -- ie
- $\mathscr{F}(G_{\Pi},\sigma_{\Pi}) \subseteq \mathscr{F}(G,\sigma)$ must hold --
- , which imposes
- extremely strong constraints on the different partitions $\Pi$
- we need (see Lemma \ref{lem:R-Ri}). 
+ for $\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)$ and \emph{vice versa}
+
+  If, for example, we want 
+  $\mathscr{R}(G,\sigma)\subseteq \mathscr{R}(G_{\Pi},\sigma_{\Pi})$ 
+  (as implicitely used in some of Annachiaras proofs) we must ensure
+  to still distinguish between the colors in $(G_{\Pi},\sigma_{\Pi})$ 
+  used to infer $\mathscr{R}(G,\sigma)$ via $(G,\sigma)$ etc .. 
+  This, however,  imposes
+   extremely strong constraints on the different partitions $\Pi$
+   we need (see Lemma \ref{lem:R-Ri}). 
 \begin{center}**** --- **** \end{center}
 }
 
@@ -578,7 +581,7 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
     $(\mathscr{R}(G_\Pi,\sigma_\Pi),
     \mathscr{F}(G_\Pi,\sigma_\Pi))$ is consistent or if 
     $(G_\Pi,\sigma_\Pi)$ 
-    satisfies or (R2) and (F2) and $(\mathscr{R}(G,\sigma),
+    satisfies (R2) and (F2) and $(\mathscr{R}(G,\sigma),
     \mathscr{F}(G,\sigma))$ is consistent (latter equivalent to $(G,\sigma)$  is BMG), 
     then $(G_\Pi,\sigma_\Pi)$ is a BMG. 
 \end{lemma}
