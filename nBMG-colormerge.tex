@@ -228,7 +228,7 @@ Let $(G,\sigma)$ be a vertex-colored digraph. Then the set of
 	
 
 \begin{definition}
-  Let $(G,\sigma)$ be an $n$-colored digraph with color-set $S$ and $\Pi =
+  Let $(G,\sigma)$ be an colored digraph with color-set $S$ and $\Pi =
   \{S_1,\dots,S_k\}$, $k\geq 1$ be a partition of $S$. Define the
   $k$-colored graph $(G_{\Pi},\sigma_{\Pi})$ with color map
   $\sigma_{\Pi}\colon V(G_{\Pi})\to \Pi$, as follows:
@@ -239,21 +239,328 @@ Let $(G,\sigma)$ be a vertex-colored digraph. Then the set of
     	  $\sigma_{\Pi}(x)\neq \sigma_{\Pi}(y)$. 
   \end{enumerate}
   We call $(G_{\Pi},\sigma_{\Pi})$ a \emph{partition-color-merged (PCM) graph of $(G,\sigma)$.}
-  
 \end{definition}	
 
 Thus, $G_{\Pi}$ is obtained from $G$ by removing all edges between vertices $x$
 and $y$ that are in a common class $S_i\in \Pi$. 
+Note that there are cases, where  $(G_{\Pi},\sigma_{\Pi})$ is not a BMG 
+for all $\Pi$ with $|\Pi|>1$ for  BMGs $(G,\sigma)$. \TODO{add fig for generic examples
+that works for an arbirary number of colors. }
 	
 
-\mh{
-Note that there are cases, where  $(G_{\Pi},\sigma_{\Pi})$ is not a BMG 
-for all $\Pi$ with $|\Pi|>1$, for  BMGs $(G,\sigma)$. \TODO{fig}. 
+\TODO{ \begin{center}**** MH comment on old file **** \end{center} 
+ To summarize the main-idea of the first part of annachiara: 
+ \begin{itemize}[nolistsep, noitemsep]
+ 	\item it is assumed that $G$ is color-sinkfree and $|S|=3$
+ 	\item it is assumed that we have two partitions $\Pi_1 = \{\{1\},\{2,3\}\}$ and $\Pi_2=
+		 \{\{2\},\{1,3\}\}$ such that 		 
+		 $(G_{\Pi_1},\sigma_{\Pi_1})$ and $(G_{\Pi_2},\sigma_{\Pi_2})$ are 2-BMGs that
+		 are explained by a common tree $T$. \smallskip
+		 
+		 This directly implies that
+		 $(\mathscr{R}(G_{\Pi_i},\sigma_{\Pi_i}),\mathscr{F}(G_{\Pi_i},\sigma_{\Pi_i})$,
+ 		$i\in \{1,2\}$ are both consistent.		 \smallskip
+ 		
+ 		Since $(G_{\Pi_1},\sigma_{\Pi_1})$ and $(G_{\Pi_2},\sigma_{\Pi_2})$ are explained by common tree $T$, 
+ 		we immediately get that 
+ 		$(\mathscr{R}^*, \mathscr{F}^*) \coloneqq
+ 		  (\mathscr{R}(G_{\Pi_1},\sigma_{\Pi_1}),\mathscr{F}(G_{\Pi_1},\sigma_{\Pi_1})
+ 		  \cup (\mathscr{R}(G_{\Pi_2},\sigma_{\Pi_2}),\mathscr{F}(G_{\Pi_2},\sigma_{\Pi_2})$
+ 		  is consistent	
+ 	\item Since only $|S|=3$ colors are used, and one class of $\Pi_1$ and
+ 	      $\Pi_2$ consist of a single "outsourced color", it is almost a trivial
+ 	      and direct consequence that we can get ALL triples of
+ 	      $(\mathscr{R}(G,\sigma),(G,\sigma)$ of $G$ and that
+ 	      $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)) \subseteq
+ 	      (\mathscr{R}^*, \mathscr{F}^*)$. 
+ 	      
+  	      Since $(\mathscr{R}^*, \mathscr{F}^*)$ is consistent, 
+ 	      $(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi})$.
+ 	      is consistent. This together with $G$ is color-sinkfree implies that
+ 	      $G$ is a 3-BMG.  
+  	  
+ \end{itemize}
+ 
+ \smallskip
+ \noindent
+  In other words, Annachiaras idea is essentially just a translation
+ into "which triples in the 3-colored case (when mergin 2 colors) 
+ does one get to obtain $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)$". 
+ So it is wrong to say, that this is a pure "graphtheoretic way"
+ to describe/characterize 3-BMGS. \smallskip
+ 
+ Note, in the general case, neither $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)
+ \subseteq (\mathscr{R}(G_{\Pi_i},\sigma_{\Pi_i}),\mathscr{F}(G_{\Pi_i},\sigma_{\Pi_i})$
+ nor $ (\mathscr{R}(G_{\Pi_i},\sigma_{\Pi_i}),\mathscr{F}(G_{\Pi_i},\sigma_{\Pi_i})
+ \subseteq (\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)$
+ holds (see lemma \ref{lem:R-Ri} below).\smallskip 
+ 
+ Still I like the idea of "color-merging", but I think that these 
+ strong conditions above + the fact that only $|S|=3$ colors are
+  not enough for a publication. Hence, I try to generalize, 
+ but still have some doubts, since everything is just a 
+ "combinatorial" re-formulation of which triples do we get 
+ from the $(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi})$
+ (and we NEED to get all of $\mathscr{R}(G,\sigma)$ -- ie 
+ $\mathscr{R}(G,\sigma)\subseteq \mathscr{R}(G_{\Pi},\sigma_{\Pi})$ must hold -- 
+ and we ARE NOT ALLOWED to introduce further triples in 
+ $\mathscr{F}(G_{\Pi},\sigma_{\Pi})$ -- ie
+ $\mathscr{F}(G_{\Pi},\sigma_{\Pi}) \subseteq \mathscr{F}(G,\sigma)$ must hold --
+ , which imposes
+ extremely strong constraints on the different partitions $\Pi$
+ we need (see Lemma \ref{lem:R-Ri}). 
+\begin{center}**** --- **** \end{center}
+}
+
+
+\begin{lemma}\label{lem:basicsPCM}
+  Let $(G,\sigma)$ be colored digraph and $(G_{\Pi},\sigma_{\Pi})$ 
+  be a PCM of $G$. Then, $G_\Pi  \subseteq G$ and 
+  $(G_{\Pi},\sigma_{\Pi})$ is properly colored. 
+  Moreover, if $(G,\sigma)$ is color-sink-free, 
+  then $(G_{\Pi},\sigma_{\Pi})$ is color-sink-free.
+\end{lemma}
+\begin{proof}
+ 	Let $(G,\sigma)$ be colored digraph and $(G_{\Pi},\sigma_{\Pi})$ 
+  be a PCM of $G$. By construction, only edges that already
+  exist in $G$ may be retained in $G_\Pi$ which together
+  with $V(G) = V(G_\Pi)$ implies that $G_\Pi  \subseteq G$.
+  Moreover, since all edges of $G$ that connect vertices 
+  with the same color $\sigma_\Pi$ have been removed
+  from $G$ to obtain $G_\Pi$, it follows that 
+  $(G_{\Pi},\sigma_{\Pi})$ is properly colored. 
+  
+  Assume now that $(G,\sigma)$ is color-sink-free. 
+  All vertices $z\in S_i\in \Pi$ obtain color
+ $\sigma_\Pi(z)=S_i$. To show that $(G_\Pi,\sigma_\Pi)$ is color-sink-free we
+	must show $N_{G_\Pi}(x,S_i)\neq \emptyset$ for all $S_i\in \Pi\setminus
+	\{\sigma(x)\}$. The latter is equivalent to show that $N_{G_\Pi}(x,S_i)\neq
+	\emptyset$ for all $S_i\in \Pi$ with $x\notin S_i$. Let $x\in V(G_\Pi)=V(G)$
+	and suppose that $x\in S_j\in \Pi$ and thus, $\sigma_\Pi(x) = S_j$. Now,
+	consider $S_i\in \Pi$ with $i\neq j$. By construction $\sigma(x)\neq
+	\sigma(y)$ for all $y\in S_i$. Since $(G,\sigma)$ is color-sink-free, there
+	is a vertex $y'\in S_i$ such that $\sigma(y')=\sigma(y)$ and $y'\in
+	N_G(x,\sigma(y))$. In particular, $xy'$ remains an edge in $G_\Pi$. Hence,
+	$N_{G_\Pi}(x,S_i)\neq \emptyset$. Since $S_i$ was chosen arbtrarily,
+	$(G_\Pi,\sigma_\Pi)$ is color-sink-free.
+ \end{proof}
+
+Note that color-sink-freeness of  $(G_{\Pi},\sigma_{\Pi})$.
+does, in general, not imply  color-sink-freeness of  $(G,\sigma)$.
+To see this consider,  $(G,\sigma)$ with $V(G) = \{a,b,c\}$
+and where the vertices have a pairwise distinct colors. 
+Moreover, assume that $E(G) = \{ab,ba,ac,ca\}$. 
+Since $b$ and $c$ are not adjacent in $G$ but have different
+colors,  $(G,\sigma)$ is not color-sink-free. 
+Now let $\Pi = \{\{\sigma(a)\},\{\sigma(b),\sigma(c)\}\}$
+to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
+
+
+\begin{lemma}\label{lem:R-Ri}
+	Let $(G,\sigma)$ be a properly colored graph and $\Pi =  \{S_1,\dots,S_k\}$
+	be a partition of the color set $S$. Then the following conditions hold. 
+	
+	\begin{enumerate}[nolistsep, noitemsep]
+ 		\item $\mathscr{R}(G,\sigma) \subseteq \mathscr{R}(G_\Pi,\sigma_\Pi)$
+ 			  	  if and only if 
+	
+			\begin{enumerate}[noitemsep]
+ 			  	 \item[(R1):]  for all $ab|b' \in \mathscr{R}(G,\sigma)$ we have 
+ 			  	 $\sigma_\Pi(a) \neq  \sigma_\Pi(b)$ 
+			      i.e., $\sigma(a)$ and $\sigma_\Pi(b)$ are in different classes
+			      of  $\Pi$. 	
+			\end{enumerate}			      
+
+ 		\item $\mathscr{R}(G_\Pi,\sigma_\Pi)  \subseteq  \mathscr{R}(G,\sigma)$
+ 			  	  if and only if 			  	   
+	
+			\begin{enumerate}[noitemsep]
+ 			  	 \item[(R2):] for all $ab|b' \in \mathscr{R}(G_\Pi,\sigma_\Pi)$ we have 
+ 			  	 $\sigma(a) \neq \sigma(b) = \sigma(b')$. 
+			\end{enumerate}			      
+			      
+ 		\item $\mathscr{F}(G,\sigma) \subseteq \mathscr{F}(G_\Pi,\sigma_\Pi)$
+ 			  	  if and only if 
+	
+			\begin{enumerate}[noitemsep]
+ 			  	 \item[(F1):]  for all $ab|b' \in \mathscr{F}(G,\sigma)$ we have 
+ 			  	 $\sigma_\Pi(a) \neq  \sigma_\Pi(b)$ 
+			      i.e., $\sigma(a)$ and $\sigma_\Pi(b)$ are in different classes
+			      of  $\Pi$. 	
+			\end{enumerate}			      
+
+ 		\item $\mathscr{F}(G_\Pi,\sigma_\Pi)  \subseteq  \mathscr{F}(G,\sigma)$
+ 			  	  if and only if 			  	   
+	
+			\begin{enumerate}[noitemsep]
+ 			  	 \item[(F2):] for all $ab|b' \in \mathscr{R}(G_\Pi,\sigma_\Pi)$ we have 
+ 			  	 $\sigma(a) \neq \sigma(b) = \sigma(b')$. 
+			\end{enumerate}			      
+	\end{enumerate}
+	\TODO{[MH: note that (R1),  (R2),  (F1),  (F2) directlty translate to
+	     "graphtheoretic properties" based on the (non)edges as used 
+	     for the construction of $\mathscr{R}$ and $\mathscr{F}$. 
+	     but its simpler for the statements to avoid these "edge-color-conditions".] }
+\end{lemma}
+\begin{proof}
+	To simplify the writing we put $\mathscr{R}\coloneqq \mathscr{R}(G,\sigma)$, 
+	$\mathscr{F}\coloneqq \mathscr{F}(G,\sigma)$, 
+	$\mathscr{R}_\Pi\coloneqq \mathscr{R}(G_\Pi,\sigma_\Pi)$, and
+	$\mathscr{F}_\Pi\coloneqq \mathscr{F}(G_\Pi,\sigma_\Pi)$. 
+
+	\emph{(1): }
+	By contraposition, assume that (R1) is not satisfied. Thus, there is a
+	triple $ab|b' \in \mathscr{R}$ with $\sigma_\Pi(a) =
+	\sigma_\Pi(b)$. Since (R1) is not satisfied, we have
+	$\sigma_\Pi(b)=\sigma_\Pi(b')$ and thus,
+	$\sigma_\Pi(a)=\sigma_\Pi(b)=\sigma_\Pi(b')$. Hence, $a|bb'\notin
+	\mathscr{R}_\Pi$ and thus, $\mathscr{R}
+	\not\subseteq \mathscr{R}_\Pi$. Hence, $\mathscr{R}
+	\subseteq \mathscr{R}_\Pi$ implies (R1).
+    
+    Suppose (R1) holds. Let $ab|b' \in \mathscr{R}$. By definition,
+    $\sigma(a)\neq\sigma(b)=\sigma(b')$, $ab\in E(G)$, and $ab'\notin E(G)$. By
+    (R1), $\sigma_\Pi(a) \neq \sigma_\Pi(b)$ and, therefore, $ab\in E(G_\Pi)$.
+    Moreover, by construction, it always holds $E(G_\Pi)\subseteq E(G)$ and
+    thus, $ab'\notin E(G_\Pi)$. Hence, $a|bb'\in \mathscr{R}_\Pi$
+    and we obtain $\mathscr{R}\subseteq
+    \mathscr{R}_\Pi$. 
+    
+	\emph{(2):}
+	By contraposition, assume that (R2) is not satisfied. 
+	Let $ab|b' \in \mathscr{R}_\Pi$ and thus, 
+	$\sigma_\Pi(a)\neq \sigma_\Pi(b) = \sigma_\Pi(b')$. 
+	Since $\Pi$ ``merges'' colors, it follows that 
+	$\sigma(a)\neq \sigma(b)$ and $\sigma(a)\neq \sigma(b')$. 
+	This together with the
+	assumption that (R2) is not satisfied implies
+	that $\sigma(b) \neq \sigma(b')$. Hence, 
+	$\sigma(a),  \sigma(b)$ and $\sigma(b')$ are pairwise
+	distinct. Thus, $ab|b' \not\in \mathscr{R}$
+	which shows that $\mathscr{R}_\Pi \not\subseteq  \mathscr{R}$. 
+	Hence, $\mathscr{R}_\Pi \subseteq  \mathscr{R}$ implies (R2). 
+	
+	Suppose (R2) holds. Let $ab|b' \in \mathscr{R}_\Pi$
+	and thus, $ab\in E(G_\Pi)$ and $ab'\notin E(G_\Pi)$
+	as well as $\sigma_\Pi(a)\neq\sigma_\Pi(b)=\sigma_\Pi(b')$. 
+	Since $E(G_\Pi)\subseteq E(G)$, we have $ab\in E(G)$. 
+	By (R2), $\sigma(a)\neq\sigma(b) = \sigma(b')$.
+	Since	$\sigma(a)\neq\sigma(b')$ and
+	$ab'\notin E(G_\Pi)$ it holds, by construction of $G_\Pi$, 
+	that $ab'\notin E(G)$. Hence, $ab|b' \in \mathscr{R}$
+	and thus, $\mathscr{R}_\Pi \subseteq  \mathscr{R}$. 
+	
+	
+	\TODO{proofs of (3) and (4) are nearly identical - if someone
+	is bored, just add it ..}
+\end{proof}
+
+%\begin{lemma}
+%	Let $(G,\sigma)$ be a colored graphs and $\Pi =  \{S_1,\dots,S_k\}$
+%	be a partition of the color set $S$. 
+%	Suppose that both $(G,\sigma)$  and  $(G_\Pi,\sigma_\Pi)$ are BMGs.
+%	Then, the following statements are equivalent. 
+%	\begin{enumerate}
+%		\item $(G,\sigma)$ is explained by $(T,\sigma)$ and  $(G_\Pi,\sigma_\Pi)$ is explained 
+%		   	 by $(T,\sigma_\Pi)$ (i.e, they share a common tree $T$)
+%	
+%		\item (R1), (R2), (F1) and (F2) are satisfied. 
+%	\end{enumerate}
+%\end{lemma}
+%\begin{proof}
+%	Assume that $(G,\sigma)$ is explained by $(T,\sigma)$ and  $(G_\Pi,\sigma_\Pi)$ is explained 
+%	by $(T,\sigma_\Pi)$. 
+%	
+%\end{proof}
+
+%\begin{lemma}
+%Let $(G,\sigma)$ be a BMG and $(G_{\Pi},\sigma_{\Pi})$ be PCM graph of $(G,\sigma)$. 
+%If $(G_{\Pi},\sigma_{\Pi})$ is color-sink-free
+%and for all 
+
+%, then $(G_{\Pi},\sigma_{\Pi})$ is a BMG. 
+%\end{lemma}
+%\begin{proof}
+%Assume that $(G_{\Pi},\sigma_{\Pi})$ is color-sink-free. By Prop.\ \ref{prop:BMG-triple-charac}, 
+%it suffices to show that $(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi})$ is consistent 
+%to verify that  $(G_{\Pi},\sigma_{\Pi})$ is a BMG.
+
+%Let $ab|b'\in \mathscr{R}(G_{\Pi}$. Hence, 
+% $\sigma_{\Pi}(a)\neq\sigma_{\Pi}(b)=\sigma_{\Pi}(b')$ and $ab\in E(G)$ and 
+%    $ab'\notin E(G)$.  mmh .. koennen haben $\sigma(b)\neq \sigma(b')$
+%    and thus $ab|b'\notin \mathscr{R}(G)$ so, 
+%    $\mathscr{R}(G_{\Pi}\not\subseteq \mathscr{R}(G)$
+%\end{proof}
+
+
+\begin{lemma}
+    Let $(G,\sigma)$ be a properly colored graph that is  is color-sink-free. 
+	Then, $(G,\sigma)$ is a BMG if and only if 
+	there is a partition $\Pi$ of $S$ such that (R1) and (F1) is satisfied
+	and $(\mathscr{R}(G_\Pi,\sigma_\Pi), \mathscr{F}(G_\Pi,\sigma_\Pi)$
+	is consistent. In this case, $(G_\Pi,\sigma_\Pi)$ is a BMG. 
+\end{lemma}
+\begin{proof}
+	Assume that $(G,\sigma)$ is a BMG. Let $\Pi$ be the partition that consists
+	of $|S|$ color classes each consiting of a single color. Hence,
+	$(G,\sigma)\simeq (G_\Pi,\sigma_\Pi)$. It is easy to verify that
+	$\mathscr{R}(G,\sigma) = \mathscr{R}(G_\Pi,\sigma_\Pi)$ and
+	$\mathscr{F}(G,\sigma) = \mathscr{F}(G_\Pi,\sigma_\Pi)$. By Lemma
+	\ref{lem:R-Ri}, (R1) and (F1) are satisfied. Moreover, by Prop.\
+	\ref{prop:BMG-triple-charac} and since $(G,\sigma)$ is a BMG,
+	$(\mathscr{R}(G,\sigma), \mathscr{F}(G,\sigma)) =
+	(\mathscr{R}(G_\Pi,\sigma_\Pi), \mathscr{F}(G_\Pi,\sigma_\Pi))$ is
+	consistent.
+	
+	Now suppose that $(G,\sigma)$ is color-sink-free and that there is a
+	partition $\Pi$ of $S$ such that $(\mathscr{R}(G_\Pi,\sigma_\Pi),
+	\mathscr{F}(G_\Pi,\sigma_\Pi)$ is consistent and that (R1) and (F1) is
+	satisfied. By Lemma \ref{lem:R-Ri}, $\mathscr{R}(G,\sigma) \subseteq
+	\mathscr{R}(G_\Pi,\sigma_\Pi)$ and $\mathscr{F}(G,\sigma) \subseteq
+	\mathscr{F}(G_\Pi,\sigma_\Pi)$. Hence, $(\mathscr{R}(G,\sigma)
+	,\mathscr{F}(G,\sigma) $ is consistent. Now, we can apply Prop.\
+	\ref{prop:BMG-triple-charac} to conclude that $(G,\sigma)$ is a BMG. 
+	
+
+	To see that $(G_\Pi,\sigma_\Pi)$ is a BMG, we observe first that Lemma
+	\ref{lem:basicsPCM} implies that $(G_\Pi,\sigma_\Pi)$ is color-sink-free.
+	Moreover, since $(\mathscr{R}(G_\Pi,\sigma_\Pi),
+	\mathscr{F}(G_\Pi,\sigma_\Pi))$ is consistent, we can Prop.\
+	\ref{prop:BMG-triple-charac} to conclude that $(G_\Pi,\sigma_\Pi)$ is a BMG.
+\end{proof}
+
+\begin{lemma}
+	Moreover, for an arbitrary partition $\Pi$ of $S$, 
+	 $(G_\Pi,\sigma_\Pi)$ is a BMG if and	only if
+	 \TODO{conditions that ony depend on (R1/2) and (S1/2)--is this even possible?}
+	 
+%	Moreover, $(G_\Pi,\sigma_\Pi)$ is a BMG if and
+%	only if (R2) and (F2) is satisfied and
+%	$(\mathscr{R}(G,\sigma), \mathscr{F}(G,\sigma)$ is consistent. 
+
+\end{lemma}
+
+
+
 Nevertheless, one may ask how much information about the property
 ``$(G,\sigma)$ is an  $n$-BMG'' is contained in certain
-$\Pi$-color-mergeds graph of $(G,\sigma)$. 
-}
-\begin{definition}
+$\Pi$-color-mergeds graph of $(G,\sigma)$ and, contrary, which 
+$(G_{\Pi},\sigma_{\Pi})$ are BMGs. .. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+\TODO{\bigskip \bigskip NEXT refers to starting point in case we have several partitions .... }
+\begin{definition}\TODO{translation of the 2nd-derivative stuff:}
 \mh{
 Let $(G,\sigma)$ be an $n$-colored digraph 
 and $(G_{\Pi},\sigma_{\Pi})$ and $(G_{\Pi'},\sigma_{\Pi'})$ 
