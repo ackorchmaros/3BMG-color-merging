@@ -493,7 +493,7 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 %\end{proof}
 
 
-\begin{lemma}
+\begin{lemma}\label{BMG-R1F1}
     Let $(G,\sigma)$ be a properly colored graph that is  is color-sink-free. 
 	Then, $(G,\sigma)$ is a BMG if and only if 
 	there is a partition $\Pi$ of $S$ such that (R1) and (F1) is satisfied
@@ -529,27 +529,61 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 	\ref{prop:BMG-triple-charac} to conclude that $(G_\Pi,\sigma_\Pi)$ is a BMG.
 \end{proof}
 
-\begin{lemma}\TODO{this is the interesting part:}
-	Let $(G,\sigma)$ be a properly colored and color-sink-free graph and $\Pi =  \{S_1,\dots,S_k\}$
-	be a partition of the color set $S$.
-	Then, 
-	 $(G_\Pi,\sigma_\Pi)$ is a BMG if and	only if
-	 \TODO{conditions that only depend on (R1/2) and (F1/2)--is this even possible?
-	 	(sufficient consitions are easily-derived, but necessary ones?)
-	 	}
-	 
-%	Moreover, $(G_\Pi,\sigma_\Pi)$ is a BMG if and
-%	only if (R2) and (F2) is satisfied and
-%	$(\mathscr{R}(G,\sigma), \mathscr{F}(G,\sigma)$ is consistent. 
 
-\end{lemma}
+%\begin{lemma}
+%Let $(G,\sigma)$ be a properly colored and color-sink-free graph. 
+%Then there is is a partition $\Pi$ of $S$ such that 
+% $(G_\Pi,\sigma_\Pi)$ is a BMG if and only if 
+% (R2) and (F2) is satisfied
+%  and $(\mathscr{R}(G,\sigma), \mathscr{F}(G,\sigma))$
+%	is consistent. 
+%	\TODO{(equivalent to ? $(G_\Pi,\sigma_\Pi)$ is a BMG and (R2,F2) ?? )}
+%%	In this case, $(G_\Pi,\sigma_\Pi)$ is a BMG. 
+%\end{lemma}
+%\begin{proof}
+%	For the \emph{if} direction, consistency of
+%	$(\mathscr{R}(G,\sigma), \mathscr{F}(G,\sigma))$ and 
+%	color-sink-freeness of the properly-colored graph $(G,\sigma)$ together
+%	with Prop.\ \ref{prop:BMG-triple-charac} implies that 
+%	$(G,\sigma)$ is a BMG. 
+%	Now, we can choose the partition $\Pi$ that consists
+%	of $|S|$ color classes each consiting of a single color. 
+%	By the same arguments, as in the first part of the proof
+%	of Lemma \ref{BMG-R1F1}, we can conclude that 
+%	$(G_\Pi,\sigma_\Pi)$ is a BMG.
+%	
+%	Assume now that there is a partition $\Pi$ of $S$ such that 
+%	$(G_\Pi,\sigma_\Pi)$ is a BMG. 
+%\end{proof}
 
 
+%\begin{lemma}\TODO{this is the interesting part:}
+%	Let $(G,\sigma)$ be a properly colored and color-sink-free graph and $\Pi =  \{S_1,\dots,S_k\}$
+%	be a partition of the color set $S$.
+%	Then, 
+%	 $(G_\Pi,\sigma_\Pi)$ is a BMG if and	only if
+%	 \TODO{conditions that only depend on (R1/2) and (F1/2)--is this even possible?
+%	 	(sufficient consitions are easily-derived, but necessary ones?)
+%	 	}
+%	 
+%%	Moreover, $(G_\Pi,\sigma_\Pi)$ is a BMG if and
+%%	only if (R2) and (F2) is satisfied and
+%%	$(\mathscr{R}(G,\sigma), \mathscr{F}(G,\sigma)$ is consistent. 
 
-Nevertheless, one may ask how much information about the property
-``$(G,\sigma)$ is an  $n$-BMG'' is contained in certain
-$\Pi$-color-mergeds graph of $(G,\sigma)$ and, contrary, which 
-$(G_{\Pi},\sigma_{\Pi})$ are BMGs. .. 
+%\end{lemma}
+
+\TODO{MH- more interesting question: when is for a given partition $\Pi$ the graph $(G_\Pi,\sigma_\Pi)$ a BMG
+where $(G,\sigma)$ properly colored and color-sink-free?
+ }
+ 
+\TODO{do we have a "generic" exmple such that  $(G_\Pi,\sigma_\Pi)$ is / is not a BMG
+for all partitions $\Pi$ in case $(G,\sigma)$ is / is not BMG? } 
+
+
+%Nevertheless, one may ask how much information about the property
+%``$(G,\sigma)$ is an  $n$-BMG'' is contained in certain
+%$\Pi$-color-mergeds graph of $(G,\sigma)$ and, contrary, which 
+%$(G_{\Pi},\sigma_{\Pi})$ are BMGs. .. 
 
 
 
