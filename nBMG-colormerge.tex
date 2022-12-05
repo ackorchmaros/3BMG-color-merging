@@ -251,7 +251,7 @@ that works for an arbirary number of colors. }
 \TODO{ \begin{center}**** MH comment on old file **** \end{center} 
  To summarize the main-idea of the first part of annachiara: 
  \begin{itemize}[nolistsep, noitemsep]
- 	\item it is assumed that $G$ is color-sinkfree and $|S|=3$
+ 	\item it is assumed that $G$ is color-sinkfree and $|S|=3$ \ak{we can drop this hypothesis if $\Pi_3=\{\{3\},\{1,2\}\}$ is sink-free, see my comments of proof L.3.1 in main.tex}
  	\item it is assumed that we have two partitions $\Pi_1 = \{\{1\},\{2,3\}\}$ and $\Pi_2=
 		 \{\{2\},\{1,3\}\}$ such that 		 
 		 $(G_{\Pi_1},\sigma_{\Pi_1})$ and $(G_{\Pi_2},\sigma_{\Pi_2})$ are 2-BMGs that
@@ -307,7 +307,7 @@ that works for an arbirary number of colors. }
   If, for example, we want 
   $\mathscr{R}(G,\sigma)\subseteq \mathscr{R}(G_{\Pi},\sigma_{\Pi})$
   (as implicitely used in some of Annachiaras proofs). 
-  if for example $ab|b'\mathscr{R}(G,\sigma)$ we must ensure that $a$ is in a different color set than $b,b'$
+  if for example $ab|b' \ak{\in}\mathscr{R}(G,\sigma)$ we must ensure that $a$ is in a different color set than $b,b'$
   in $\Pi$ in order to still distinguish between the colors 
   used to infer $\mathscr{R}(G,\sigma)$ via $(G,\sigma)$ etc .. 
   Of course we may have several partitions that together help
@@ -342,15 +342,15 @@ that works for an arbirary number of colors. }
   Assume now that $(G,\sigma)$ is color-sink-free. 
   All vertices $z\in S_i\in \Pi$ obtain color
  $\sigma_\Pi(z)=S_i$. To show that $(G_\Pi,\sigma_\Pi)$ is color-sink-free we
-	must show $N_{G_\Pi}(x,S_i)\neq \emptyset$ for all $S_i\in \Pi\setminus
-	\{\sigma(x)\}$. The latter is equivalent to show that $N_{G_\Pi}(x,S_i)\neq
-	\emptyset$ for all $S_i\in \Pi$ with $x\notin S_i$. Let $x\in V(G_\Pi)=V(G)$
-	and suppose that $x\in S_j\in \Pi$ and thus, $\sigma_\Pi(x) = S_j$. Now,
+	must show $N_{G_\Pi}(x,S_i)\neq \emptyset$ \OLD{for all $S_i\in \Pi\setminus
+	\{\sigma(x)\}$.} \ak{for all $S_i$ with $\sigma(x)\notin S_i$ and for each $x\in V(G)$, for example, if $\Pi=\{\{1\}, \{2,3\}\}=S_1 \cup S_2$ and $\sigma(x)=2$ we check only $N_{G_\Pi}(x,S_1)\neq \emptyset$}. \OLD{The latter is equivalent to show that $N_{G_\Pi}(x,S_i)\neq
+	\emptyset$ for all $S_i\in \Pi$ with $x\notin S_i$}. Let $x\in V(G_\Pi)=V(G)$
+	and suppose that $\ak{\sigma(}x\ak{)}\in S_j\in \Pi$ and thus, $\sigma_\Pi(x) = S_j$. Now,
 	consider $S_i\in \Pi$ with $i\neq j$. By construction $\sigma(x)\neq
 	\sigma(y)$ for all $y\in S_i$. Since $(G,\sigma)$ is color-sink-free, there
 	is a vertex $y'\in S_i$ such that $\sigma(y')=\sigma(y)$ and $y'\in
 	N_G(x,\sigma(y))$. In particular, $xy'$ remains an edge in $G_\Pi$. Hence,
-	$N_{G_\Pi}(x,S_i)\neq \emptyset$. Since $S_i$ was chosen arbtrarily,
+	$N_{G_\Pi}(x,S_i)\neq \emptyset$. Since $S_i$ was chosen arbitrarily,
 	$(G_\Pi,\sigma_\Pi)$ is color-sink-free.
  \end{proof}
 
@@ -363,7 +363,7 @@ Since $b$ and $c$ are not adjacent in $G$ but have different
 colors,  $(G,\sigma)$ is not color-sink-free. 
 Now let $\Pi = \{\{\sigma(a)\},\{\sigma(b),\sigma(c)\}\}$
 to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
-
+\ak{Is there a minimal set of sink-free bipartitions which gives that $(G,\sigma)$ is color-sink-free? Yes, $\{\Pi_1,\ldots, \Pi_n\}$ with $\Pi_i=\{\{i\},\{j\in S with j\neq i\}\}$}
 
 \begin{lemma}\label{lem:R-Ri}
 	Let $(G,\sigma)$ be a properly colored graph and $\Pi =  \{S_1,\dots,S_k\}$
@@ -376,7 +376,7 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 			\begin{enumerate}[noitemsep]
  			  	 \item[(R1):]  for all $ab|b' \in \mathscr{R}(G,\sigma)$ we have 
  			  	 $\sigma_\Pi(a) \neq  \sigma_\Pi(b)$ 
-			      i.e., $\sigma(a)$ and $\sigma_\Pi(b)$ are in different classes
+			      i.e., $\sigma(a)$ and $\sigma(b)$ are in different classes
 			      of  $\Pi$. 	
 			\end{enumerate}			      
 
@@ -394,7 +394,7 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 			\begin{enumerate}[noitemsep]
  			  	 \item[(F1):]  for all $ab|b' \in \mathscr{F}(G,\sigma)$ we have 
  			  	 $\sigma_\Pi(a) \neq  \sigma_\Pi(b)$ 
-			      i.e., $\sigma(a)$ and $\sigma_\Pi(b)$ are in different classes
+			      i.e., $\sigma(a)$ and $\sigma(b)$ are in different classes
 			      of  $\Pi$. 	
 			\end{enumerate}			      
 
@@ -402,7 +402,7 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
  			  	  if and only if 			  	   
 	
 			\begin{enumerate}[noitemsep]
- 			  	 \item[(F2):] for all $ab|b' \in \mathscr{R}(G_\Pi,\sigma_\Pi)$ we have 
+ 			  	 \item[(F2):] for all $ab|b' \in \mathscr{F}(G_\Pi,\sigma_\Pi)$ we have 
  			  	 $\sigma(a) \neq \sigma(b) = \sigma(b')$. 
 			\end{enumerate}			      
 	\end{enumerate}
@@ -420,9 +420,9 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 	\emph{(1): }
 	By contraposition, assume that (R1) is not satisfied. Thus, there is a
 	triple $ab|b' \in \mathscr{R}$ with $\sigma_\Pi(a) =
-	\sigma_\Pi(b)$. Since (R1) is not satisfied, we have
+	\sigma_\Pi(b)$. Since \OLD{(R1) is not satisfied}\ak{$\sigma(b)=\sigma(b')$}, we have
 	$\sigma_\Pi(b)=\sigma_\Pi(b')$ and thus,
-	$\sigma_\Pi(a)=\sigma_\Pi(b)=\sigma_\Pi(b')$. Hence, $a|bb'\notin
+	$\sigma_\Pi(a)=\sigma_\Pi(b)=\sigma_\Pi(b')$. Hence, $ab|b'\notin
 	\mathscr{R}_\Pi$ and thus, $\mathscr{R}
 	\not\subseteq \mathscr{R}_\Pi$. Hence, $\mathscr{R}
 	\subseteq \mathscr{R}_\Pi$ implies (R1).
@@ -431,7 +431,7 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
     $\sigma(a)\neq\sigma(b)=\sigma(b')$, $ab\in E(G)$, and $ab'\notin E(G)$. By
     (R1), $\sigma_\Pi(a) \neq \sigma_\Pi(b)$ and, therefore, $ab\in E(G_\Pi)$.
     Moreover, by construction, it always holds $E(G_\Pi)\subseteq E(G)$ and
-    thus, $ab'\notin E(G_\Pi)$. Hence, $a|bb'\in \mathscr{R}_\Pi$
+    thus, $ab'\notin E(G_\Pi)$. Hence, $ab|b'\in \mathscr{R}_\Pi$
     and we obtain $\mathscr{R}\subseteq
     \mathscr{R}_\Pi$. 
     
@@ -503,7 +503,7 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 
 
 \begin{lemma}\label{BMG-R1F1}
-    Let $(G,\sigma)$ be a properly colored graph that is  is color-sink-free. 
+    Let $(G,\sigma)$ be a properly colored graph that is color-sink-free. 
 	Then, $(G,\sigma)$ is a BMG if and only if 
 	there is a partition $\Pi$ of $S$ such that (R1) and (F1) is satisfied
 	and $(\mathscr{R}(G_\Pi,\sigma_\Pi), \mathscr{F}(G_\Pi,\sigma_\Pi))$
@@ -538,6 +538,11 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 	\ref{prop:BMG-triple-charac} to conclude that $(G_\Pi,\sigma_\Pi)$ is a BMG.
 \end{proof}
 
+\ak{
+	\begin{observ}
+   If $(G,\sigma)$ is color-sink-free satisfying (R1) such that there is a triple for every two distinct colors, then $\Pi_i=\{i\}$ for all $i\in S$. Indeed, if there is a triple for the colors $\{i,j\}$ with $i\neq j$ then $\sigma(i)$ and $\sigma(j)$ belongs to different partition classes. Now, if there is a triple for the colors $\{i,k\}$ and $\{j,k\}$ with $j\neq k$, then $\sigma(k)$ belongs to a partition class different from the one either $\sigma(i)$ or $\sigma(j)$ belong to. Repeating this argument for all couples of different colors of $S$, we have that $\Pi_i=\{i\}$ for all $i\in S$.
+	\end{observ}
+   }
 
 %\begin{lemma}
 %Let $(G,\sigma)$ be a properly colored and color-sink-free graph. 
