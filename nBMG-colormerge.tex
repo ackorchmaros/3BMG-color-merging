@@ -505,17 +505,17 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 \begin{lemma}\label{BMG-R1F1}
     Let $(G,\sigma)$ be a properly colored graph that is color-sink-free. 
 	Then, $(G,\sigma)$ is a BMG if and only if 
-	there is a partition $\Pi$ of $S$ such that (R1) and (F1) is satisfied
+	there is a partition $\Pi$ of $S$ such that (R1) and (F1) are satisfied
 	and $(\mathscr{R}(G_\Pi,\sigma_\Pi), \mathscr{F}(G_\Pi,\sigma_\Pi))$
 	is consistent. In this case, $(G_\Pi,\sigma_\Pi)$ is a BMG. 
 \end{lemma}
 \begin{proof}
 	Assume that $(G,\sigma)$ is a BMG. Let $\Pi$ be the partition that consists
-	of $|S|$ color classes each consiting of a single color. Hence,
+	of $|S|$ color classes each consisting of a single color. Hence,
 	$(G,\sigma)\simeq (G_\Pi,\sigma_\Pi)$. It is easy to verify that
 	$\mathscr{R}(G,\sigma) = \mathscr{R}(G_\Pi,\sigma_\Pi)$ and
 	$\mathscr{F}(G,\sigma) = \mathscr{F}(G_\Pi,\sigma_\Pi)$. By Lemma
-	\ref{lem:R-Ri}, (R1) and (F1) are satisfied. Moreover, by Prop.\
+	~\ref{lem:R-Ri}, (R1) and (F1) are satisfied. Moreover, by Proposition~\
 	\ref{prop:BMG-triple-charac} and since $(G,\sigma)$ is a BMG,
 	$(\mathscr{R}(G,\sigma), \mathscr{F}(G,\sigma)) =
 	(\mathscr{R}(G_\Pi,\sigma_\Pi), \mathscr{F}(G_\Pi,\sigma_\Pi))$ is
@@ -523,26 +523,29 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 	
 	Now suppose that $(G,\sigma)$ is color-sink-free and that there is a
 	partition $\Pi$ of $S$ such that $(\mathscr{R}(G_\Pi,\sigma_\Pi),
-	\mathscr{F}(G_\Pi,\sigma_\Pi)$ is consistent and that (R1) and (F1) is
-	satisfied. By Lemma \ref{lem:R-Ri}, $\mathscr{R}(G,\sigma) \subseteq
+	\mathscr{F}(G_\Pi,\sigma_\Pi))$ is consistent and that (R1) and (F1) is
+	satisfied. By Lemma~\ref{lem:R-Ri}, $\mathscr{R}(G,\sigma) \subseteq
 	\mathscr{R}(G_\Pi,\sigma_\Pi)$ and $\mathscr{F}(G,\sigma) \subseteq
 	\mathscr{F}(G_\Pi,\sigma_\Pi)$. Hence, $(\mathscr{R}(G,\sigma)
-	,\mathscr{F}(G,\sigma) $ is consistent. Now, we can apply Prop.\
+	,\mathscr{F}(G,\sigma))$ is consistent. Now, we can apply Proposition~\
 	\ref{prop:BMG-triple-charac} to conclude that $(G,\sigma)$ is a BMG. 
 	
 
 	To see that $(G_\Pi,\sigma_\Pi)$ is a BMG, we observe first that Lemma
-	\ref{lem:basicsPCM} implies that $(G_\Pi,\sigma_\Pi)$ is color-sink-free.
+	~\ref{lem:basicsPCM} implies that $(G_\Pi,\sigma_\Pi)$ is color-sink-free.
 	Moreover, since $(\mathscr{R}(G_\Pi,\sigma_\Pi),
-	\mathscr{F}(G_\Pi,\sigma_\Pi))$ is consistent, we can apply Prop.\
+	\mathscr{F}(G_\Pi,\sigma_\Pi))$ is consistent, we can apply Proposition~\
 	\ref{prop:BMG-triple-charac} to conclude that $(G_\Pi,\sigma_\Pi)$ is a BMG.
 \end{proof}
 
 \ak{
+	The following observation suggests that the only partition of $S$ satisfying (R1) for $(G,\sigma)$ is the partition of $|S|$ color classes each consisting of a single color.
 	\begin{observ}
-   If $(G,\sigma)$ is color-sink-free satisfying (R1) such that there is a triple for every two distinct colors, then $\Pi_i=\{i\}$ for all $i\in S$. Indeed, if there is a triple for the colors $\{i,j\}$ with $i\neq j$ then $\sigma(i)$ and $\sigma(j)$ belongs to different partition classes. Now, if there is a triple for the colors $\{i,k\}$ and $\{j,k\}$ with $j\neq k$, then $\sigma(k)$ belongs to a partition class different from the one either $\sigma(i)$ or $\sigma(j)$ belong to. Repeating this argument for all couples of different colors of $S$, we have that $\Pi_i=\{i\}$ for all $i\in S$.
-	\end{observ}
-   }
+	Let $(G,\sigma)$ be a properly colored graph whose induced subgraphs on any two colors are not complete, and there are at least two distinct vertices for every color of $S$. Then $(G,\sigma)$ is color-sink-free if and only if there is an informative triple for every two distinct colors of $S$.
+	
+	Let $(G,\sigma)$ be a properly colored graph such that there is an informative triple for every two distinct colors of $S$. If $\Pi$ is a partition of $S$ satisfying (R1), then $\Pi$ is the partition of $|S|$ color classes each consisting of a single color, i.e. $\Pi_i=\{i\}$ for all $i\in S$. Indeed, if there is a triple for the colors $\{i,j\}$ with $i\neq j$ then $\sigma(i)$ and $\sigma(j)$ belongs to different partition classes. Now, if there is a triple for the colors $\{i,k\}$ and $\{j,k\}$ with $j\neq k$, then $\sigma(k)$ belongs to a partition class different from the one either $\sigma(i)$ or $\sigma(j)$ belong to. Repeating this argument for all couples of different colors of $S$, we have that $\Pi_i=\{i\}$ for all $i\in S$.
+\end{observ}
+}
 
 %\begin{lemma}
 %Let $(G,\sigma)$ be a properly colored and color-sink-free graph. 
