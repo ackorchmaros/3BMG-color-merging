@@ -539,13 +539,13 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 \end{proof}
 
 \ak{
-	The following observation suggests that the only partition of $S$ satisfying (R1) for $(G,\sigma)$ is the partition of $|S|$ color classes each consisting of a single color.
+	The following observation suggests that the only partition of $S$ satisfying (R1) for a properly colored graph $(G,\sigma)$ with an informative triple for every two distinct colors is the partition of $|S|$ color classes each consisting of a single color.
 	\begin{observ}
-	Let $(G,\sigma)$ be a properly colored graph whose induced subgraphs on any two colors are not complete, and there are at least two distinct vertices for every color of $S$. Then $(G,\sigma)$ is color-sink-free if and only if there is an informative triple for every two distinct colors of $S$.
-	
 	Let $(G,\sigma)$ be a properly colored graph such that there is an informative triple for every two distinct colors of $S$. If $\Pi$ is a partition of $S$ satisfying (R1), then $\Pi$ is the partition of $|S|$ color classes each consisting of a single color, i.e. $\Pi_i=\{i\}$ for all $i\in S$. Indeed, if there is a triple for the colors $\{i,j\}$ with $i\neq j$ then $\sigma(i)$ and $\sigma(j)$ belongs to different partition classes. Now, if there is a triple for the colors $\{i,k\}$ and $\{j,k\}$ with $j\neq k$, then $\sigma(k)$ belongs to a partition class different from the one either $\sigma(i)$ or $\sigma(j)$ belong to. Repeating this argument for all couples of different colors of $S$, we have that $\Pi_i=\{i\}$ for all $i\in S$.
-\end{observ}
-}
+	
+	Let $(G,\sigma)$ be a color-sink-free properly colored graph. Suppose that for any two colors there is an induced subgraph of $G$ which is not complete, and there are at least two distinct vertices for each color of $S$. Then there is an informative triple of $G$ for every two distinct colors of $S$.
+	\end{observ}
+	Furthermore, Cases (2) and (4) in Lemma~\ref{lem:R-Ri} always occur for a partition $\Pi$ with $\Pi_i\neq \{i\}$ for some $i\in S$ and a properly colored graph $(G,\sigma)$ such that there is an informative triple for every two distinct colors of $S$.}
 
 %\begin{lemma}
 %Let $(G,\sigma)$ be a properly colored and color-sink-free graph. 
@@ -590,7 +590,7 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 %\end{lemma}
 
 \begin{lemma}
-    Let $(G,\sigma)$ be a properly colored graph that is is color-sink-free. Let
+    Let $(G,\sigma)$ be a properly colored graph that is color-sink-free. Let
     $\Pi$ be a partition of the color set $S$. If 
     $(\mathscr{R}(G_\Pi,\sigma_\Pi),
     \mathscr{F}(G_\Pi,\sigma_\Pi))$ is consistent or if 
@@ -612,8 +612,9 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
     \mathscr{R}(G,\sigma)$ and $\mathscr{F}(G_\Pi,\sigma_\Pi) \subseteq
     \mathscr{F}(G,\sigma)$. Since $(\mathscr{R}(G,\sigma),
     \mathscr{F}(G,\sigma))$ is consistent, $(\mathscr{R}(G_\Pi,\sigma_\Pi)
-    ,\mathscr{F}(G_\Pi,\sigma_\Pi) )$ is consistent. By the same arguments as
-    used in the first case, $(G_\Pi,\sigma_\Pi)$ is a BMG. 
+    ,\mathscr{F}(G_\Pi,\sigma_\Pi) )$ is consistent \ak{Why?}. By the same arguments as
+    used in the first case, $(G_\Pi,\sigma_\Pi)$ is a BMG. \ak{For the case of $3$ colors and $\Pi=\{\{1\},\{2,3\}\}$, Fig.1 in main.tex gives a counterexample. 
+    Indeed, take $(\partial_r(\Gamma),\sigma_r)=(G_{\Pi},\sigma_\Pi)$ where red=$1$, blue=$2$, yellow=$3$. $(G_{\Pi},\sigma_\Pi)$ isn't a 2-BMG but $(G,\sigma)$ is a 3-BMG and (R2) and (F2) hold for $\Pi$.}
 \end{proof}
 
 
@@ -623,7 +624,7 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 	contained in a constistent triple-set
 
 more interesting question: what are the properties that CHARACTERIZE the graphs $(G_\Pi,\sigma_\Pi)$ that are BMGs :
-	"	 $(G_\Pi,\sigma_\Pi)$ is a BMG if and	only if   WHAT ???"	
+	"	 $(G_\Pi,\sigma_\Pi)$ is a BMG if and	only if   WHAT ???"	AK: for the case of bipartitions, we can rewrite the Ns axioms or the forbidden graphs in terms of the original colors
 	
 	The problem I see here, we should come up with something that is substantially
 	different from $(\mathscr{R}(G_\Pi,\sigma_\Pi) ,\mathscr{F}(G_\Pi,\sigma_\Pi) )$ is consistent.
@@ -679,7 +680,7 @@ if
 		$$(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi}))\ \cup\ 
 		(\mathscr{R}(G_{\Pi'},\sigma_{\Pi'}),\mathscr{F}(G_{\Pi'},\sigma_{\Pi'}))\ \cup\ 
 		(\mathscr{R}(G_{\Pi''},\sigma_{\Pi''}),\mathscr{F}(G_{\Pi''},\sigma_{\Pi''}))$$
-		
+		AK: How about if $T$ is the LRT of $(G_{\Pi},\sigma_{\Pi})$? In the case $(G,\sigma)$ is a 3-BMG, this is transitive, see Proposition 3.3 in main.tex
 
 
 If not transitive, can we characterize when its transitive, so when 
@@ -761,6 +762,8 @@ such that we get $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$ for color-sink 
 ? as this lies at the heart of all the 3BMG proofs as well. 
 
 \item when is  $(G_{\Pi},\sigma_{\Pi})$ a $|\Pi|$-BMG?
+
+\item AK: can wen have a BMG editing heuristics from a single partition? For the case of $3$ colors, if $(G_{\Pi},\sigma_{\Pi})=(G_{|1},\sigma_{|1})$ is a 2-BMG explained by $T$. Changing the leaf-coloring of $T$ according to $\sigma_{|2}$ tells us how to edit the edges between any vertices $x$ and $y$ with $\sigma(x)=2$ and $\sigma(y)=3$ to have that $(G,\sigma)$ is a 3-BMG. Note that such method doesn't change any neighborhood of every vertex $z$ with $\sigma(z)=1$.
 
 \item what else .. ?
 
