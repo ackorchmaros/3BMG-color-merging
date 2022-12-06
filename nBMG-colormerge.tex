@@ -248,78 +248,6 @@ for all $\Pi$ with $|\Pi|>1$ for  BMGs $(G,\sigma)$. \TODO{add fig for generic e
 that works for an arbirary number of colors. }
 	
 
-\TODO{ \begin{center}**** MH comment on old file **** \end{center} 
- To summarize the main-idea of the first part of annachiara: 
- \begin{itemize}[nolistsep, noitemsep]
- 	\item it is assumed that $G$ is color-sinkfree and $|S|=3$ \ak{we can drop this hypothesis if $\Pi_3=\{\{3\},\{1,2\}\}$ is sink-free, see my comments of proof L.3.1 in main.tex}
- 	\item it is assumed that we have two partitions $\Pi_1 = \{\{1\},\{2,3\}\}$ and $\Pi_2=
-		 \{\{2\},\{1,3\}\}$ such that 		 
-		 $(G_{\Pi_1},\sigma_{\Pi_1})$ and $(G_{\Pi_2},\sigma_{\Pi_2})$ are 2-BMGs that
-		 are explained by a common tree $T$. \smallskip
-		 
-		 This directly implies that
-		 $(\mathscr{R}(G_{\Pi_i},\sigma_{\Pi_i}),\mathscr{F}(G_{\Pi_i},\sigma_{\Pi_i})$,
- 		$i\in \{1,2\}$ are both consistent.		 \smallskip
- 		
- 		Since $(G_{\Pi_1},\sigma_{\Pi_1})$ and $(G_{\Pi_2},\sigma_{\Pi_2})$ are explained by common tree $T$, 
- 		we immediately get that 
- 		$(\mathscr{R}^*, \mathscr{F}^*) \coloneqq
- 		  (\mathscr{R}(G_{\Pi_1},\sigma_{\Pi_1}),\mathscr{F}(G_{\Pi_1},\sigma_{\Pi_1})
- 		  \cup (\mathscr{R}(G_{\Pi_2},\sigma_{\Pi_2}),\mathscr{F}(G_{\Pi_2},\sigma_{\Pi_2})$
- 		  is consistent	
- 	\item Since only $|S|=3$ colors are used, and one class of $\Pi_1$ and
- 	      $\Pi_2$ consist of a single "outsourced color", it is almost a trivial
- 	      and direct consequence that we can get ALL triples of
- 	      $(\mathscr{R}(G,\sigma),\mathscr{R}(G,\sigma)$ of $G$ and that
- 	      $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)) \subseteq
- 	      (\mathscr{R}^*, \mathscr{F}^*)$. 
- 	      
-  	      Since $(\mathscr{R}^*, \mathscr{F}^*)$ is consistent, 
- 	      $(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi})$.
- 	      is consistent. This together with $G$ is color-sinkfree implies that
- 	      $G$ is a 3-BMG.  
-  	  
- \end{itemize}
- 
- \smallskip
- \noindent
-  In other words, Annachiaras idea is essentially  a translation
- into "which triples in the 3-colored case (when mergin 2 colors) 
- does one get to obtain $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)$". 
- So it is wrong to say, that this is a pure "graphtheoretic way
- that does not involve triples"
- to describe/characterize 3-BMGS. \smallskip
- 
- Note, in the general case, neither $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)
- \subseteq (\mathscr{R}(G_{\Pi_i},\sigma_{\Pi_i}),\mathscr{F}(G_{\Pi_i},\sigma_{\Pi_i})$
- nor $ (\mathscr{R}(G_{\Pi_i},\sigma_{\Pi_i}),\mathscr{F}(G_{\Pi_i},\sigma_{\Pi_i})
- \subseteq (\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)$
- holds (see lemma \ref{lem:R-Ri} below).\smallskip 
- 
- Still I like the idea of "color-merging", but I think that these 
- strong conditions above + the fact that only $|S|=3$, are
-  not enough for a publication. Hence, I try to generalize, 
- but still have some doubts, since everything is just a 
- "combinatorial" re-formulation of which triples do we get 
- from the $(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi})$
- for $\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)$ and \emph{vice versa}
-
-  If, for example, we want 
-  $\mathscr{R}(G,\sigma)\subseteq \mathscr{R}(G_{\Pi},\sigma_{\Pi})$
-  (as implicitely used in some of Annachiaras proofs). 
-  if for example $ab|b' \ak{\in}\mathscr{R}(G,\sigma)$ we must ensure that $a$ is in a different color set than $b,b'$
-  in $\Pi$ in order to still distinguish between the colors 
-  used to infer $\mathscr{R}(G,\sigma)$ via $(G,\sigma)$ etc .. 
-  Of course we may have several partitions that together help
-  to  distinguish the colors to obtain eg $\mathscr{R}(G,\sigma)$. 
-  This, however (even with not a single but many partitions),  imposes
-   extremely strong constraints on the different partitions $\Pi$
-   we need (see Lemma \ref{lem:R-Ri}). 
-  And I feel, that these conditions are so strong, that 
-  we even not have somthing substantial different as
-  the already existing characterition in Prop.\ \ref{prop:BMG-triple-charac}.
-\begin{center}**** --- **** \end{center}
-}
 
 
 \begin{lemma}\label{lem:basicsPCM}
@@ -796,6 +724,78 @@ such that we get $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma))$ for color-sink 
 
 
 
+\TODO{ \begin{center}**** MH comment on old file **** \end{center} 
+ To summarize the main-idea of the first part of annachiara: 
+ \begin{itemize}[nolistsep, noitemsep]
+ 	\item it is assumed that $G$ is color-sinkfree and $|S|=3$ \ak{we can drop this hypothesis if $\Pi_3=\{\{3\},\{1,2\}\}$ is sink-free, see my comments of proof L.3.1 in main.tex}
+ 	\item it is assumed that we have two partitions $\Pi_1 = \{\{1\},\{2,3\}\}$ and $\Pi_2=
+		 \{\{2\},\{1,3\}\}$ such that 		 
+		 $(G_{\Pi_1},\sigma_{\Pi_1})$ and $(G_{\Pi_2},\sigma_{\Pi_2})$ are 2-BMGs that
+		 are explained by a common tree $T$. \smallskip
+		 
+		 This directly implies that
+		 $(\mathscr{R}(G_{\Pi_i},\sigma_{\Pi_i}),\mathscr{F}(G_{\Pi_i},\sigma_{\Pi_i})$,
+ 		$i\in \{1,2\}$ are both consistent.		 \smallskip
+ 		
+ 		Since $(G_{\Pi_1},\sigma_{\Pi_1})$ and $(G_{\Pi_2},\sigma_{\Pi_2})$ are explained by common tree $T$, 
+ 		we immediately get that 
+ 		$(\mathscr{R}^*, \mathscr{F}^*) \coloneqq
+ 		  (\mathscr{R}(G_{\Pi_1},\sigma_{\Pi_1}),\mathscr{F}(G_{\Pi_1},\sigma_{\Pi_1})
+ 		  \cup (\mathscr{R}(G_{\Pi_2},\sigma_{\Pi_2}),\mathscr{F}(G_{\Pi_2},\sigma_{\Pi_2})$
+ 		  is consistent	
+ 	\item Since only $|S|=3$ colors are used, and one class of $\Pi_1$ and
+ 	      $\Pi_2$ consist of a single "outsourced color", it is almost a trivial
+ 	      and direct consequence that we can get ALL triples of
+ 	      $(\mathscr{R}(G,\sigma),\mathscr{R}(G,\sigma)$ of $G$ and that
+ 	      $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)) \subseteq
+ 	      (\mathscr{R}^*, \mathscr{F}^*)$. 
+ 	      
+  	      Since $(\mathscr{R}^*, \mathscr{F}^*)$ is consistent, 
+ 	      $(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi})$.
+ 	      is consistent. This together with $G$ is color-sinkfree implies that
+ 	      $G$ is a 3-BMG.  
+  	  
+ \end{itemize}
+ 
+ \smallskip
+ \noindent
+  In other words, Annachiaras idea is essentially  a translation
+ into "which triples in the 3-colored case (when mergin 2 colors) 
+ does one get to obtain $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)$". 
+ So it is wrong to say, that this is a pure "graphtheoretic way
+ that does not involve triples"
+ to describe/characterize 3-BMGS. \smallskip
+ 
+ Note, in the general case, neither $(\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)
+ \subseteq (\mathscr{R}(G_{\Pi_i},\sigma_{\Pi_i}),\mathscr{F}(G_{\Pi_i},\sigma_{\Pi_i})$
+ nor $ (\mathscr{R}(G_{\Pi_i},\sigma_{\Pi_i}),\mathscr{F}(G_{\Pi_i},\sigma_{\Pi_i})
+ \subseteq (\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)$
+ holds (see lemma \ref{lem:R-Ri} below).\smallskip 
+ 
+ Still I like the idea of "color-merging", but I think that these 
+ strong conditions above + the fact that only $|S|=3$, are
+  not enough for a publication. Hence, I try to generalize, 
+ but still have some doubts, since everything is just a 
+ "combinatorial" re-formulation of which triples do we get 
+ from the $(\mathscr{R}(G_{\Pi},\sigma_{\Pi}),\mathscr{F}(G_{\Pi},\sigma_{\Pi})$
+ for $\mathscr{R}(G,\sigma),\mathscr{F}(G,\sigma)$ and \emph{vice versa}
+
+  If, for example, we want 
+  $\mathscr{R}(G,\sigma)\subseteq \mathscr{R}(G_{\Pi},\sigma_{\Pi})$
+  (as implicitely used in some of Annachiaras proofs). 
+  if for example $ab|b' \ak{\in}\mathscr{R}(G,\sigma)$ we must ensure that $a$ is in a different color set than $b,b'$
+  in $\Pi$ in order to still distinguish between the colors 
+  used to infer $\mathscr{R}(G,\sigma)$ via $(G,\sigma)$ etc .. 
+  Of course we may have several partitions that together help
+  to  distinguish the colors to obtain eg $\mathscr{R}(G,\sigma)$. 
+  This, however (even with not a single but many partitions),  imposes
+   extremely strong constraints on the different partitions $\Pi$
+   we need (see Lemma \ref{lem:R-Ri}). 
+  And I feel, that these conditions are so strong, that 
+  we even not have somthing substantial different as
+  the already existing characterition in Prop.\ \ref{prop:BMG-triple-charac}.
+\begin{center}**** --- **** \end{center}
+}
 
 
 
