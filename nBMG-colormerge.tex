@@ -342,10 +342,9 @@ that works for an arbirary number of colors. }
   Assume now that $(G,\sigma)$ is color-sink-free. 
   All vertices $z\in S_i\in \Pi$ obtain color
  $\sigma_\Pi(z)=S_i$. To show that $(G_\Pi,\sigma_\Pi)$ is color-sink-free we
-	must show $N_{G_\Pi}(x,S_i)\neq \emptyset$ \OLD{for all $S_i\in \Pi\setminus
-	\{\sigma(x)\}$.} \ak{for all $S_i$ with $\sigma(x)\notin S_i$ and for each $x\in V(G)$, for example, if $\Pi=\{\{1\}, \{2,3\}\}=S_1 \cup S_2$ and $\sigma(x)=2$ we check only $N_{G_\Pi}(x,S_1)\neq \emptyset$}. \OLD{The latter is equivalent to show that $N_{G_\Pi}(x,S_i)\neq
-	\emptyset$ for all $S_i\in \Pi$ with $x\notin S_i$}. Let $x\in V(G_\Pi)=V(G)$
-	and suppose that $\ak{\sigma(}x\ak{)}\in S_j\in \Pi$ and thus, $\sigma_\Pi(x) = S_j$. Now,
+	must show $N_{G_\Pi}(x,S_i)\neq \emptyset$ for all $S_i\in \Pi$ with $\sigma(x)\notin S_i$ and 
+	for each $x\in V(G)$. Let $x\in V(G_\Pi)=V(G)$
+	and suppose that  $\sigma_\Pi(x) = S_j$.  Now,
 	consider $S_i\in \Pi$ with $i\neq j$. By construction $\sigma(x)\neq
 	\sigma(y)$ for all $y\in S_i$. Since $(G,\sigma)$ is color-sink-free, there
 	is a vertex $y'\in S_i$ such that $\sigma(y')=\sigma(y)$ and $y'\in
@@ -540,6 +539,9 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
 
 \ak{
 	The following observation suggests that the only partition of $S$ satisfying (R1) for a properly colored graph $(G,\sigma)$ with an informative triple for every two distinct colors is the partition of $|S|$ color classes each consisting of a single color.
+	\TODO{MH: no, it only shows that this "each-class-singleton" partition is needed, under the assumption that "there is an informative triple for every two distinct colors of $S$." .. 
+	it would be nice to understand, if this holds in general for all BMGs, or if there are "more interesting" partitions for BMGs ie BMGs for which not every two colors provide some triple}
+	
 	\begin{observ}
 	Let $(G,\sigma)$ be a properly colored graph such that there is an informative triple for every two distinct colors of $S$. If $\Pi$ is a partition of $S$ satisfying (R1), then $\Pi$ is the partition of $|S|$ color classes each consisting of a single color, i.e. $\Pi_i=\{i\}$ for all $i\in S$. Indeed, if there is a triple for the colors $\{i,j\}$ with $i\neq j$ then $\sigma(i)$ and $\sigma(j)$ belongs to different partition classes. Now, if there is a triple for the colors $\{i,k\}$ and $\{j,k\}$ with $j\neq k$, then $\sigma(k)$ belongs to a partition class different from the one either $\sigma(i)$ or $\sigma(j)$ belong to. Repeating this argument for all couples of different colors of $S$, we have that $\Pi_i=\{i\}$ for all $i\in S$.
 	
@@ -612,9 +614,18 @@ to obtain the color-sink-free graph $(G_{\Pi},\sigma_{\Pi})$.
     \mathscr{R}(G,\sigma)$ and $\mathscr{F}(G_\Pi,\sigma_\Pi) \subseteq
     \mathscr{F}(G,\sigma)$. Since $(\mathscr{R}(G,\sigma),
     \mathscr{F}(G,\sigma))$ is consistent, $(\mathscr{R}(G_\Pi,\sigma_\Pi)
-    ,\mathscr{F}(G_\Pi,\sigma_\Pi) )$ is consistent \ak{Why?}. By the same arguments as
+    ,\mathscr{F}(G_\Pi,\sigma_\Pi) )$ is consistent \ak{Why?}
+    \mh{MH: because there is a tree $T$ that displays all triples of 
+    $(\mathscr{R}(G,\sigma)$ and thus, in particular, all of $\mathscr{R}(G_\Pi,\sigma_\Pi)$ 
+    and none of $\mathscr{F}(G,\sigma))$ and thus, in particular, 
+    none of $\mathscr{F}(G_\Pi,\sigma_\Pi)$
+    }. By the same arguments as
     used in the first case, $(G_\Pi,\sigma_\Pi)$ is a BMG. \ak{For the case of $3$ colors and $\Pi=\{\{1\},\{2,3\}\}$, Fig.1 in main.tex gives a counterexample. 
-    Indeed, take $(\partial_r(\Gamma),\sigma_r)=(G_{\Pi},\sigma_\Pi)$ where red=$1$, blue=$2$, yellow=$3$. $(G_{\Pi},\sigma_\Pi)$ isn't a 2-BMG but $(G,\sigma)$ is a 3-BMG and (R2) and (F2) hold for $\Pi$.}
+    Indeed, take $(\partial_r(\Gamma),\sigma_r)=(G_{\Pi},\sigma_\Pi)$ where red=$1$, blue=$2$, yellow=$3$. $(G_{\Pi},\sigma_\Pi)$ isn't a 2-BMG but $(G,\sigma)$ is a 3-BMG and (R2) and (F2) hold for $\Pi$.
+    \mh{MH: this is not correct neither (F2) nor (R2) is satisfied. in your example we get
+    we get $xy|z'\in \mathscr{R}(G_\Pi,\sigma_\Pi)$ but since they have 3 distinct colors (= not (R2))
+   	as well as $xy|z\in \mathscr{F}(G_\Pi,\sigma_\Pi)$ for which (F2) is not satisfied}
+    }
 \end{proof}
 
 
